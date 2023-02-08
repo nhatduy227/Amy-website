@@ -1,0 +1,29 @@
+.container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image {
+    max-height: 7vh;
+}
+
+.nav {
+    background-color: grey;
+    display: flex;
+    justify-content: flex-end;
+    height: 2vh;
+}
+
+.link {
+    text-decoration: inherit;
+    padding-right: 4vw;
+    color: white;
+}

@@ -1,0 +1,9 @@
+.landing {
+    margin-top: 7vh;
+    margin-left: 2.5vw;
+    background-image: url('../../Assets/background.png');
+    height: 93vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+}

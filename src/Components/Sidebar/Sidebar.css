@@ -1,0 +1,9 @@
+.sidebar {
+    background: var(--primary);
+    position:fixed;
+    top:7vh;
+    bottom:0;
+    height:100vh;
+    left:0;
+    width: 2.5vw;
+}
