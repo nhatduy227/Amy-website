@@ -1,0 +1,12 @@
+.home {
+    height: calc(100vh-80px);
+}
+
+.banner-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.home-container {
+    background-color: #231f20;
+}

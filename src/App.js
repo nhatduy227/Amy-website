@@ -1,21 +1,67 @@
-import React from 'react'
-import Header from  './Components/Header/Header'
-import Sidebar from './Components/Sidebar/Sidebar'
-import Footer from './Components/Footer/Footer'
-import Products from './Pages/Products/Products'
-import NewProducts from './Pages/NewProducts/NewProducts'
-import './App.css'
+import React from 'react';
+import Sidebar from './Components/Sidebar/Sidebar';
+import Footer from './Components/Footer/Footer';
+import './App.css';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import Header from './Components/Header/Header';
+import Home from './Pages/Home/Home';
+import Navbar from './Components/Navbar/Navbar';
+import About from './Pages/About/About';
+import Product from './Pages/Product/Product';
 
+function Layout() {
+  return (
+    <div>
+      <Header />
+      <div className="grid-container">
+        <Sidebar />
+        <div>
+          <Navbar />
+          <Outlet />
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/product',
+        element: <Product />,
+      },
+      {
+        path: '/event',
+        element: <Product />,
+      },
+      {
+        path: '/notice',
+        element: <Product />,
+      },
+      {
+        path: '/where-to-buy',
+        element: <Product />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
     <div>
-      <Header />
-      <Sidebar />
-      <div className='home' id='home'/>
-      <Products id='products'/>
-      <NewProducts/>
-      <Footer />
+      <RouterProvider router={router} />
     </div>
   );
 }

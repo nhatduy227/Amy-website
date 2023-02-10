@@ -1,20 +1,40 @@
-import React from 'react'
-import './Header.css'
-import Logo from '../../Assets/logo.png';
-import { Link } from 'react-scroll'
+import React from 'react';
+import './Header.css';
+import { Link } from 'react-router-dom';
+import logo from '../../Assets/logo.png';
 
 export default function Header() {
   return (
-    <div className='container'>
-    <nav className='header'>
-        <img className='image' src={Logo} alt="Logo" />
-    </nav>
-    <nav className='nav'>
-      <Link activeClass="active" to="home" spy={true} smooth={true} className='link'>Home</Link> 
-      <Link to="products" spy={true} smooth={true} className='link'>Products</Link>
-      <Link to="home" spy={true} smooth={true} className='link'>Login</Link>
-    </nav>
+    <div className="header">
+      <div className="wrapper">
+        <div className="left">
+          <Link to="/">
+            <img src={logo} className="logo" alt="Amy-logo" />
+          </Link>
+        </div>
+        <div className="right">
+          <div className="item">
+            <Link className="link" to="/">
+              Login
+            </Link>
+          </div>
+          <div className="item">
+            <Link className="link" to="/">
+              Cart
+            </Link>
+          </div>
+          <div className="item">
+            <Link className="link" to="/">
+              Message
+            </Link>
+          </div>
+          <div className="item">
+            <Link className="link" to="/">
+              Stores
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
-    
-  )
+  );
 }
