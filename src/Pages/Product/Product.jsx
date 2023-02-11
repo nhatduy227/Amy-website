@@ -1,5 +1,4 @@
 import React from 'react';
-import './Product.css';
 import productBanner from '../../Assets/product-banner.png';
 import ProductCard from './ProductCard';
 import la1 from '../../Assets/la1.png';
