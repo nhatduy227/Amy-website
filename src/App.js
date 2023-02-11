@@ -8,18 +8,20 @@ import Home from './Pages/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About/About';
 import Product from './Pages/Product/Product';
+import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
 
 function Layout() {
   return (
     <div>
       <Header />
-      <div className="grid-container">
+      <div className="flex">
         <Sidebar />
-        <div>
+        <div className='flex-1'>
           <Navbar />
           <Outlet />
         </div>
       </div>
+      <BeforeFooter />
       <Footer />
     </div>
   );
