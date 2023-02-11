@@ -1,14 +1,7 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.home {
-    margin-top: 7vh;
-    margin-left: 2.5vw;
-    background-image: url('./Assets/background.png');
-    height: 90vh;
-    width: 97.5vw;
-    background-size: 97.5vw 90vh;
-    background-repeat: no-repeat;
-    background-position: center center; 
-}
+

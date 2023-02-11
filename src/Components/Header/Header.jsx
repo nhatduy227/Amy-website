@@ -1,20 +1,38 @@
-import React from 'react'
-import './Header.css'
-import Logo from '../../Assets/logo.png';
-import { Link } from 'react-scroll'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
+
+import logo from '../../Assets/logo.png';
 
 export default function Header() {
   return (
-    <div className='container'>
-    <nav className='header'>
-        <img className='image' src={Logo} alt="Logo" />
-    </nav>
-    <nav className='nav'>
-      <Link activeClass="active" to="home" spy={true} smooth={true} className='link'>Home</Link> 
-      <Link to="products" spy={true} smooth={true} className='link'>Products</Link>
-      <Link to="home" spy={true} smooth={true} className='link'>Login</Link>
-    </nav>
+    <div className="w-full h-[80px]">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-6">
+          <Link to="/">
+            <img src={logo} className="w-[200px] h-20" alt="Amy-logo" />
+          </Link>
+        </div>
+        <div className="flex items-center gap-6 mr-[60px]">
+          <Link className="flex no-underline text-base" to="/">
+            <PersonOutlineIcon />
+            <div className="h-6 ml-1">Login</div>
+          </Link>
+          <Link className="flex no-underline text-base" to="/">
+            <ShoppingCartOutlinedIcon />
+            <div className="h-6 ml-1">Cart</div>
+          </Link>
+          <Link className="flex no-underline text-base" to="/">
+            <ChatBubbleOutlineOutlinedIcon />
+            <div className="h-6 ml-1">Message</div>
+          </Link>
+          <Link className="flex no-underline text-base" to="/">
+            Stores
+          </Link>
+        </div>
+      </div>
     </div>
-    
-  )
+  );
 }

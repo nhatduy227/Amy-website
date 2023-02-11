@@ -1,8 +1,5 @@
-import React from 'react'
-import './Sidebar.css'
+import React from 'react';
 
 export default function Sidebar() {
-  return (
-    <nav className='sidebar'/>
-  )
+  return <div className="w-[60px] bg-primary-default z-50" />;
 }
