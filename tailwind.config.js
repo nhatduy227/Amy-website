@@ -10,6 +10,9 @@ module.exports = {
         background: {
           main: '#231f20',
         },
+        gray: {
+          50: '#808080',
+        }
       },
     },
   },

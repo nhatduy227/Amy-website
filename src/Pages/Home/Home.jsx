@@ -1,6 +1,6 @@
 import React from 'react';
 import banner from '../../Assets/background.png';
-import Products from './../Products/Products';
+import Products from '../../Components/Products/Products';
 import Bubble from '../../Assets/bubble.png';
 import bubble1 from '../../Assets/bubble1.png';
 import la1 from '../../Assets/la1.png';
@@ -64,12 +64,11 @@ const Home = () => {
         <img src={la2} alt="" className="w-[250px] top-[1200px] -right-[50px] absolute" />
         <img src={la1} alt="" className="w-[250px] top-[1500px] -left-[50px] absolute" />
 
-
         <h1 className="text-primary-default text-center text-[24px] font-semibold mb-5">Không chất bảo quản</h1>
-        <Products title="Selling Products" productData={dummyData} />
-        <Products title="Selling Products" productData={dummyData} />
-        <Products title="New Products" productData={dummyData2} />
-        <Products title="New Products" productData={dummyData2} />
+        <Products title="Sản phẩm bán chạy" productData={dummyData} />
+        <Products title="Sản phẩm bán chạy" productData={dummyData} />
+        <Products title="Sản phẩm mới" productData={dummyData2} />
+        <Products title="Sản phẩm mới" productData={dummyData2} />
         {/* <NewProducts/> */}
       </div>
     </div>
