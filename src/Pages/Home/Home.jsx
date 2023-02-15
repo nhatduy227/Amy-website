@@ -69,7 +69,6 @@ const Home = () => {
         <Products title="Sản phẩm bán chạy" productData={dummyData} />
         <Products title="Sản phẩm mới" productData={dummyData2} />
         <Products title="Sản phẩm mới" productData={dummyData2} />
-        {/* <NewProducts/> */}
       </div>
     </div>
   );
