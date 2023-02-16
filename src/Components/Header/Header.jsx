@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { signInWithGoogle, logOut } from '../../Firebase';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
@@ -16,10 +17,20 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-6 mr-[60px]">
-          <Link className="flex no-underline text-base" to="/">
+          {localStorage ? <div className="flex no-underline text-base">
+            <PersonOutlineIcon />
+            <h1>{localStorage.getItem("name")}</h1>
+          </div> : null}
+          {localStorage ? 
+          <button className="flex no-underline text-base" onClick={signInWithGoogle}>
             <PersonOutlineIcon />
             <div className="h-6 ml-1">Login</div>
-          </Link>
+          </button> : 
+          <button className="flex no-underline text-base" onClick={logOut}>
+          <PersonOutlineIcon />
+          <div className="h-6 ml-1">Logout</div>
+          </button>
+          }
           <Link className="flex no-underline text-base" to="/">
             <ShoppingCartOutlinedIcon />
             <div className="h-6 ml-1">Cart</div>
