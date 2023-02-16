@@ -1,0 +1,53 @@
+{
+  "header": {
+    "login_in": "Sign In",
+    "login_out": "Log Out",
+    "cart": "Cart",
+    "message": "Message",
+    "admin": "Admin"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "product": "Product",
+    "event": "Event",
+    "notice": "Notice",
+    "where to buy": "Where to buy"
+  },
+  "before_footer": {
+    "first_column": {
+      "company_name": "AMY VN JOINT STOCK COMPANY",
+      "address": "Office: No. 02, Street 24, Quarter 2, An Khanh Ward, City. Thu Duc, T. Pho Ho Chi Minh.",
+      "factory_address": "Factory: 143 Vo Van Hat, Long Truong Ward, City. Thu Duc, T. Pho Ho Chi Minh.",
+      "email": "Email: info@amyvietnam.com",
+      "website": "Website: www.amyvietname.com",
+      "hotline": "Hotline: (84.8) 653 653 67"
+    },
+    "second_column": {
+      "policy": "POLICY",
+      "information_and_security_policy": "Information Security Policy",
+      "rules_and_form_payment": "Rules & Form Of Payment",
+      "return_and_refund_policy": "Return & Refund Policy",
+      "shipping_and_forward_policy": "Shipping & Forward Policy"
+    },
+    "third_column": {
+      "information": "THÔNG TIN",
+      "recruitment": "Recruitment",
+      "agent_system": "Agent system",
+      "frequently_asked_questions": "Frequently asked questions",
+      "contact_cooperation": "Contact Cooperation"
+    },
+    "fourth_column": {
+      "social_media": "SOCIAL MEDIA"
+    },
+    "fifth_column": {
+      "contact_us": "CONTACT_US",
+      "label": "Receive the lastest product information, promotions and more",
+      "input_place_holder": "Your Email",
+      "subscribe": "Subscribe"
+    }
+  },
+  "footer": {
+    "copy_right": "Copyright AMY VIETNAM Joint Stock Company"
+  }
+}

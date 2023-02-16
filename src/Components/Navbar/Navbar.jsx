@@ -1,28 +1,34 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+const navList = [
+  {
+    title: 'home',
+    path: '/',
+  },
+  { title: 'about', path: '/about' },
+  { title: 'product', path: '/product' },
+  { title: 'event', path: '/' },
+  { title: 'notice', path: '/' },
+  { title: 'where to buy', path: '/' },
+];
+
 const Navbar = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="w-full h-[30px] bg-[#808080] flex items-center justify-end">
+    <div className="bg-gray-50 flex items-center justify-end">
       <ul className="mr-[60px] flex list-none">
-        <Link className="no-underline" to="/">
-          <li className="p-5 text-white uppercase text-xs">Home</li>
-        </Link>
-        <Link className="no-underline" to="/about">
-          <li className="p-5 text-white uppercase text-xs">About</li>
-        </Link>
-        <Link className="no-underline" to="/product">
-          <li className="p-5 text-white uppercase text-xs">Product</li>
-        </Link>
-        <Link className="no-underline" to="/event">
-          <li className="p-5 text-white uppercase text-xs">Event</li>
-        </Link>
-        <Link className="no-underline" to="/notice">
-          <li className="p-5 text-white uppercase text-xs">Notice</li>
-        </Link>
-        <Link className="no-underline" to="/where-to-buy">
-          <li className="p-5 pr-0 text-white uppercase text-xs">Where to buy</li>
-        </Link>
+        {navList.map(({ title, path }) => {
+          return (
+            <li key={title} className="py-2  cursor-pointer text-white uppercase text-xs hover:bg-primary-default">
+              <Link className="px-4 no-underline uppercase" to={path}>
+                {t(`navbar.${title}`)}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

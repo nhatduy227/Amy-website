@@ -1,29 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect, createContext } from "react";
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { auth } from './Firebase';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Footer from './Components/Footer/Footer';
-import './App.css';
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Home from './Pages/Home/Home';
+import Admin from "./Pages/Admin/Admin";
 import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About/About';
 import Product from './Pages/Product/Product';
 import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
+import './App.css';
 
 function Layout() {
   return (
-    <div>
+    <>
       <Header />
       <div className="flex">
         <Sidebar />
-        <div className='flex-1'>
+        <div className="flex-1">
           <Navbar />
           <Outlet />
         </div>
       </div>
       <BeforeFooter />
       <Footer />
-    </div>
+    </>
   );
 }
 
@@ -56,16 +58,32 @@ const router = createBrowserRouter([
         path: '/where-to-buy',
         element: <Product />,
       },
+      {
+        path: '/admin',
+        element: <Admin />,
+      },
     ],
   },
 ]);
 
+export const UserContext = createContext({ user: null })
+
 function App() {
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      const { displayName, email } = user;
+      setUser({
+        displayName,
+        email
+      })
+    })
+  }, [])
+
+  return <UserContext.Provider value={user}>
+    <RouterProvider router={router} />
+  </UserContext.Provider>;
 }
 
 export default App;
