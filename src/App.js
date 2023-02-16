@@ -12,18 +12,18 @@ import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
 
 function Layout() {
   return (
-    <div>
+    <>
       <Header />
       <div className="flex">
         <Sidebar />
-        <div className='flex-1'>
+        <div className="flex-1">
           <Navbar />
           <Outlet />
         </div>
       </div>
       <BeforeFooter />
       <Footer />
-    </div>
+    </>
   );
 }
 
@@ -61,11 +61,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
