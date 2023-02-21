@@ -6,6 +6,7 @@ import bubble1 from '../../Assets/bubble1.png';
 import la1 from '../../Assets/la1.png';
 import la2 from '../../Assets/la2.png';
 import bubbleDeco from '../../Assets/bubble-deco.png';
+import Slider from './../../Components/Slider/Slider';
 
 const dummyData = [
   {
@@ -50,14 +51,15 @@ const dummyData2 = [
 
 const Home = () => {
   return (
-    <div className="overflow-hidden">
-      <div className="">
-        <img className="w-full object-cover" src={banner} alt="banner" />
+    <div className="">
+      <div className="bg-gray-50">
+        <Slider />
       </div>
-      <div className="bg-background-main pt-5 relative">
+
+      <div className="bg-background-main pt-5 relative overflow-hidden">
         <img src={la1} alt="" className="w-[250px] top-[50px] -left-[50px] absolute" />
         {/* Decoration */}
-        <img src={bubbleDeco} alt="bubbleDeco" className="w-[400px] top-[300px] -left-[100px] absolute" />
+        <img src={bubbleDeco} alt="bubbleDeco" className="w-[400px] top-[300px] -left-[100px] absolute " />
         <img src={la2} alt="" className="w-[250px] top-[500px] -right-[50px] absolute" />
         <img src={la1} alt="" className="w-[250px] top-[800px] -left-[50px] absolute" />
         <img src={bubbleDeco} alt="bubbleDeco" className="w-[400px] top-[800px] -right-[120px] absolute" />

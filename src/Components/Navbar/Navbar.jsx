@@ -2,6 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+import './Navbar.scss'
+
 const navList = [
   {
     title: 'home',
@@ -18,7 +20,7 @@ const Navbar = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-gray-50 flex items-center justify-end">
+    <nav className="bg-gray-50 flex items-center justify-end">
       <ul className="mr-[60px] flex list-none">
         {navList.map(({ title, path }) => {
           return (
@@ -30,7 +32,7 @@ const Navbar = () => {
           );
         })}
       </ul>
-    </div>
+    </nav>
   );
 };
 

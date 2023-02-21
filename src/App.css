@@ -4,4 +4,6 @@
     box-sizing: border-box;
 }
 
-
+.container {
+    max-width: calc(100% - 60px);
+}
