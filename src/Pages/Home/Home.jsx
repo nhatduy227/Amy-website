@@ -1,5 +1,4 @@
 import React from 'react';
-import banner from '../../Assets/background.png';
 import Products from '../../Components/Products/Products';
 import Bubble from '../../Assets/bubble.png';
 import bubble1 from '../../Assets/bubble1.png';

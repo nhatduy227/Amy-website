@@ -9,6 +9,7 @@ import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About/About';
 import Product from './Pages/Product/Product';
 import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
+import Notice from './Pages/Notice/Notice';
 
 function Layout() {
   return (
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/notice',
-        element: <Product />,
+        element: <Notice />,
       },
       {
         path: '/where-to-buy',

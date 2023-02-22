@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import './Navbar.scss'
+import './Navbar.scss';
 
 const navList = [
   {
@@ -11,9 +11,9 @@ const navList = [
   },
   { title: 'about', path: '/about' },
   { title: 'product', path: '/product' },
-  { title: 'event', path: '/' },
-  { title: 'notice', path: '/' },
-  { title: 'where to buy', path: '/' },
+  // { title: 'event', path: '/' },
+  { title: 'notice', path: '/notice' },
+  // { title: 'where to buy', path: '/' },
 ];
 
 const Navbar = () => {

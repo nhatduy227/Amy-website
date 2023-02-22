@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EastOutlinedIcon from '@mui/icons-material/EastOutlined';
 import WestOutlinedIcon from '@mui/icons-material/WestOutlined';
-import banner from '../../Assets/background.png';
+import banner from '../../Assets/home-banner.png';
 
 import './Slider.scss';
 
