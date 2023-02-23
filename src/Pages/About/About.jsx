@@ -1,15 +1,30 @@
 import React from 'react';
-import banner1 from '../../Assets/about-banner.png';
+import banner from '../../Assets/about-banner.png';
 import technology from '../../Assets/technology.png';
 import bulletPoint from '../../Assets/bullet-point-img.svg';
+import la1 from '../../Assets/la1.png';
+import la2 from '../../Assets/la2.png';
+import bubbleDeco from '../../Assets/bubble-deco.png';
 
 const About = () => {
   return (
     <div>
       <div className="">
-        <img src={banner1} alt="banner-1" />
+        <img src={banner} alt="banner" className="inline-block w-full object-cover" />
       </div>
-      <div className="w-full px-36 py-10 flex flex-col gap-10 bg-background-main text-white">
+      <div className="w-full lg:pl-36 lg:pr-48 pl-10 pr-16 py-10 flex flex-col gap-10 bg-background-main text-white relative overflow-hidden">
+        {/* Decoration */}
+        <>
+          <img src={la1} alt="" className="hidden lg:inline-block w-[250px] display-no top-[50px] -left-[50px] absolute" />
+          <img src={bubbleDeco} alt="bubbleDeco" className="hidden lg:inline-block w-[400px] top-[300px] -left-[100px] absolute " />
+  
+          <img src={bubbleDeco} alt="bubbleDeco" className="hidden lg:inline-block w-[400px] top-[600px] -right-[120px] absolute" />
+          <img src={la2} alt="" className="hidden lg:inline-block w-[250px] top-[1000px] -right-[50px] absolute rotate-90" />
+  
+          <img src={la1} alt="" className="hidden lg:inline-block w-[220px] bottom-6 left-[5px] absolute" />
+        </>
+
+
         <div className="flex items-start">
           <img src={bulletPoint} alt="" className="w-20" />
           <div className="ml-2 text-justify leading-relaxed">

@@ -10,6 +10,7 @@ import About from './Pages/About/About';
 import Product from './Pages/Product/Product';
 import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
 import Notice from './Pages/Notice/Notice';
+import Event from './Pages/Event/Event';
 
 function Layout() {
   return (
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/event',
-        element: <Product />,
+        element: <Event />,
       },
       {
         path: '/notice',

@@ -56,14 +56,16 @@ const Home = () => {
       </div>
 
       <div className="bg-background-main pt-5 relative overflow-hidden">
-        <img src={la1} alt="" className="w-[250px] top-[50px] -left-[50px] absolute" />
         {/* Decoration */}
-        <img src={bubbleDeco} alt="bubbleDeco" className="w-[400px] top-[300px] -left-[100px] absolute " />
-        <img src={la2} alt="" className="w-[250px] top-[500px] -right-[50px] absolute" />
-        <img src={la1} alt="" className="w-[250px] top-[800px] -left-[50px] absolute" />
-        <img src={bubbleDeco} alt="bubbleDeco" className="w-[400px] top-[800px] -right-[120px] absolute" />
-        <img src={la2} alt="" className="w-[250px] top-[1200px] -right-[50px] absolute" />
-        <img src={la1} alt="" className="w-[250px] top-[1500px] -left-[50px] absolute" />
+        <>
+          <img src={la1} alt="" className="lg:inline-block w-[250px] top-[50px] -left-[50px] absolute" />
+          <img src={bubbleDeco} alt="bubbleDeco" className="lg:inline-block w-[400px] top-[300px] -left-[100px] absolute " />
+          <img src={la2} alt="" className="lg:inline-block w-[250px] top-[500px] -right-[50px] absolute" />
+          <img src={la1} alt="" className="lg:inline-block w-[250px] top-[800px] -left-[50px] absolute" />
+          <img src={bubbleDeco} alt="bubbleDeco" className="lg:inline-block w-[400px] top-[800px] -right-[120px] absolute" />
+          <img src={la2} alt="" className="lg:inline-block w-[250px] top-[1200px] -right-[50px] absolute" />
+          <img src={la1} alt="" className="lg:inline-block w-[250px] top-[1500px] -left-[50px] absolute" />
+        </>
 
         <h1 className="text-primary-default text-center text-[24px] font-semibold mb-5">Không chất bảo quản</h1>
         <Products title="Sản phẩm bán chạy" productData={dummyData} />

@@ -11,9 +11,9 @@ const navList = [
   },
   { title: 'about', path: '/about' },
   { title: 'product', path: '/product' },
-  // { title: 'event', path: '/' },
+  { title: 'event', path: '/event' },
   { title: 'notice', path: '/notice' },
-  // { title: 'where to buy', path: '/' },
+  { title: 'where to buy', path: '/' },
 ];
 
 const Navbar = () => {
