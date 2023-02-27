@@ -1,17 +1,17 @@
 import React from 'react';
-import bubble from '../../Assets/bubble.png';
+import { Link } from 'react-router-dom';
 
-const ProductCard = () => {
+const ProductCard = ({id, title, price, img}) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="flex justify-center w-[660px] h-[2px] bg-primary-default my-6" />
       <div className="flex  w-[660px]">
-        <div>
-          <img className="w-[220px] h-[220px] object-contain" src={bubble} alt="" />
-        </div>
-        <div className="pl-[110px] text-white">
-          <div className="text-lg text-white">Tran chau tuoi cu nang</div>
-          <div className='py-[25px]'>Price: 25000 VND</div>
+        <Link to={"/product/" + id} >
+          <img className="w-[220px] h-[220px] object-cover ml-10" src={img} alt="" />
+        </Link>
+        <div className="pl-20 text-white">
+          <div className="text-lg text-white">{title}</div>
+          <div className='py-[25px]'>Price: {price} VND</div>
           <div className='flex flex-col'>
             <label htmlFor="size">Size</label>
             <input className='px-4 text-background-main' id="size" type="text" placeholder='250g'/>

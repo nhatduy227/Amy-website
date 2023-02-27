@@ -10,7 +10,7 @@ const navList = [
     path: '/',
   },
   { title: 'about', path: '/about' },
-  { title: 'product', path: '/product' },
+  { title: 'product', path: '/products' },
   { title: 'event', path: '/event' },
   { title: 'notice', path: '/notice' },
   { title: 'where to buy', path: '/' },
@@ -24,8 +24,8 @@ const Navbar = () => {
       <ul className="mr-[60px] flex list-none">
         {navList.map(({ title, path }) => {
           return (
-            <li key={title} className="py-2  cursor-pointer text-white uppercase text-xs hover:bg-primary-default">
-              <Link className="px-4 no-underline uppercase" to={path}>
+            <li key={title} className="text-xs">
+              <Link className="px-4 py-2 no-underline uppercase hover:bg-primary-default text-white" to={path}>
                 {t(`navbar.${title}`)}
               </Link>
             </li>

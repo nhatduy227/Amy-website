@@ -7,10 +7,11 @@ import Header from './Components/Header/Header';
 import Home from './Pages/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About/About';
-import Product from './Pages/Product/Product';
+import Products from './Pages/Products/Products';
 import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
 import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
+import Product from './Pages/Product/Product';
 
 function Layout() {
   return (
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: '/product',
+        path: '/products',
+        element: <Products />,
+      },
+      {
+        path: '/product/:id',
         element: <Product />,
       },
       {
@@ -56,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/where-to-buy',
-        element: <Product />,
+        element: <Products />,
       },
     ],
   },
