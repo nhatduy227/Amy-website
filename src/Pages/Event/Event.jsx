@@ -14,7 +14,7 @@ const Event = () => {
   return (
     <div className="">
       {/* Banner */}
-      <div className="bg-background-main p-36 flex justify-center relative">
+      <div className="bg-background-main  lg:h-[510px] p-36 flex justify-center relative">
         <img src={eventBanner} alt="event-banner" className="w-[800px] border-4 rounded z-10" />
         <img src={la1} alt="" className="w-[300px] absolute bottom-0 left-0" />
         <img src={la2} alt="" className="w-[350px] absolute top-0 right-0" />

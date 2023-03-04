@@ -1,6 +1,16 @@
 import React from 'react';
+// Banner
 import milkTea from '../../Assets/milktea-banner.png';
-import moodDuongDen from '../../Assets/mood-duongden.png';
+import Banner3Q from '../../Assets/3Q-banner.png';
+import cunangBanner from '../../Assets/cunang-banner.png';
+import duongmiaBanner from '../../Assets/duongmia-banner.png';
+import duongdenBanner from '../../Assets/duongden-banner.png';
+
+// Mood
+import moodCuNang from '../../Assets/moodCuNang.png';
+import moodDuongMia from '../../Assets/moodDuongMia.png';
+import mood3Q from '../../Assets/mood3Q.png';
+import moodDuongDen from '../../Assets/moodDuongDen.png';
 import noPreservatives from '../../Assets/no-preservatives.png';
 // Hướng dẫn sử dụng
 import defrost01 from '../../Assets/defrost01.png';
@@ -19,6 +29,7 @@ import duongmia from '../../Assets/duongmia.png';
 import duongden from '../../Assets/duongden.png';
 import trasua from '../../Assets/trasua.png';
 import tranchau3Q from '../../Assets/3Q.png';
+import { useParams } from 'react-router-dom';
 
 const dummyData = [
   {
@@ -54,15 +65,56 @@ const dummyData = [
 ];
 
 const Product = () => {
+  const { id } = useParams();
+  console.log(id);
+
   return (
     <div className="bg-background-main lg:px-36 lg:pb-10 px-10 pb-10">
       <div className="flex flex-col overflow-hidden items-center justify-center">
-        <img src={milkTea} alt="" className="w-[500px] lg:w-[700px] mt-8" />
-        {/* <p>Trà sữa</p> */}
-        <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
-          Hãy thưởng cho mình một ly <strong>Trà sữa trân châu tươi</strong> ăn liền vị “<strong>Đường đen</strong>”
-          thơm nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
-        </p>
+        {id === '1' && (
+          <>
+            <img src={cunangBanner} alt="" className="w-[500px] lg:w-[700px] mt-8" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Củ năng</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
+        {id === '2' && (
+          <>
+            <img src={duongmiaBanner} alt="" className="w-[500px] lg:w-[700px] mt-8" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Đường mía</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
+        {id === '3' && (
+          <>
+            <img src={duongdenBanner} alt="" className="w-[500px] lg:w-[700px] mt-8" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Đường đen</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
+        {id === '4' && (
+          <>
+            <img src={milkTea} alt="" className="w-[500px] lg:w-[700px] mt-8" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
+              Hãy thưởng cho mình một ly <strong>Trà sữa trân châu tươi</strong> ăn liền vị “<strong>Đường đen</strong>”
+              thơm nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
+        {id === '5' && (
+          <>
+            <img src={Banner3Q} alt="" className="w-[500px] lg:w-[700px] mt-8" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền với “<strong>3Q</strong>” thơm nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
       </div>
 
       {/* Separate line */}
@@ -73,7 +125,11 @@ const Product = () => {
         <div className="flex">
           <div className="flex justify-between w-full flex-wrap">
             <div>
-              <img src={moodDuongDen} alt="" className="w-[250px] lg:w-[250px]" />
+              {id === '1' && <img src={moodCuNang} alt="" className="w-[250px] lg:w-[250px]" />}
+              {id === '2' && <img src={moodDuongMia} alt="" className="w-[250px] lg:w-[250px]" />}
+              {id === '3' && <img src={moodDuongDen} alt="" className="w-[250px] lg:w-[250px]" />}
+              {id === '4' && <img src={moodDuongDen} alt="" className="w-[250px] lg:w-[250px]" />}
+              {id === '5' && <img src={mood3Q} alt="" className="w-[250px] lg:w-[250px]" />}
             </div>
             <div>
               <img src={noPreservatives} alt="" className="w-[300px]" />
@@ -81,18 +137,65 @@ const Product = () => {
           </div>
         </div>
 
-        {/* Row 2 */}
+        {/* Row 2: Thanh phan*/}
         <div className="text-white mt-4">
           Thành phần:
-          <ul className="list-disc ml-5">
-            <li>
-              Nước tinh khiết, tinh bột khoai mì, tinh bột biến tính (INS 1422), Caramen (INS 150d), đường đen, trà, bột
-              kem.
-            </li>
-            <li>Bảo quản: Đặt trong tủ đông với nhiệt độ dưới -5oC. Tránh tiếp xúc với ánh nắng mặt trời.</li>
-            <li>Thời hạn sử dụng: 06 tháng kể từ ngày sản xuất. Ngày sản xuất: In trên bao bì.</li>
-            <li>Thông tin cảnh báo: Không dùng khi sản phẩm bị mốc hoặc hết hạn sử dụng.</li>
-          </ul>
+          {id === '1' && (
+            <ul className="list-disc ml-5">
+              <li>
+                Nước tinh khiết, tinh bột khoai mì, tinh bột biến tính (INS 1422), Caramen (INS 150d), củ năng, màu thực
+                phẩm (INS 124).
+              </li>
+              <li>Bảo quản: Đặt trong tủ đông với nhiệt độ dưới -5oC. Tránh tiếp xúc với ánh nắng mặt trời.</li>
+              <li>Thời hạn sử dụng: 06 tháng kể từ ngày sản xuất. Ngày sản xuất: In trên bao bì.</li>
+              <li>Thông tin cảnh báo: Không dùng khi sản phẩm bị mốc hoặc hết hạn sử dụng.</li>
+            </ul>
+          )}
+          {id === '2' && (
+            <ul className="list-disc ml-5">
+              <li>Nước tinh khiết, tinh bột khoai mì, tinh bột biến tính (INS 1422), đường mía.</li>
+              <li>Bảo quản: Đặt trong tủ đông với nhiệt độ dưới -5oC. Tránh tiếp xúc với ánh nắng mặt trời.</li>
+              <li>Thời hạn sử dụng: 06 tháng kể từ ngày sản xuất. Ngày sản xuất: In trên bao bì.</li>
+              <li>Thông tin cảnh báo: Không dùng khi sản phẩm bị mốc hoặc hết hạn sử dụng.</li>
+            </ul>
+          )}
+          {id === '3' && (
+            <ul className="list-disc ml-5">
+              <li>
+                Nước tinh khiết, tinh bột khoai mì, tinh bột biến tính (INS 1422), Caramen (INS 150d), đường đen, trà,
+                bột kem.
+              </li>
+              <li>Bảo quản: Đặt trong tủ đông với nhiệt độ dưới -5oC. Tránh tiếp xúc với ánh nắng mặt trời.</li>
+              <li>Thời hạn sử dụng: 06 tháng kể từ ngày sản xuất. Ngày sản xuất: In trên bao bì.</li>
+              <li>Thông tin cảnh báo: Không dùng khi sản phẩm bị mốc hoặc hết hạn sử dụng.</li>
+            </ul>
+          )}
+          {id === '4' && (
+            <ul className="list-disc ml-5">
+              <li>
+                Nước tinh khiết, tinh bột khoai mì, tinh bột biến tính (INS 1422), Caramen (INS 150d), đường đen, trà,
+                bột kem.
+              </li>
+              <li>Bảo quản: Đặt trong tủ đông với nhiệt độ dưới -5oC. Tránh tiếp xúc với ánh nắng mặt trời.</li>
+              <li>Thời hạn sử dụng: 06 tháng kể từ ngày sản xuất. Ngày sản xuất: In trên bao bì.</li>
+              <li>Thông tin cảnh báo: Không dùng khi sản phẩm bị mốc hoặc hết hạn sử dụng.</li>
+            </ul>
+          )}
+          {id === '5' && (
+            <ul className="list-disc ml-5">
+              <li>
+                Nước tinh khiết, bột konjac, chất làm dày (INS 407, 1422), chất bảo quản (INS 202), chất điều vị (Acid
+                citric).
+              </li>
+              <li>
+                Bảo quản: Nơi khô ráo, thoáng mát từ 5-25oC. Tránh tiếp xúc với ánh nắng mặt trời. Sau khi cắt bao bì,
+                nên kẹp kín hoặc cho vào hộp, lọ có nắp bảo quản trong ngăn mát tủ lạnh. Sử dụng tốt nhất khoảng từ 4-6
+                giờ nếu bảo quản ở nhiệt độ hường bên ngoài.
+              </li>
+              <li>Thời hạn sử dụng: 06 tháng kể từ ngày sản xuất. Ngày sản xuất: In trên bao bì.</li>
+              <li>Thông tin cảnh báo: Không dùng khi sản phẩm bị mốc hoặc hết hạn sử dụng.</li>
+            </ul>
+          )}
         </div>
 
         {/* Row 3 */}

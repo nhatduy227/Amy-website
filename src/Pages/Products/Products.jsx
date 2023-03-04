@@ -64,7 +64,7 @@ const Products = () => {
         <img src={la2} alt="" className="hidden lg:block w-[250px] top-[1500px] -right-[50px] absolute" />
 
         {/* Banner */}
-        <img className="w-full" src={productBanner} alt="product-banner" />
+        <img className="w-full lg:h-[510px]" src={productBanner} alt="product-banner" />
         <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">Không chất bảo quản</h1>
         {productList.map((product) => {
           return (

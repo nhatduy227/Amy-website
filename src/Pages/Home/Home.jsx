@@ -94,8 +94,6 @@ const Home = () => {
 
         <h1 className="text-primary-default text-center text-[24px] font-semibold mb-5">Không chất bảo quản</h1>
         <ProductsComponent title="Sản phẩm bán chạy" productData={dummyData} />
-        <ProductsComponent title="Sản phẩm bán chạy" productData={dummyData} />
-        <ProductsComponent title="Sản phẩm mới" productData={dummyData2} />
         <ProductsComponent title="Sản phẩm mới" productData={dummyData2} />
       </div>
     </div>
