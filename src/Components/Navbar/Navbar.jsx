@@ -13,6 +13,9 @@ const navList = [
   { title: 'product', path: '/products' },
   { title: 'event', path: '/event' },
   { title: 'notice', path: '/notice' },
+  // { title: 'recruitment', path: '/' },
+  // { title: 'user manual', path: '/user manual' },
+  // { title: 'cooking recipe', path: '/' },
   { title: 'where to buy', path: '/' },
 ];
 

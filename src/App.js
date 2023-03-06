@@ -12,6 +12,7 @@ import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
 import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
+import LandingPage from './Pages/LandingPage/LandingPage';
 
 function Layout() {
   return (
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: '/where-to-buy',
         element: <Products />,
+      },
+      {
+        path: '/*',
+        element: <LandingPage />,
       },
     ],
   },

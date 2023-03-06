@@ -1,17 +1,22 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+
+import ProductsComponent from '../../Components/ProductsComponent/ProductsComponent';
+
 // Banner
-import milkTea from '../../Assets/milktea-banner.png';
-import Banner3Q from '../../Assets/3Q-banner.png';
-import cunangBanner from '../../Assets/cunang-banner.png';
+import phomaiBanner from '../../Assets/phomai-banner.png';
+import cunangBanner from '../../Assets/cunang-banner1.png';
 import duongmiaBanner from '../../Assets/duongmia-banner.png';
 import duongdenBanner from '../../Assets/duongden-banner.png';
+import botgiaviBanner from '../../Assets/botgiavi-banner.jpg';
+import botchienxuBanner from '../../Assets/botchienxu-banner.png';
 
 // Mood
 import moodCuNang from '../../Assets/moodCuNang.png';
 import moodDuongMia from '../../Assets/moodDuongMia.png';
-import mood3Q from '../../Assets/mood3Q.png';
 import moodDuongDen from '../../Assets/moodDuongDen.png';
 import noPreservatives from '../../Assets/no-preservatives.png';
+
 // Hướng dẫn sử dụng
 import defrost01 from '../../Assets/defrost01.png';
 import defrost02 from '../../Assets/defrost02.png';
@@ -22,59 +27,51 @@ import step4 from '../../Assets/step4.png';
 
 import certificate from '../../Assets/certificate.png';
 
-import ProductsComponent from '../../Components/ProductsComponent/ProductsComponent';
 // List product
-import cunang from '../../Assets/cunang.png';
-import duongmia from '../../Assets/duongmia.png';
-import duongden from '../../Assets/duongden.png';
-import trasua from '../../Assets/trasua.png';
-import tranchau3Q from '../../Assets/3Q.png';
-import { useParams } from 'react-router-dom';
+import tranchaucunang from '../../Assets/cunang.png';
+import tranchauduongmia from '../../Assets/duongmia.png';
+import tranchauduongden from '../../Assets/duongden.png';
+import tranchauphomai from '../../Assets/phomai.png';
+
 
 const dummyData = [
   {
     id: 1,
-    title: 'Trân châu tươi củ năng',
-    img: cunang,
+    title: 'Trân châu củ năng 350gr',
+    img: tranchaucunang,
     price: 25000,
   },
   {
     id: 2,
-    title: 'Trân châu tươi đường mía',
-    img: duongmia,
+    title: 'Trân châu đường mía 350gr',
+    img: tranchauduongmia,
     price: 25000,
   },
   {
     id: 3,
-    title: 'Trân châu tươi đường đen',
-    img: duongden,
+    title: 'Trân châu đường đen 350gr',
+    img: tranchauduongden,
     price: 25000,
   },
   {
     id: 4,
-    title: 'Trà sữa trân châu tươi đường đen',
-    img: trasua,
-    price: 25000,
-  },
-  {
-    id: 5,
-    title: 'Trân châu trắng 3Q',
-    img: tranchau3Q,
+    title: 'Trân châu phô mai 350gr',
+    img: tranchauphomai,
     price: 25000,
   },
 ];
 
 const Product = () => {
   const { id } = useParams();
-  console.log(id);
 
   return (
-    <div className="bg-background-main lg:px-36 lg:pb-10 px-10 pb-10">
+    <div className="bg-background-main pb-10">
+      {/* Product Banner */}
       <div className="flex flex-col overflow-hidden items-center justify-center">
         {id === '1' && (
           <>
-            <img src={cunangBanner} alt="" className="w-[500px] lg:w-[700px] mt-8" />
-            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
+            <img src={cunangBanner} alt="cunangBanner" className="w-full inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
               Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Củ năng</strong>” thơm
               nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
             </p>
@@ -82,8 +79,8 @@ const Product = () => {
         )}
         {id === '2' && (
           <>
-            <img src={duongmiaBanner} alt="" className="w-[500px] lg:w-[700px] mt-8" />
-            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
+            <img src={duongmiaBanner} alt="duongmiaBanner" className="w-full inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
               Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Đường mía</strong>” thơm
               nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
             </p>
@@ -91,8 +88,8 @@ const Product = () => {
         )}
         {id === '3' && (
           <>
-            <img src={duongdenBanner} alt="" className="w-[500px] lg:w-[700px] mt-8" />
-            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
+            <img src={duongdenBanner} alt="duongdenBanner" className="w-full inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
               Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Đường đen</strong>” thơm
               nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
             </p>
@@ -100,27 +97,46 @@ const Product = () => {
         )}
         {id === '4' && (
           <>
-            <img src={milkTea} alt="" className="w-[500px] lg:w-[700px] mt-8" />
-            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
-              Hãy thưởng cho mình một ly <strong>Trà sữa trân châu tươi</strong> ăn liền vị “<strong>Đường đen</strong>”
-              thơm nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            <img src={phomaiBanner} alt="" className="w-full inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Phô mai</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
             </p>
           </>
         )}
         {id === '5' && (
           <>
-            <img src={Banner3Q} alt="" className="w-[500px] lg:w-[700px] mt-8" />
-            <p className="text-primary-default text-center text-xl leading-relaxed mt-8">
-              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền với “<strong>3Q</strong>” thơm nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            <img src={phomaiBanner} alt="" className="w-full inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Phô mai</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
+        {id === '6' && (
+          <>
+            <img src={botgiaviBanner} alt="" className="w-full h-[610px] object-cover inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Phô mai</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
+        {id === '7' && (
+          <>
+            <img src={botchienxuBanner} alt="" className="w-full h-[610px] object-cover inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Phô mai</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
             </p>
           </>
         )}
       </div>
 
-      {/* Separate line */}
-      <div className="h-[2px] w-full my-6 bg-primary-default rounded"></div>
+      <div className="lg:px-36">
+        {/* Separate line */}
+        <div className="h-[2px] w-full my-6 bg-primary-default rounded"></div>
 
-      <div>
         {/* Row 1 */}
         <div className="flex">
           <div className="flex justify-between w-full flex-wrap">
@@ -129,7 +145,6 @@ const Product = () => {
               {id === '2' && <img src={moodDuongMia} alt="" className="w-[250px] lg:w-[250px]" />}
               {id === '3' && <img src={moodDuongDen} alt="" className="w-[250px] lg:w-[250px]" />}
               {id === '4' && <img src={moodDuongDen} alt="" className="w-[250px] lg:w-[250px]" />}
-              {id === '5' && <img src={mood3Q} alt="" className="w-[250px] lg:w-[250px]" />}
             </div>
             <div>
               <img src={noPreservatives} alt="" className="w-[300px]" />
@@ -181,7 +196,7 @@ const Product = () => {
               <li>Thông tin cảnh báo: Không dùng khi sản phẩm bị mốc hoặc hết hạn sử dụng.</li>
             </ul>
           )}
-          {id === '5' && (
+          {/* {id === '5' && (
             <ul className="list-disc ml-5">
               <li>
                 Nước tinh khiết, bột konjac, chất làm dày (INS 407, 1422), chất bảo quản (INS 202), chất điều vị (Acid
@@ -195,10 +210,10 @@ const Product = () => {
               <li>Thời hạn sử dụng: 06 tháng kể từ ngày sản xuất. Ngày sản xuất: In trên bao bì.</li>
               <li>Thông tin cảnh báo: Không dùng khi sản phẩm bị mốc hoặc hết hạn sử dụng.</li>
             </ul>
-          )}
+          )} */}
         </div>
 
-        {/* Row 3 */}
+        {/* Row 3: Gia tri dinh duong */}
         <div className="flex flex-wrap gap-6 text-white mt-8">
           <div className="w-[350px] text-lg ">
             <p className="text-primary-default text-3xl">Rã đông:</p>
@@ -227,7 +242,7 @@ const Product = () => {
           </div>
           <div className="hidden lg:block h-[400px] w-[2px] bg-[#fff] rounded mr-9"></div>
           <div className="lg:flex-1 text-lg">
-            <p className=" text-3xl">Hướng dẫn sử dụng:</p>
+            <p className=" text-3xl text-primary-default">Hướng dẫn sử dụng:</p>
             <div className="flex flex-col text-base italic text-center">
               <div className="flex">
                 <div className="flex flex-col items-center">
@@ -256,131 +271,134 @@ const Product = () => {
         </div>
       </div>
 
-      {/* Separate line */}
-      <div className="h-[2px] w-full my-6 bg-primary-default rounded"></div>
-      <div className="flex items-end justify-center">
-        <div className="w-[425px] flex items-center justify-center">
-          <table className="inline-block w-full border-[2px] border-[#fff] rounded p-4 text-white text">
-            <thead>
-              <tr className="w-full text-center bg-primary-default font-semibold text-black">
-                <th colSpan="3" className="text-lg">
-                  Giá trị dinh dưỡng
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b-[1px]">
-                <td className="py-1">
-                  <strong>Trọng lượng</strong>: <em>350g</em>
-                </td>
-              </tr>
-              <tr className="border-b-[1px]">
-                {/* <td></td> */}
-                <td colSpan={2} className="text-right py-1">
-                  <strong>Trên 350g</strong>
-                </td>
-                <td className="inline-block ml-4  py-1">
-                  <strong>Trên 100g</strong>
-                </td>
-              </tr>
-              <tr className="border-b-[1px]">
-                <td className="py-1">
-                  <strong>Năng lượng</strong>/Calories
-                </td>
-                <td className="text-right">
-                  <em>360.5 cal</em>
-                </td>
-                <td className="text-right">
-                  <em>103 cal</em>
-                </td>
-              </tr>
-              <tr className="border-b-[1px]">
-                <td className="py-1">
-                  <strong>Chất đạm</strong>/Protein
-                </td>
-                <td className="text-right">
-                  <em>0.7g</em>
-                </td>
-                <td className="text-right">
-                  <em>0.2g</em>
-                </td>
-              </tr>
-              <tr className="border-b-[1px]">
-                <td className="py-1">
-                  <strong>Tổng chất béo</strong>/Total fat
-                </td>
-                <td className="text-right">
-                  <em>0g</em>
-                </td>
-                <td className="text-right">
-                  <em>0g</em>
-                </td>
-              </tr>
-              <tr className="border-b-[1px]">
-                <td className="py-1">
-                  <strong>Chất béo bão hòa</strong>/Saturated fat
-                </td>
-                <td className="text-right">
-                  <em>0g</em>
-                </td>
-                <td className="text-right">
-                  <em>0g</em>
-                </td>
-              </tr>
-              <tr className="border-b-[1px]">
-                <td className="py-1">
-                  <strong>Chất béo chuyển hóa</strong>/Trans fat
-                </td>
-                <td className="text-right">
-                  <em>0g</em>
-                </td>
-                <td className="text-right">
-                  <em>0g</em>
-                </td>
-              </tr>
-              <tr className="border-b-[1px]">
-                <td className="py-1">
-                  <strong>Carbohydrate</strong>
-                </td>
-                <td className="text-right">
-                  <em>89.25g</em>
-                </td>
-                <td className="text-right">
-                  <em>25.5g</em>
-                </td>
-              </tr>
-              <tr className="border-b-[1px]">
-                <td className="py-1">
-                  <strong>Đường</strong>/Sugars
-                </td>
-                <td className="text-right">
-                  <em>5.6g</em>
-                </td>
-                <td className="text-right">
-                  <em>1.6g</em>
-                </td>
-              </tr>
-              <tr className="border-b-[1px]">
-                <td className="py-1">
-                  <strong>Natri</strong>/Sodium
-                </td>
-                <td className="text-right">
-                  <em>31.5mg</em>
-                </td>
-                <td className="text-right">
-                  <em>9mg</em>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="ml-20">
-          <img src={certificate} alt="" className="w-40" />
+      <div className="px-36">
+        {/* Separate line */}
+        <div className="h-[2px] w-full my-6 bg-primary-default rounded"></div>
+
+        <div className="flex items-end justify-center">
+          <div className="w-[425px] flex items-center justify-center">
+            <table className="inline-block w-full border-[2px] border-[#fff] rounded p-4 text-white text">
+              <thead>
+                <tr className="w-full text-center bg-primary-default font-semibold text-black">
+                  <th colSpan="3" className="text-lg">
+                    Giá trị dinh dưỡng
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b-[1px]">
+                  <td className="py-1">
+                    <strong>Trọng lượng</strong>: <em>350g</em>
+                  </td>
+                </tr>
+                <tr className="border-b-[1px]">
+                  {/* <td></td> */}
+                  <td colSpan={2} className="text-right py-1">
+                    <strong>Trên 350g</strong>
+                  </td>
+                  <td className="inline-block ml-4  py-1">
+                    <strong>Trên 100g</strong>
+                  </td>
+                </tr>
+                <tr className="border-b-[1px]">
+                  <td className="py-1">
+                    <strong>Năng lượng</strong>/Calories
+                  </td>
+                  <td className="text-right">
+                    <em>360.5 cal</em>
+                  </td>
+                  <td className="text-right">
+                    <em>103 cal</em>
+                  </td>
+                </tr>
+                <tr className="border-b-[1px]">
+                  <td className="py-1">
+                    <strong>Chất đạm</strong>/Protein
+                  </td>
+                  <td className="text-right">
+                    <em>0.7g</em>
+                  </td>
+                  <td className="text-right">
+                    <em>0.2g</em>
+                  </td>
+                </tr>
+                <tr className="border-b-[1px]">
+                  <td className="py-1">
+                    <strong>Tổng chất béo</strong>/Total fat
+                  </td>
+                  <td className="text-right">
+                    <em>0g</em>
+                  </td>
+                  <td className="text-right">
+                    <em>0g</em>
+                  </td>
+                </tr>
+                <tr className="border-b-[1px]">
+                  <td className="py-1">
+                    <strong>Chất béo bão hòa</strong>/Saturated fat
+                  </td>
+                  <td className="text-right">
+                    <em>0g</em>
+                  </td>
+                  <td className="text-right">
+                    <em>0g</em>
+                  </td>
+                </tr>
+                <tr className="border-b-[1px]">
+                  <td className="py-1">
+                    <strong>Chất béo chuyển hóa</strong>/Trans fat
+                  </td>
+                  <td className="text-right">
+                    <em>0g</em>
+                  </td>
+                  <td className="text-right">
+                    <em>0g</em>
+                  </td>
+                </tr>
+                <tr className="border-b-[1px]">
+                  <td className="py-1">
+                    <strong>Carbohydrate</strong>
+                  </td>
+                  <td className="text-right">
+                    <em>89.25g</em>
+                  </td>
+                  <td className="text-right">
+                    <em>25.5g</em>
+                  </td>
+                </tr>
+                <tr className="border-b-[1px]">
+                  <td className="py-1">
+                    <strong>Đường</strong>/Sugars
+                  </td>
+                  <td className="text-right">
+                    <em>5.6g</em>
+                  </td>
+                  <td className="text-right">
+                    <em>1.6g</em>
+                  </td>
+                </tr>
+                <tr className="border-b-[1px]">
+                  <td className="py-1">
+                    <strong>Natri</strong>/Sodium
+                  </td>
+                  <td className="text-right">
+                    <em>31.5mg</em>
+                  </td>
+                  <td className="text-right">
+                    <em>9mg</em>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="ml-20">
+            <img src={certificate} alt="" className="w-40" />
+          </div>
         </div>
       </div>
 
       {/* Selling Products */}
-      <div className="mt-10">
+      <div className="mt-10 px-36">
         <ProductsComponent title="Sản phẩm bán chạy" productData={dummyData} />
       </div>
 

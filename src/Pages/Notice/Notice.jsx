@@ -9,9 +9,9 @@ const Notice = () => {
   return (
     <div>
       <div className="">
-        <img src={banner} alt="banner" className="inline-block w-full lg:h-[510px] object-cover" />
+        <img src={banner} alt="banner" className="inline-block w-full lg:h-[610px] object-cover" />
       </div>
-      <div className="w-full lg:pl-36 lg:pr-48 pl-10 pr-16 py-10 flex flex-col gap-10 bg-background-main text-white relative overflow-hidden">
+      <div className="w-full lg:px-36 pl-10 pr-16 py-10 flex flex-col gap-10 bg-background-main text-white relative overflow-hidden">
         {/* Decoration */}
         <>
           <img

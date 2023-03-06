@@ -11,16 +11,16 @@ const ProductCard = ({id, title, price, img}) => {
         </Link>
         <div className="pl-20 text-white">
           <div className="text-lg text-white">{title}</div>
-          <div className='py-[25px]'>Price: {price} VND</div>
-          <div className='flex flex-col'>
+          {/* <div className='py-4'>Price: {price} VND</div> */}
+          <div className='flex flex-col mt-2'>
             <label htmlFor="size">Size</label>
-            <input className='px-4 text-background-main' id="size" type="text" placeholder='250g'/>
-            <label htmlFor="quantity">Quantity</label>
+            <input className='px-4 mt-1 text-background-main' id="size" type="number" placeholder='250g'/>
+            <label htmlFor="quantity" className='mt-2'>Quantity</label>
             <input className='px-4 text-background-main select-none' id="quantity" type="number" min="1" max="5" placeholder='01'/>
           </div>
-          <div className='mt-3'>
-            <button className='px-4 bg-white text-background-main font-semibold'>Add to cart</button>
-            <button className='px-4 bg-primary-default ml-3'>Buy now</button>
+          <div className='mt-6'>
+            <button className='px-4 bg-white text-background-main font-semibold hover:opacity-80 rounded'>Add to cart</button>
+            <button className='px-4 bg-primary-default ml-3 hover:opacity-80 rounded'>Buy now</button>
           </div>
         </div>
       </div>

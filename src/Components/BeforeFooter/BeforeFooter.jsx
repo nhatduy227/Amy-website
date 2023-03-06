@@ -4,6 +4,7 @@ import botGiaViGaTa from '../../Assets/avatarbotgiavigata.jpg';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
+import FBLogo from '../../Assets/facebook-logo.png';
 // import FacebookIcon from '@mui/icons-material/Facebook';
 // import YouTubeIcon from '@mui/icons-material/YouTube';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +15,7 @@ const BeforeFooter = () => {
   });
 
   return (
-    <div className="bg-primary-default flex flex-col pt-[50px] px-20 lg:px-[200px] pb-5 gap-5 text-white">
+    <div className="bg-primary-default flex flex-col pt-[50px] px-20 lg:px-36 pb-5 gap-5 text-white">
       <div className="flex flex-wrap gap-12">
         <div className="flex flex-col flex-[1.6] text-justify text-sm gap-2">
           <h2 className="text-left text-[18px] font-medium">{t('first_column.company_name')}</h2>
@@ -26,7 +27,9 @@ const BeforeFooter = () => {
           </div>
           <div className="flex">
             <PublicOutlinedIcon />
-            <span className="ml-1">{t('first_column.website')}</span>
+            <a href="http://amyvietnam.com/" target="_blank" rel="noreferrer">
+              <span className="ml-1">{t('first_column.website')}</span>
+            </a>
           </div>
           <div>
             <LocalPhoneOutlinedIcon />
@@ -48,25 +51,39 @@ const BeforeFooter = () => {
           <span>{t('third_column.contact_cooperation')}</span>
         </div>
         <div className="flex flex-col lg:flex-1 text-justify text-sm gap-2">
-          <h2 className=" text-left text-[18px] font-medium">FANPAGE</h2>
+          <div className="flex">
+            <h2 className=" text-left text-[18px] font-medium">FANPAGE</h2>
+            <img src={FBLogo} alt="Face book logo" className="w-[20px] rounded-full ml-2" />
+          </div>
           <p>
             Hãy theo dõi chúng tôi trên facebook để cập nhật những thông tin mới nhất về sản phẩm và các chương trình
             khuyến mãi
           </p>
-          <div className='flex items-center justify-around lg:flex-col lg: gap-5'>
-            <a href="https://www.facebook.com/tranchautuoimood/">
-              <img src={fanPage} alt="fanpage-mood" className='inline-block'/>
-            </a>
-            <a href="https://www.facebook.com/botgiavigata/">
-              <img src={botGiaViGaTa} alt="avatar-bot-gia-vi-gata" className='inline-block w-[200px]' />
-            </a>
+          {/* <FacebookIcon className="text-[#0572e6] bg-white rounded mx-2 ml-0" /> */}
+          <div className="flex items-start justify-around lg:gap-5">
+            <div>
+              <p>Trân châu tươi</p>
+              <a href="https://www.facebook.com/tranchautuoimood/" target="_blank" rel="noreferrer">
+                <img src={fanPage} alt="fanpage-mood" className="inline-block mt-2" />
+              </a>
+            </div>
+            <div className="flex flex-col items-center">
+              <p>Bột gia vị</p>
+              <a href="https://www.facebook.com/botgiavigata/" target="_blank" rel="noreferrer">
+                <img
+                  src={botGiaViGaTa}
+                  alt="avatar-bot-gia-vi-gata"
+                  className="inline-block w-[120px] rounded-full mt-2"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
       {/* <div className='flex justify-between'>
         <div>
           <h2 className="text-left text-[18px] font-medium">{t("fourth_column.social_media")}</h2>
-          <FacebookIcon className="text-[#0572e6] bg-white rounded mx-2 ml-0" />
+          
           <YouTubeIcon className="text-[#f00] bg-white rounded" />
         </div>
         <div>
