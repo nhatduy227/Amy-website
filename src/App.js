@@ -7,8 +7,12 @@ import Header from './Components/Header/Header';
 import Home from './Pages/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About/About';
-import Product from './Pages/Product/Product';
+import Products from './Pages/Products/Products';
 import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
+import Notice from './Pages/Notice/Notice';
+import Event from './Pages/Event/Event';
+import Product from './Pages/Product/Product';
+import LandingPage from './Pages/LandingPage/LandingPage';
 
 function Layout() {
   return (
@@ -16,7 +20,7 @@ function Layout() {
       <Header />
       <div className="flex">
         <Sidebar />
-        <div className="flex-1">
+        <div className="container">
           <Navbar />
           <Outlet />
         </div>
@@ -41,20 +45,28 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: '/product',
+        path: '/products',
+        element: <Products />,
+      },
+      {
+        path: '/product/:id',
         element: <Product />,
       },
       {
         path: '/event',
-        element: <Product />,
+        element: <Event />,
       },
       {
         path: '/notice',
-        element: <Product />,
+        element: <Notice />,
       },
       {
         path: '/where-to-buy',
-        element: <Product />,
+        element: <Products />,
+      },
+      {
+        path: '/*',
+        element: <LandingPage />,
       },
     ],
   },

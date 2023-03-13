@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import vnFlag from '../../Assets/vietnam-flag.png';
 import ukFlag from '../../Assets/united-kingdom.png';
 import logo from '../../Assets/logo.png';
+import './Header.scss'
 
 export default function Header() {
   const [defaultSelectLanguage, setDefaultSelectLanguage] = useState('vi');
@@ -27,7 +28,7 @@ export default function Header() {
   }, [i18n.language]);
 
   return (
-    <div className="w-full h-[80px]">
+    <header className="w-full header">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-6 w-[200px] h-20">
           <Link to="/">
@@ -66,6 +67,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

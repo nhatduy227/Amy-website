@@ -21,4 +21,7 @@ code {
   --primary: #87b63b;
   --secondary: grey;
   --fullwidth: 100%;
+  --header-height: 80px;
+  --nav-height: 32px;
+  --sidebar-width: 60px;
 }
