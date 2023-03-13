@@ -1,5 +1,9 @@
 import React from 'react';
+import './Sidebar.scss';
 
 export default function Sidebar() {
-  return <div className=" lg:w-[60px] bg-primary-default" />;
+  return (
+    <div className="bg-primary-default shrink sidebar">
+    </div>
+  );
 }
