@@ -62,6 +62,7 @@ const dummyData = [
   },
 ];
 
+
 const Product = () => {
   const { id } = useParams();
 
