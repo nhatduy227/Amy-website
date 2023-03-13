@@ -10,6 +10,8 @@ import duongmiaBanner from '../../Assets/duongmia-banner.png';
 import duongdenBanner from '../../Assets/duongden-banner.png';
 import botgiaviBanner from '../../Assets/botgiavi-banner.jpg';
 import botchienxuBanner from '../../Assets/botchienxu-banner.png';
+import tranchaukhoBanner1 from '../../Assets/TrangHat.png';
+import tranchaukhoBanner2 from '../../Assets/TrangHat02.png';
 
 // Mood
 import moodCuNang from '../../Assets/moodCuNang.png';
@@ -32,7 +34,6 @@ import tranchaucunang from '../../Assets/cunang.png';
 import tranchauduongmia from '../../Assets/duongmia.png';
 import tranchauduongden from '../../Assets/duongden.png';
 import tranchauphomai from '../../Assets/phomai.png';
-
 
 const dummyData = [
   {
@@ -106,7 +107,7 @@ const Product = () => {
         )}
         {id === '5' && (
           <>
-            <img src={phomaiBanner} alt="" className="w-full inline-block" />
+            <img src={tranchaukhoBanner2} alt="" className="w-full inline-block" />
             <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
               Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Phô mai</strong>” thơm
               nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
@@ -115,7 +116,7 @@ const Product = () => {
         )}
         {id === '6' && (
           <>
-            <img src={botgiaviBanner} alt="" className="w-full h-[610px] object-cover inline-block" />
+            <img src={tranchaukhoBanner2} alt="" className="w-full inline-block" />
             <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
               Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Phô mai</strong>” thơm
               nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
@@ -123,6 +124,33 @@ const Product = () => {
           </>
         )}
         {id === '7' && (
+          <>
+            <img src={tranchaukhoBanner1} alt="" className="w-full inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Phô mai</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
+        {id === '8' && (
+          <>
+            <img src={tranchaukhoBanner1} alt="" className="w-full inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Phô mai</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
+        {id === '9' && (
+          <>
+            <img src={botgiaviBanner} alt="" className="w-full h-[610px] object-cover inline-block" />
+            <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
+              Hãy thưởng cho mình một ly <strong>Trân châu tươi</strong> ăn liền vị “<strong>Phô mai</strong>” thơm
+              nồng, bổ sung năng lượng, phù hợp sức khỏe với <strong>một phong cách độc đáo</strong>.
+            </p>
+          </>
+        )}
+        {id === '10' && (
           <>
             <img src={botchienxuBanner} alt="" className="w-full h-[610px] object-cover inline-block" />
             <p className="text-primary-default text-center text-xl leading-relaxed mt-8 px-36">
@@ -133,7 +161,7 @@ const Product = () => {
         )}
       </div>
 
-      <div className="lg:px-36">
+      <div className="lg:px-36 px-12">
         {/* Separate line */}
         <div className="h-[2px] w-full my-6 bg-primary-default rounded"></div>
 

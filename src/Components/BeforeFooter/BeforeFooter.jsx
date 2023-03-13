@@ -62,7 +62,7 @@ const BeforeFooter = () => {
           {/* <FacebookIcon className="text-[#0572e6] bg-white rounded mx-2 ml-0" /> */}
           <div className="flex items-start justify-around lg:gap-5">
             <div>
-              <p>Trân châu tươi</p>
+              <p>Trân châu tươi, khô</p>
               <a href="https://www.facebook.com/tranchautuoimood/" target="_blank" rel="noreferrer">
                 <img src={fanPage} alt="fanpage-mood" className="inline-block mt-2" />
               </a>
