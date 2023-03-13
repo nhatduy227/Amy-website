@@ -16,6 +16,7 @@ export default function Admin() {
     const handlePostProduct = async () => {
         const collectionRef = collection(db, "Products")
         const payload = { productName: data.name, productPrice: data.price }
+        setData(initialState)
         await addDoc(collectionRef, payload).then(() => console.log("submitted"))
     }
     return (
