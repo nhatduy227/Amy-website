@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import { signInWithGoogle, logOut } from '../../Firebase';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import { useTranslation } from 'react-i18next';
+import { UserContext } from '../../App';
 
 import vnFlag from '../../Assets/vietnam-flag.png';
 import ukFlag from '../../Assets/united-kingdom.png';
@@ -13,6 +14,7 @@ import './Header.scss'
 export default function Header() {
   const [defaultSelectLanguage, setDefaultSelectLanguage] = useState('vi');
   const { t, i18n } = useTranslation();
+  const user = useContext(UserContext)
 
   const onChangeVNLanguage = () => {
     localStorage.setItem('locale', 'vi');
@@ -26,7 +28,6 @@ export default function Header() {
   useEffect(() => {
     setDefaultSelectLanguage(i18n.language || 'vi');
   }, [i18n.language]);
-
   return (
     <header className="w-full header">
       <div className="flex items-center justify-between">
@@ -36,18 +37,33 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-6 mr-[60px]">
-          <Link className="flex no-underline text-base" to="/">
-            <PersonOutlineIcon />
-            <div className="h-6 ml-1">{t('header.login_in')}</div>
-          </Link>
-          <Link className="flex no-underline text-base" to="/">
-            <ShoppingCartOutlinedIcon />
-            <div className="h-6 ml-1">{t('header.cart')}</div>
-          </Link>
-          <Link className="flex no-underline text-base" to="/">
-            <ChatBubbleOutlineOutlinedIcon />
-            <div className="h-6 ml-1">{t('header.message')}</div>
-          </Link>
+          {user ?
+            <Link className="flex no-underline text-base" to="/">
+              <div className="h-6 ml-1" >{user.displayName}</div>
+            </Link> :
+            <Link className="flex no-underline text-base" to="/">
+              <button className="h-6 ml-1" onClick={signInWithGoogle}>{t('header.login_in')} </button>
+            </Link>
+          }
+          {user ?
+            <>
+              <Link className="flex no-underline text-base" to="/">
+                <ShoppingCartOutlinedIcon />
+                <div className="h-6 ml-1">{t('header.cart')}</div>
+              </Link>
+              <Link className="flex no-underline text-base" to="/">
+                <ChatBubbleOutlineOutlinedIcon />
+                <div className="h-6 ml-1">{t('header.message')}</div>
+              </Link>
+              <Link className="flex no-underline text-base" to="/admin">
+                <div className="h-6 ml-1">{t('header.admin')}</div>
+              </Link>
+            </> : null}
+          {user ?
+            <Link className="flex no-underline text-base" to="/">
+              <button className="h-6 ml-1" onClick={logOut}>{t('header.login_out')}</button>
+            </Link> : null
+          }
           <div className="flex w-20 no-underline text-base" to="/">
             <div className="flex items-center justify-center">
               <img

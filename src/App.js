@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect, createContext } from "react";
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { auth } from './Firebase';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Footer from './Components/Footer/Footer';
-import './App.css';
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Home from './Pages/Home/Home';
+import Admin from "./Pages/Admin/Admin";
 import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About/About';
 import Products from './Pages/Products/Products';
 import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
+import './App.css';
 import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
@@ -68,12 +70,32 @@ const router = createBrowserRouter([
         path: '/*',
         element: <LandingPage />,
       },
+      {
+        path: '/admin',
+        element: <Admin />,
+      },
     ],
   },
 ]);
 
+export const UserContext = createContext({ user: null })
+
 function App() {
-  return <RouterProvider router={router} />;
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      const { displayName, email } = user;
+      setUser({
+        displayName,
+        email
+      })
+    })
+  }, [])
+
+  return <UserContext.Provider value={user}>
+    <RouterProvider router={router} />
+  </UserContext.Provider>;
 }
 
 export default App;
