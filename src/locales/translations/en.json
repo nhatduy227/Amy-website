@@ -1,8 +1,10 @@
 {
   "header": {
     "login_in": "Sign In",
+    "login_out": "Log Out",
     "cart": "Cart",
-    "message": "Message"
+    "message": "Message",
+    "admin": "Admin"
   },
   "navbar": {
     "home": "Home",

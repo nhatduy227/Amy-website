@@ -1,8 +1,10 @@
 {
   "header": {
     "login_in": "Đăng nhập",
+    "login_out": "Đăng xuất",
     "cart": "Giỏ hàng",
-    "message": "Tin nhắn"
+    "message": "Tin nhắn",
+    "admin": "Quản Lý"
   },
   "navbar": {
     "home": "Trang chủ",
