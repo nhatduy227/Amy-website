@@ -15,6 +15,8 @@ import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import LandingPage from './Pages/LandingPage/LandingPage';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "./Firebase";
 
 function Layout() {
   return (
@@ -34,6 +36,47 @@ function Layout() {
 }
 
 const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/products',
+        element: <Products />,
+      },
+      {
+        path: '/product/:id',
+        element: <Product />,
+      },
+      {
+        path: '/event',
+        element: <Event />,
+      },
+      {
+        path: '/notice',
+        element: <Notice />,
+      },
+      {
+        path: '/where-to-buy',
+        element: <Products />,
+      },
+      {
+        path: '/*',
+        element: <LandingPage />,
+      },
+    ],
+  },
+]);
+
+const adminRouter = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
@@ -92,9 +135,8 @@ function App() {
       })
     })
   }, [])
-
   return <UserContext.Provider value={user}>
-    <RouterProvider router={router} />
+    <RouterProvider router={user ? adminRouter : router} />
   </UserContext.Provider>;
 }
 
