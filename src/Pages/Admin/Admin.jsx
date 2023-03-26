@@ -1,26 +1,45 @@
 import React, { useState } from "react";
 import { db } from "../../Firebase";
+import {
+    ref,
+    uploadBytes,
+    getDownloadURL,
+} from "firebase/storage";
 import { addDoc, collection } from "firebase/firestore";
+import { storage } from "../../Firebase";
+import { v4 } from "uuid";
 export default function Admin() {
     const initialState = {
         name: "",
         price: "",
+        url: ""
     };
     const [data, setData] = useState(initialState);
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [imageUpload, setImageUpload] = useState(null);
     const handleInputChange = event => {
         setData({
             ...data,
             [event.target.name]: event.target.value
         });
     };
-    const handleFileChange = (event) => {
-        setSelectedFile(event.target.files[0]);
+    const uploadFile = () => {
+        if (imageUpload == null) return;
+        const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+        uploadBytes(imageRef, imageUpload).then((snapshot) => {
+            getDownloadURL(snapshot.ref).then((url) => {
+                setData({
+                    ...data,
+                    url: url
+                })
+            });
+        });
     };
     const handlePostProduct = async () => {
         const collectionRef = collection(db, "Products")
-        // const payload = { productName: data.name, productPrice: data.price, productFile: downloadURL }
-        const payload = { productName: data.name, productPrice: data.price }
+        uploadFile()
+        const payload = { productName: data.name, productPrice: data.price, productFile: data.url }
+        console.log(payload)
+        // const payload = { productName: data.name, productPrice: data.price }
         setData(initialState)
         await addDoc(collectionRef, payload).then(() => console.log("submitted"))
     }
@@ -60,7 +79,9 @@ export default function Admin() {
                 </label>
                 <input
                     type="file"
-                    onChange={handleFileChange}
+                    onChange={(event) => {
+                        setImageUpload(event.target.files[0]);
+                    }}
                     name="file"
                     id="file"
                 />
