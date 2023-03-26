@@ -15,7 +15,7 @@ import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import LandingPage from './Pages/LandingPage/LandingPage';
-import { doc, getDoc } from "firebase/firestore";
+import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "./Firebase";
 
 function Layout() {
@@ -126,13 +126,27 @@ export const UserContext = createContext({ user: null })
 function App() {
   const [user, setUser] = useState(null)
 
+  const getAdminRight = async (userId) => {
+    const usersCollection = collection(db, "users");
+    const userDoc = doc(usersCollection, userId);
+    getDoc(userDoc)
+      .then((doc) => {
+        if (doc.exists()) {
+          // Document data exists
+          const userData = doc.data();
+          setUser(userData)
+        } else {
+          // Document does not exist
+          console.log("No such document!");
+        }
+      })
+      .catch((error) => {
+        console.error("Error getting document:", error);
+      });
+  }
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-      const { displayName, email } = user;
-      setUser({
-        displayName,
-        email
-      })
+      getAdminRight(user.uid)
     })
   }, [])
   return <UserContext.Provider value={user}>
