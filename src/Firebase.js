@@ -1,7 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, doc, setDoc, collection } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyANjSJrLfumyuofFMKaVGNpRsFdakE0Tcc",
@@ -17,20 +19,26 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const storage = getStorage(app);
+
 
 const provider = new GoogleAuthProvider();
 
-export const signInWithGoogle = () => {
+export const signInWithGoogle = async () => {
   console.log(auth)
-  signInWithPopup(auth, provider)
+  await signInWithPopup(auth, provider)
     .then((result) => {
-      const name = result.user.displayName;
-      const email = result.user.email;
-      const profilePic = result.user.photoURL;
-
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
-      localStorage.setItem("profilePic", profilePic);
+      const usersCollection = collection(db, "users");
+      const customId = result.user.uid
+      const payload = { name: result.user.displayName, email: result.user.email, isAdmin: false }
+      const userDocRef = doc(usersCollection, customId);
+      setDoc(userDocRef, payload, { merge: true })
+        .then(() => {
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
     })
     .catch((error) => {
       console.log(error);

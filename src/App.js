@@ -15,6 +15,8 @@ import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import LandingPage from './Pages/LandingPage/LandingPage';
+import { collection, doc, getDoc } from "firebase/firestore";
+import { db } from "./Firebase";
 
 function Layout() {
   return (
@@ -70,6 +72,47 @@ const router = createBrowserRouter([
         path: '/*',
         element: <LandingPage />,
       },
+    ],
+  },
+]);
+
+const adminRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/products',
+        element: <Products />,
+      },
+      {
+        path: '/product/:id',
+        element: <Product />,
+      },
+      {
+        path: '/event',
+        element: <Event />,
+      },
+      {
+        path: '/notice',
+        element: <Notice />,
+      },
+      {
+        path: '/where-to-buy',
+        element: <Products />,
+      },
+      {
+        path: '/*',
+        element: <LandingPage />,
+      },
       {
         path: '/admin',
         element: <Admin />,
@@ -83,18 +126,31 @@ export const UserContext = createContext({ user: null })
 function App() {
   const [user, setUser] = useState(null)
 
+  const getAdminRight = async (userId) => {
+    const usersCollection = collection(db, "users");
+    const userDoc = doc(usersCollection, userId);
+    getDoc(userDoc)
+      .then((doc) => {
+        if (doc.exists()) {
+          // Document data exists
+          const userData = doc.data();
+          setUser(userData)
+        } else {
+          // Document does not exist
+          console.log("No such document!");
+        }
+      })
+      .catch((error) => {
+        console.error("Error getting document:", error);
+      });
+  }
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-      const { displayName, email } = user;
-      setUser({
-        displayName,
-        email
-      })
+      getAdminRight(user.uid)
     })
   }, [])
-
   return <UserContext.Provider value={user}>
-    <RouterProvider router={router} />
+    <RouterProvider router={user ? adminRouter : router} />
   </UserContext.Provider>;
 }
 
