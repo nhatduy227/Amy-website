@@ -8,7 +8,9 @@ import Home from './Pages/Home/Home';
 import Admin from "./Pages/Admin/Admin";
 import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About/About';
-import Products from './Pages/Products/Products';
+import DriedBoba from './Pages/Products/DriedBoba';
+import FreshBoba from './Pages/Products/FreshBoba';
+import PowderSpices from './Pages/Products/PowderSpices';
 import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
 import './App.css';
 import Notice from './Pages/Notice/Notice';
@@ -47,8 +49,16 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: '/products',
-        element: <Products />,
+        path: '/dried-boba',
+        element: <DriedBoba />,
+      },
+      {
+        path: '/fresh-boba',
+        element: <FreshBoba />,
+      },
+      {
+        path: '/powder-spices',
+        element: <PowderSpices />,
       },
       {
         path: '/product/:id',
@@ -64,7 +74,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/where-to-buy',
-        element: <Products />,
+        element: <FreshBoba />,
       },
       {
         path: '/*',
