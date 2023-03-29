@@ -1,4 +1,6 @@
 import React from 'react';
+import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
+
 import productBanner from '../../Assets/product-banner.png';
 import ProductCard from './ProductsCard';
 import la1 from '../../Assets/la1.png';
@@ -64,6 +66,7 @@ const Products = () => {
         {/* Banner */}
         <img className="w-full lg:h-[610px]" src={productBanner} alt="product-banner" />
         <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">Không chất bảo quản</h1>
+
         {productList.map((product) => {
           return (
             <ProductCard
@@ -75,6 +78,36 @@ const Products = () => {
             />
           );
         })}
+
+        {/* Video */}
+        <div className="w-full flex flex-col justify-center items-center mt-5">
+          <div className="mb-5">
+            <ArrowForwardOutlinedIcon className="text-white mr-2" />
+            <a className="text-white" href="fresh-boba-instruction.pdf" target="_blank" rel="noreferrer">
+              Hướng dẫn sử dụng và bảo quản trân châu tươi
+            </a>
+          </div>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/CJfiXrcKlgw"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            className="mb-5"
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/4sOt5GS2jIE"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p className='w-full text-white flex justify-center items-center mt-5'>Thông tin tài khoản cho khách mua lẻ khi đặt hàng: BÙI THỊ ÁNH - Số tài khoản: 060199027754 - Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank) - PGD An Phú – TP HCM</p>
       </div>
     </div>
   );

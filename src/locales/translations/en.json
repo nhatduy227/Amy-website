@@ -17,17 +17,16 @@
   "before_footer": {
     "first_column": {
       "company_name": "AMY VN JOINT STOCK COMPANY",
-      "address": "Office: No. 02, Street 24, Quarter 2, An Khanh Ward, City. Thu Duc, T. Pho Ho Chi Minh.",
+      "address": "Company address: No. 2, Street 4, Quarter 2, An Khanh Ward, City. Thu Duc, HCMC.",
       "factory_address": "Factory: 143 Vo Van Hat, Long Truong Ward, City. Thu Duc, T. Pho Ho Chi Minh.",
       "email": "Email: info@amyvietnam.com",
-      "website": "Website: www.amyvietname.com",
+      "website": "Website: https://amyvietnam.com/",
       "hotline": "Hotline: (84.8) 653 653 67"
     },
     "second_column": {
       "policy": "POLICY",
       "information_and_security_policy": "Information Security Policy",
-      "rules_and_form_payment": "Rules & Form Of Payment",
-      "return_and_refund_policy": "Return & Refund Policy",
+      "sales_policy": "Sales Policy",
       "shipping_and_forward_policy": "Shipping & Forward Policy"
     },
     "third_column": {

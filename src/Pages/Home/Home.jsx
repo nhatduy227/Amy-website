@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ProductsComponent from '../../Components/ProductsComponent/ProductsComponent';
 import hatduongden from '../../Assets/HatDuongDen.png';
 import hathoangkim from '../../Assets/HatHoangKim.png';
@@ -48,24 +49,24 @@ const dummyData = [
 const dummyData2 = [
   {
     id: 5,
-    title: 'Trân châu khô hạt Đường đen',
+    title: 'Trân châu khô hạt Đường đen 1 kg',
     img: hatduongden,
     // price: 25000,
   },
   {
     id: 6,
-    title: 'Trân châu khô hạt Hoàng Kim',
+    title: 'Trân châu khô hạt Hoàng Kim 1 kg',
     img: hathoangkim,
     // price: 25000,
   },
   {
     id: 7,
-    title: 'Trân châu khô hạt Khoai môn',
+    title: 'Trân châu khô hạt Khoai môn 1 kg',
     img: hatkhoaimon, // price: 25000,
   },
   {
     id: 8,
-    title: 'Trân châu khô hạt Ô Long',
+    title: 'Trân châu khô hạt Ô Long 1 kg',
     img: hatolong, // price: 25000,
   },
 ];
@@ -112,7 +113,7 @@ const Home = () => {
           {/* <img src={la1} alt="" className="lg:block hidden w-[250px] top-[1500px] -left-[50px] absolute" /> */}
         </>
 
-        <h1 className="text-primary-default text-center text-[24px] font-semibold mb-5">Không chất bảo quản</h1>
+        <h2 className="text-primary-default text-center text-[24px] font-semibold mb-5">Không chất bảo quản</h2>
         <ProductsComponent title="Trân châu tươi" productData={dummyData} />
         <ProductsComponent title="Trân châu khô" productData={dummyData2} classCustom="h-[350px]" />
         <ProductsComponent title="Bột gia vị" productData={dummyData3} classCustom="h-[250px] w-[200px]" />

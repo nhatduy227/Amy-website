@@ -27,7 +27,7 @@ const BeforeFooter = () => {
           </div>
           <div className="flex">
             <PublicOutlinedIcon />
-            <a href="http://amyvietnam.com/" target="_blank" rel="noreferrer">
+            <a href="https://amyvietnam.com/" target="_blank" rel="noreferrer">
               <span className="ml-1">{t('first_column.website')}</span>
             </a>
           </div>
@@ -38,10 +38,9 @@ const BeforeFooter = () => {
         </div>
         <div className="flex flex-col flex-1 text-justify text-sm gap-2">
           <h2 className=" text-left text-[18px] font-medium">{t('second_column.policy')}</h2>
-          <span>{t('second_column.information_and_security_policy')}</span>
-          <span>{t('second_column.rules_and_form_payment')}</span>
-          <span>{t('second_column.return_and_refund_policy')}</span>
-          <span>{t('second_column.shipping_and_forward_policy')}</span>
+          <a href='informationSecurity.pdf' target="_blank" rel="noreferrer">{t('second_column.information_and_security_policy')}</a>
+          <a href='salesPolicy.pdf' target="_blank" rel="noreferrer">{t('second_column.sales_policy')}</a>
+          <a href='shippingForwardPolicy.pdf' target="_blank" rel="noreferrer">{t('second_column.shipping_and_forward_policy')}</a>
         </div>
         <div className="flex flex-col lg:flex-1 text-justify text-sm gap-2">
           <h2 className=" text-left text-[18px] font-medium">{t('third_column.information')}</h2>

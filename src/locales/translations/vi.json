@@ -17,22 +17,21 @@
   "before_footer": {
     "first_column": {
       "company_name": "CÔNG TY CỔ PHẦN AMY VIETNAM",
-      "address": "Văn phòng: Số 2, Đường số 4, Khu phố 2, Phường An Khánh, Tp. Thủ Đức, T.Phố Hồ Chí Minh.",
+      "address": "Địa chỉ công ty: Số 2, đường số 4, khu phố 2, phường An Khánh, TP. Thủ Đức, TP.HCM.",
       "factory_address": "Nhà máy sản xuất: 143 Võ Văn Hát, Phường Long Trường, Tp. Thủ Đức, T.Phố Hồ Chí Minh.",
       "email": "Email: info@amyvietnam.com",
-      "website": "Website: http://amyvietnam.com/",
+      "website": "Website: https://amyvietnam.com/",
       "hotline": "Hotline: (84.8) 653 653 67"
     },
     "second_column": {
       "policy": "CHÍNH SÁCH",
-      "information_and_security_policy":"Chính sách bảo mật thông tin",
-      "rules_and_form_payment": "Quy tắc & Hình thức thanh toán",
-      "return_and_refund_policy": "Chính sách đổi trả & hoàn tiền",
-      "shipping_and_forward_policy": "Chính sách vận chuyển & giao nhận"
+      "information_and_security_policy": "Chính sách bảo mật",
+      "sales_policy": "Chính sách bán hàng",
+      "shipping_and_forward_policy": "Chính sách giao hàng"
     },
     "third_column": {
       "information": "THÔNG TIN",
-      "recruitment":"Tuyển dụng",
+      "recruitment": "Tuyển dụng",
       "agent_system": "Hệ thống đại lý",
       "frequently_asked_questions": "Các câu hỏi thường gặp",
       "contact_cooperation": "Liên hệ hợp tác"
