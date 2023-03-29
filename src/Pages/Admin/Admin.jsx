@@ -7,6 +7,7 @@ import {
 } from "firebase/storage";
 import { addDoc, collection } from "firebase/firestore";
 import { storage } from "../../Firebase";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Admin() {
     const initialState = {
@@ -45,14 +46,16 @@ export default function Admin() {
                 url: downloadURL
             })
 
-            console.log('Image uploaded successfully!');
+            // console.log('Image uploaded successfully!');
+            alert('Image uploaded successfully!')
         } catch (error) {
             console.error(error);
         }
     };
     const handlePostProduct = async () => {
         const collectionRef = collection(db, data.type)
-        const payload = { productType: data.type, productName: data.name, productPrice: data.price, productFile: data.url }
+        const id = uuidv4();
+        const payload = { productId: id, productType: data.type, productName: data.name, productPrice: data.price, productFile: data.url }
         setSelectedValue("freshBoba")
         setData(initialState)
         await addDoc(collectionRef, payload).then(() => console.log("submitted"))
