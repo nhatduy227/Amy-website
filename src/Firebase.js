@@ -21,16 +21,28 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
-
 const provider = new GoogleAuthProvider();
-
+const getAdminRight = (userID) => {
+  const usersCollection = db.collection("users");
+  const userDocRef = usersCollection.doc(userID);
+  userDocRef.get().then((doc) => {
+    if (doc.exists) {
+      return doc.data().isAdmin
+    } else {
+      return false
+    }
+  }).catch((error) => {
+    console.log("Error getting user:", error);
+  });
+}
 export const signInWithGoogle = async () => {
   console.log(auth)
   await signInWithPopup(auth, provider)
     .then((result) => {
       const usersCollection = collection(db, "users");
       const customId = result.user.uid
-      const payload = { name: result.user.displayName, email: result.user.email, isAdmin: false }
+      const isAdmin = getAdminRight(result.user.uid)
+      const payload = { name: result.user.displayName, email: result.user.email, isAdmin: isAdmin }
       const userDocRef = doc(usersCollection, customId);
       setDoc(userDocRef, payload, { merge: true })
         .then(() => {
