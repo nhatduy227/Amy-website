@@ -10,9 +10,15 @@
     "home": "Home",
     "about": "About",
     "product": "Product",
+    "admin": "Admin",
     "event": "Event",
     "notice": "Notice",
-    "where to buy": "Where to buy"
+    "where to buy": "Where to buy",
+    "fresh boba": "Fresh Boba",
+    "dried boba": "Dried Boba",
+    "powder spices": "Powder Spices",
+    "post product": " Post Products",
+    "post recipe": " Post Recipes"
   },
   "before_footer": {
     "first_column": {

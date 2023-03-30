@@ -5,7 +5,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Pages/Home/Home';
-import Admin from "./Pages/Admin/Admin";
+import PostProduct from "./Pages/PostProduct/PostProduct";
 import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About/About';
 import DriedBoba from './Pages/Products/DriedBoba';
@@ -132,8 +132,8 @@ const adminRouter = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path: '/admin',
-        element: <Admin />,
+        path: '/post-product',
+        element: <PostProduct />,
       },
     ],
   },

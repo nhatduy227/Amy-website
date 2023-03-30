@@ -10,9 +10,15 @@
     "home": "Trang chủ",
     "about": "Thông tin",
     "product": "Sản phẩm",
+    "admin": "Quản Lý",
     "event": "Sự kiện",
     "notice": "Thông báo",
-    "where to buy": "Nơi mua hàng"
+    "fresh boba": "Trân châu tươi",
+    "dried boba": "Trân châu khô",
+    "powder spices": "Bột gia vị",
+    "where to buy": "Nơi mua hàng",
+    "post product": " Đăng sản phẩm",
+    "post recipe": " Đăng công thức"
   },
   "before_footer": {
     "first_column": {

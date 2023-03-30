@@ -9,7 +9,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { storage } from "../../Firebase";
 import { v4 as uuidv4 } from 'uuid';
 
-export default function Admin() {
+export default function PostProduct() {
     const initialState = {
         type: "freshBoba",
         name: "",

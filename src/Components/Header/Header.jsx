@@ -56,10 +56,6 @@ export default function Header() {
                 <ChatBubbleOutlineOutlinedIcon />
                 <div className="h-6 ml-1">{t('header.message')}</div>
               </Link>
-              {user.isAdmin ? <Link className="flex no-underline text-base" to="/admin">
-                <div className="h-6 ml-1">{t('header.admin')}</div>
-              </Link>
-                : null}
             </> : null}
           {user ?
             <Link className="flex no-underline text-base" to="/">

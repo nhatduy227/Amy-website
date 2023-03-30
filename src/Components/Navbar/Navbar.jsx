@@ -1,40 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-
+import { UserContext } from '../../App';
 import './Navbar.scss';
-
-// const navList = [
-//   {
-//     title: 'home',
-//     path: '/',
-//   },
-//   { title: 'about', path: '/about' },
-//   { title: 'product', path: '/products' },
-//   { title: 'event', path: '/event' },
-//   { title: 'notice', path: '/notice' },
-//   // { title: 'recruitment', path: '/' },
-//   // { title: 'user manual', path: '/user manual' },
-//   // { title: 'cooking recipe', path: '/' },
-//   { title: 'where to buy', path: '/' },
-// ];
 
 const Navbar = () => {
   const { t } = useTranslation();
+  const user = useContext(UserContext)
 
   return (
     <nav className="bg-gray-50 flex items-center justify-end">
       <ul className="mr-[60px] flex list-none">
-        {/* {navList.map(({ title, path }) => {
-          return (
-            <li key={title} className="text-xs">
-              <Link className="px-4 py-2 no-underline uppercase hover:bg-primary-default text-white" to={path}>
-                {t(`navbar.${title}`)}
-              </Link>
-            </li>
-          );
-        })} */}
-
         <li key={'home'} className="text-xs">
           <Link className="px-4 py-2 no-underline uppercase hover:bg-primary-default text-white" to={'/'}>
             {t(`navbar.home`)}
@@ -55,7 +31,7 @@ const Navbar = () => {
                 className="py-2 px-4 w-full inline-block no-underline uppercase hover:bg-primary-default text-white"
                 to={'/fresh-boba'}
               >
-                {/* {t(`navbar.product`)} */}Trân châu tươi
+                {t(`navbar.fresh boba`)}
               </Link>
             </li>
             <li>
@@ -63,7 +39,7 @@ const Navbar = () => {
                 className="py-2 px-4 w-full inline-block no-underline uppercase hover:bg-primary-default text-white"
                 to={'/dried-boba'}
               >
-                {/* {t(`navbar.product`)} */}Trân châu khô
+                {t(`navbar.dried boba`)}
               </Link>
             </li>
             <li>
@@ -71,11 +47,37 @@ const Navbar = () => {
                 className="py-2 px-4 w-full inline-block no-underline uppercase hover:bg-primary-default text-white"
                 to={'/powder-spices'}
               >
-                {/* {t(`navbar.product`)} */}Bột gia vị
+                {t(`navbar.powder spices`)}
               </Link>
             </li>
           </ul>
         </li>
+        {user && user.isAdmin ?
+          <li key={'product'} className="text-xs relative group">
+            <span className="px-4 py-2 no-underline uppercase hover:bg-primary-default text-white cursor-pointer">
+              {t(`navbar.admin`)}
+            </span>
+            <ul className="w-[140px] absolute top-6 z-20 hidden flex-col bg-[#808080] group-hover:flex">
+              <li>
+                <Link
+                  className="py-2 px-4 w-full inline-block no-underline uppercase hover:bg-primary-default text-white"
+                  to={'/post-product'}
+                >
+                  {t(`navbar.post product`)}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="py-2 px-4 w-full inline-block no-underline uppercase hover:bg-primary-default text-white"
+                  to={'/dried-boba'}
+                >
+                  {t(`navbar.post recipe`)}
+                </Link>
+              </li>
+            </ul>
+          </li> : null
+        }
+
         <li key={'event'} className="text-xs">
           <Link className="px-4 py-2 no-underline uppercase hover:bg-primary-default text-white" to={'/event'}>
             {t(`navbar.event`)}
