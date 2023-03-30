@@ -7,13 +7,16 @@ import {
 } from "firebase/storage";
 import { addDoc, collection } from "firebase/firestore";
 import { storage } from "../../Firebase";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Admin() {
     const initialState = {
+        type: "freshBoba",
         name: "",
         price: "",
         url: ""
     };
+    const [selectedValue, setSelectedValue] = useState('freshBoba');
     const [data, setData] = useState(initialState);
     const handleInputChange = event => {
         setData({
@@ -21,6 +24,14 @@ export default function Admin() {
             [event.target.name]: event.target.value
         });
     };
+    const handleSelectChange = (event) => {
+        setSelectedValue(event.target.value);
+        setData({
+            ...data,
+            type: event.target.value
+        });
+    };
+
     const uploadFile = async (file) => {
         const imageRef = ref(storage, `images/${Date.now()}_${file.name}`);
 
@@ -35,21 +46,36 @@ export default function Admin() {
                 url: downloadURL
             })
 
-            console.log('Image uploaded successfully!');
+            // console.log('Image uploaded successfully!');
+            alert('Image uploaded successfully!')
         } catch (error) {
             console.error(error);
         }
     };
     const handlePostProduct = async () => {
-        const collectionRef = collection(db, "Products")
-        const payload = { productName: data.name, productPrice: data.price, productFile: data.url }
-        console.log(payload)
+        const collectionRef = collection(db, data.type)
+        const id = uuidv4();
+        const payload = { productId: id, productType: data.type, productName: data.name, productPrice: data.price, productFile: data.url }
+        setSelectedValue("freshBoba")
         setData(initialState)
         await addDoc(collectionRef, payload).then(() => console.log("submitted"))
     }
+    console.log(data)
     return (
         <form class="bg-white rounded px-8 pt-6 pb-8 mb-4">
             <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">
+                    Product Type
+                </label>
+                <select
+                    id="type"
+                    value={selectedValue}
+                    onChange={handleSelectChange}
+                    class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <option value="freshBoba">Fresh Boba</option>
+                    <option value="driedBoba">Dried Boba</option>
+                    <option value="powder">Powder</option>
+                </select>
                 <label class="block text-gray-700 text-sm font-bold mb-2">
                     Product Name
                 </label>

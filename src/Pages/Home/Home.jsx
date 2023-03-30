@@ -1,92 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../Firebase';
 
 import ProductsComponent from '../../Components/ProductsComponent/ProductsComponent';
-import hatduongden from '../../Assets/HatDuongDen.png';
-import hathoangkim from '../../Assets/HatHoangKim.png';
-import hatkhoaimon from '../../Assets/HatKhoaiMon.png';
-import hatolong from '../../Assets/HatOlong.png';
 
 import la1 from '../../Assets/la1.png';
 import la2 from '../../Assets/la2.png';
 import bubbleDeco from '../../Assets/bubble-deco.png';
 import Slider from './../../Components/Slider/Slider';
 
-import tranchaucunang from '../../Assets/cunang.png';
-import tranchauduongmia from '../../Assets/duongmia.png';
-import tranchauduongden from '../../Assets/duongden.png';
-import tranchauphomai from '../../Assets/phomai.png';
-
-import botchienxu from '../../Assets/bot-chien-xu.png';
-import botgiavi from '../../Assets/bot-gia-vi.png';
-
-const dummyData = [
-  {
-    id: 1,
-    title: 'Trân châu củ năng 350gr',
-    img: tranchaucunang,
-    price: 25000,
-  },
-  {
-    id: 2,
-    title: 'Trân châu đường mía 350gr',
-    img: tranchauduongmia,
-    price: 25000,
-  },
-  {
-    id: 3,
-    title: 'Trân châu đường đen 350gr',
-    img: tranchauduongden,
-    price: 25000,
-  },
-  {
-    id: 4,
-    title: 'Trân châu phô mai 350gr',
-    img: tranchauphomai,
-    price: 25000,
-  },
-];
-
-const dummyData2 = [
-  {
-    id: 5,
-    title: 'Trân châu khô hạt Đường đen 1 kg',
-    img: hatduongden,
-    // price: 25000,
-  },
-  {
-    id: 6,
-    title: 'Trân châu khô hạt Hoàng Kim 1 kg',
-    img: hathoangkim,
-    // price: 25000,
-  },
-  {
-    id: 7,
-    title: 'Trân châu khô hạt Khoai môn 1 kg',
-    img: hatkhoaimon, // price: 25000,
-  },
-  {
-    id: 8,
-    title: 'Trân châu khô hạt Ô Long 1 kg',
-    img: hatolong, // price: 25000,
-  },
-];
-
-const dummyData3 = [
-  {
-    id: 9,
-    title: 'Bột gia vị ướp gà 1kg',
-    img: botgiavi,
-    // price: 25000,
-  },
-  {
-    id: 10,
-    title: 'Bột chiên xù 10kg',
-    img: botchienxu,
-    // price: 25000,
-  },
-];
-
 const Home = () => {
+  const [freshBoba, setFreshBoba] = useState([]);
+  const [driedBoba, setDriedBoba] = useState([]);
+  const [powder, setPowder] = useState([]);
+  const fetchData = async (productType) => {
+    const collectionRef = collection(db, productType);
+    const querySnapshot = await getDocs(collectionRef);
+    const documents = querySnapshot.docs.map(doc => doc.data());
+    if (productType === 'freshBoba')
+      setFreshBoba(documents);
+    if (productType === 'driedBoba')
+      setDriedBoba(documents);
+    if (productType === 'powder')
+      setPowder(documents);
+  };
+  useEffect(() => {
+    fetchData('freshBoba');
+    fetchData('driedBoba');
+    fetchData('powder');
+  }, []);
+
   return (
     <div className="">
       <div className="bg-gray-50">
@@ -114,9 +57,9 @@ const Home = () => {
         </>
 
         <h2 className="text-primary-default text-center text-[24px] font-semibold mb-5">Không chất bảo quản</h2>
-        <ProductsComponent title="Trân châu tươi" productData={dummyData} />
-        <ProductsComponent title="Trân châu khô" productData={dummyData2} classCustom="h-[350px]" />
-        <ProductsComponent title="Bột gia vị" productData={dummyData3} classCustom="h-[250px] w-[200px]" />
+        <ProductsComponent title="Trân châu tươi" productData={freshBoba} />
+        <ProductsComponent title="Trân châu khô" productData={driedBoba} classCustom="h-[350px]" />
+        <ProductsComponent title="Bột gia vị" productData={powder} classCustom="h-[250px] w-[200px]" />
       </div>
     </div>
   );

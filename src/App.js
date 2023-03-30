@@ -100,8 +100,16 @@ const adminRouter = createBrowserRouter([
         element: <About />,
       },
       {
-        path: '/products',
-        element: <Products />,
+        path: '/dried-boba',
+        element: <DriedBoba />,
+      },
+      {
+        path: '/fresh-boba',
+        element: <FreshBoba />,
+      },
+      {
+        path: '/powder-spices',
+        element: <PowderSpices />,
       },
       {
         path: '/product/:id',
@@ -117,7 +125,7 @@ const adminRouter = createBrowserRouter([
       },
       {
         path: '/where-to-buy',
-        element: <Products />,
+        element: <FreshBoba />,
       },
       {
         path: '/*',

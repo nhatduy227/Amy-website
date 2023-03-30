@@ -42,8 +42,8 @@ export default function Header() {
               <div className="h-6 ml-1" >{user.displayName}</div>
             </Link> :
             <Link className="flex no-underline text-base" to="/">
-              {/* <button className="h-6 ml-1" onClick={signInWithGoogle}>{t('header.login_in')} </button> */}
-              <button className="h-6 ml-1" onClick={()=>{}}>{t('header.login_in')} </button>
+              <button className="h-6 ml-1" onClick={signInWithGoogle}>{t('header.login_in')} </button>
+              {/* <button className="h-6 ml-1" onClick={()=>{}}>{t('header.login_in')} </button> */}
             </Link>
           }
           {user ?
