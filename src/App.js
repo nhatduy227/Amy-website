@@ -20,6 +20,7 @@ import Product from './Pages/Product/Product';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "./Firebase";
+import UserInfo from "./Pages/UserInfo/UserInfo";
 
 function Layout() {
   return (
@@ -140,6 +141,10 @@ const adminRouter = createBrowserRouter([
         path: '/post-recipe',
         element: <PostRecipe />,
       },
+      {
+        path: '/user-info',
+        element: <UserInfo />,
+      },
     ],
   },
 ]);
@@ -155,11 +160,9 @@ function App() {
     getDoc(userDoc)
       .then((doc) => {
         if (doc.exists()) {
-          // Document data exists
           const userData = doc.data();
           setUser(userData)
         } else {
-          // Document does not exist
           console.log("No such document!");
         }
       })
@@ -169,7 +172,12 @@ function App() {
   }
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
+      const photoURL = user.photoURL
       getAdminRight(user.uid)
+      setUser({
+        ...user,
+        photoURL: photoURL
+      })
     })
   }, [])
   return <UserContext.Provider value={user}>
