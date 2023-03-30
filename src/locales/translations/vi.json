@@ -20,6 +20,18 @@
     "post product": " Đăng sản phẩm",
     "post recipe": " Đăng công thức"
   },
+  "admin": {
+    "product type": "Loại sản phẩm",
+    "product name": "Tên sản phẩm",
+    "product price": "Giá sản phẩm",
+    "fresh boba": "Trân châu tươi",
+    "dried boba": "Trân châu khô",
+    "powder spices": "Bột gia vị",
+    "product image": "Hình sản phẩm",
+    "recipe name": "Tên công thức nấu ăn",
+    "recipe file": "Công thức nấu ăn",
+    "submit": "Đăng"
+  },
   "before_footer": {
     "first_column": {
       "company_name": "CÔNG TY CỔ PHẦN AMY VIETNAM",

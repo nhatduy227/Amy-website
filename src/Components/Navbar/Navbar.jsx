@@ -69,7 +69,7 @@ const Navbar = () => {
               <li>
                 <Link
                   className="py-2 px-4 w-full inline-block no-underline uppercase hover:bg-primary-default text-white"
-                  to={'/dried-boba'}
+                  to={'/post-recipe'}
                 >
                   {t(`navbar.post recipe`)}
                 </Link>

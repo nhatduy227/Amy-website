@@ -20,6 +20,18 @@
     "post product": " Post Products",
     "post recipe": " Post Recipes"
   },
+  "admin": {
+    "product type": "Product Type",
+    "product name": "Product Name",
+    "product price": "Product Price",
+    "fresh boba": "Fresh Boba",
+    "dried boba": "Dried Boba",
+    "powder spices": "Powder Spices",
+    "product image": "Product Image",
+    "recipe name": "Recipe Name",
+    "recipe file": "Recipe File",
+    "submit": "Submit"
+  },
   "before_footer": {
     "first_column": {
       "company_name": "AMY VN JOINT STOCK COMPANY",
