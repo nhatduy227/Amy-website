@@ -170,14 +170,10 @@ function App() {
         console.error("Error getting document:", error);
       });
   }
+
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-      const photoURL = user.photoURL
       getAdminRight(user.uid)
-      setUser({
-        ...user,
-        photoURL: photoURL
-      })
     })
   }, [])
   return <UserContext.Provider value={user}>
