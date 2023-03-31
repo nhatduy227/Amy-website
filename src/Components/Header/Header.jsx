@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { signInWithGoogle, logOut } from '../../Firebase';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
+import CheckoutCart from '../../Pages/CheckoutCart/CheckoutCart';
 import { useTranslation } from 'react-i18next';
 import { UserContext } from '../../App';
 
@@ -51,10 +51,7 @@ export default function Header() {
           }
           {user ?
             <>
-              <Link className="flex no-underline text-base" to="/">
-                <ShoppingCartOutlinedIcon />
-                <div className="h-6 ml-1">{t('header.cart')}</div>
-              </Link>
+              <CheckoutCart />
               <Link className="flex no-underline text-base" to="/">
                 <ChatBubbleOutlineOutlinedIcon />
                 <div className="h-6 ml-1">{t('header.message')}</div>
