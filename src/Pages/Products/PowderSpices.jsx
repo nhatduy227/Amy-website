@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../Firebase';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 
 import botgiaviBanner from '../../Assets/botgiavi-banner.jpg';
@@ -6,25 +8,19 @@ import ProductCard from './ProductsCard';
 import la1 from '../../Assets/la1.png';
 import la2 from '../../Assets/la2.png';
 import bubbleDeco from '../../Assets/bubble-deco.png';
-import botchienxu from '../../Assets/bot-chien-xu.png';
-import botgiavi from '../../Assets/bot-gia-vi.png';
-
-const productList = [
-    {
-        id: 1,
-        title: 'Bột gia vị ướp gà 1kg',
-        img: botchienxu,
-        // price: 25000,
-    },
-    {
-        id: 2,
-        title: 'Bột chiên xù 10kg',
-        img: botgiavi,
-        // price: 25000,
-    },
-];
 
 const Products = () => {
+    const [powder, setPowder] = useState([]);
+    const fetchData = async () => {
+        const collectionRef = collection(db, 'powder');
+        const querySnapshot = await getDocs(collectionRef);
+        const documents = querySnapshot.docs.map(doc => doc.data());
+        setPowder(documents);
+
+    };
+    useEffect(() => {
+        fetchData();
+    }, []);
     return (
         <div className="bg-background-main overflow-hidden pb-28">
 
@@ -48,14 +44,14 @@ const Products = () => {
                 {/* Banner */}
                 <img className="w-full lg:h-[610px]" src={botgiaviBanner} alt="product-banner" />
                 <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">Bot gia vi</h1>
-                {productList.map((product) => {
+                {powder.map((product) => {
                     return (
                         <ProductCard
-                            key={product.title}
-                            id={product.id}
-                            title={product.title}
-                            price={product.price}
-                            img={product.img}
+                            key={product.productId}
+                            id={product.productId}
+                            title={product.productName}
+                            price={product.productPrice}
+                            img={product.productFile}
                         />
                     );
                 })}

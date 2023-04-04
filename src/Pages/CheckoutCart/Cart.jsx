@@ -1,14 +1,6 @@
 import CartItem from "./CartItem";
 
 const Cart = ({ cartItems, addToCart, removeFromCart }) => {
-    const dummyData = [{
-        id: 1,
-        title: "Throwback Hip Bag",
-        price: 90,
-        amount: 1,
-        image: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
-    }]
-    cartItems = dummyData
     const calculateTotal = (items) =>
         items.reduce((acc, item) => acc + item.amount * item.price, 0);
     return (

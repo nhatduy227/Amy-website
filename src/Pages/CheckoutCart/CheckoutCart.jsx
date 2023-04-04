@@ -7,8 +7,23 @@ import Cart from "./Cart";
 
 
 export default function CheckoutCart() {
+    const dummyData = [{
+        id: 1,
+        title: "Throwback Hip Bag",
+        price: 90,
+        amount: 1,
+        image: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
+    },
+    {
+        id: 2,
+        title: "Throwback Hip Bag",
+        price: 50,
+        amount: 1,
+        image: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
+    }
+    ]
     const [cartOpen, setCartOpen] = useState(false);
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(dummyData);
     const { t } = useTranslation();
 
     const handleAddToCart = (clickedItem) => {
