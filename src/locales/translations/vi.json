@@ -10,9 +10,27 @@
     "home": "Trang chủ",
     "about": "Thông tin",
     "product": "Sản phẩm",
+    "admin": "Quản Lý",
     "event": "Sự kiện",
     "notice": "Thông báo",
-    "where to buy": "Nơi mua hàng"
+    "fresh boba": "Trân châu tươi",
+    "dried boba": "Trân châu khô",
+    "powder spices": "Bột gia vị",
+    "where to buy": "Nơi mua hàng",
+    "post product": " Đăng sản phẩm",
+    "post recipe": " Đăng công thức"
+  },
+  "admin": {
+    "product type": "Loại sản phẩm",
+    "product name": "Tên sản phẩm",
+    "product price": "Giá sản phẩm",
+    "fresh boba": "Trân châu tươi",
+    "dried boba": "Trân châu khô",
+    "powder spices": "Bột gia vị",
+    "product image": "Hình sản phẩm",
+    "recipe name": "Tên công thức nấu ăn",
+    "recipe file": "Công thức nấu ăn",
+    "submit": "Đăng"
   },
   "before_footer": {
     "first_column": {
