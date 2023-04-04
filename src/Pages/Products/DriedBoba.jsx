@@ -8,7 +8,6 @@ import bubbleDeco from '../../Assets/bubble-deco.png';
 
 import tranchaukhoBanner1 from '../../Assets/TrangHat.png';
 
-
 const DriedBoba = () => {
   const [driedBoba, setDriedBoba] = useState([]);
   const fetchData = async () => {
