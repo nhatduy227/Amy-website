@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { signInWithGoogle, logOut } from '../../Firebase';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import { useTranslation } from 'react-i18next';
 import { UserContext } from '../../App';
@@ -38,8 +40,9 @@ export default function Header() {
         </div>
         <div className="flex items-center gap-6 mr-[60px]">
           {user ?
-            <Link className="flex no-underline text-base" to="/">
-              <div className="h-6 ml-1" >{user.displayName}</div>
+            <Link className="flex no-underline text-base" to="/user-info">
+              {user.isAdmin ? <StarBorderOutlinedIcon /> : <Person2OutlinedIcon />}
+              <div className="h-6 ml-1" >{user.name}</div>
             </Link> :
             <Link className="flex no-underline text-base" to="/">
               <button className="h-6 ml-1" onClick={signInWithGoogle}>{t('header.login_in')} </button>
