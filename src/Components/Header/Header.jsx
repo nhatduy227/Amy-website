@@ -7,6 +7,7 @@ import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutline
 import CheckoutCart from '../../Pages/CheckoutCart/CheckoutCart';
 import { useTranslation } from 'react-i18next';
 import { UserContext } from '../../App';
+import { OrderContext } from '../../App';
 
 import vnFlag from '../../Assets/vietnam-flag.png';
 import ukFlag from '../../Assets/united-kingdom.png';
@@ -17,6 +18,7 @@ export default function Header() {
   const [defaultSelectLanguage, setDefaultSelectLanguage] = useState('vi');
   const { t, i18n } = useTranslation();
   const user = useContext(UserContext)
+  const order = useContext(OrderContext)
 
   const onChangeVNLanguage = () => {
     localStorage.setItem('locale', 'vi');
@@ -46,12 +48,11 @@ export default function Header() {
             </Link> :
             <Link className="flex no-underline text-base" to="/">
               <button className="h-6 ml-1" onClick={signInWithGoogle}>{t('header.login_in')} </button>
-              {/* <button className="h-6 ml-1" onClick={()=>{}}>{t('header.login_in')} </button> */}
             </Link>
           }
           {user ?
             <>
-              <CheckoutCart />
+              <CheckoutCart order={order} />
               <Link className="flex no-underline text-base" to="/">
                 <ChatBubbleOutlineOutlinedIcon />
                 <div className="h-6 ml-1">{t('header.message')}</div>

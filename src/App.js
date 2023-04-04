@@ -150,9 +150,23 @@ const adminRouter = createBrowserRouter([
 ]);
 
 export const UserContext = createContext({ user: null })
+export const OrderContext = createContext({ order: null })
 
 function App() {
+  // const dummyData = [{
+  //   id: 1,
+  //   title: "Throwback Hip Bag",
+  //   price: 90,
+  //   amount: 1,
+  //   image: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
+  // },
+  // ]
   const [user, setUser] = useState(null)
+  const order = {
+    cartItems: [],
+    totalPrice: 0,
+    isCompleted: false
+  }
 
   const getAdminRight = async (userId) => {
     const usersCollection = collection(db, "users");
@@ -177,7 +191,9 @@ function App() {
     })
   }, [])
   return <UserContext.Provider value={user}>
-    <RouterProvider router={user ? adminRouter : router} />
+    <OrderContext.Provider value={order}>
+      <RouterProvider router={user ? adminRouter : router} />
+    </OrderContext.Provider>
   </UserContext.Provider>;
 }
 

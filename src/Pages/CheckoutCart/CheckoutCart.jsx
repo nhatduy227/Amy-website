@@ -6,24 +6,9 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Cart from "./Cart";
 
 
-export default function CheckoutCart() {
-    const dummyData = [{
-        id: 1,
-        title: "Throwback Hip Bag",
-        price: 90,
-        amount: 1,
-        image: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
-    },
-    {
-        id: 2,
-        title: "Throwback Hip Bag",
-        price: 50,
-        amount: 1,
-        image: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
-    }
-    ]
+export default function CheckoutCart({ order }) {
     const [cartOpen, setCartOpen] = useState(false);
-    const [cartItems, setCartItems] = useState(dummyData);
+    const [cartItems, setCartItems] = useState(order.cartItems);
     const { t } = useTranslation();
 
     const handleAddToCart = (clickedItem) => {
