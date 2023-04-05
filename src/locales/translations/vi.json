@@ -32,6 +32,68 @@
     "recipe file": "Công thức nấu ăn",
     "submit": "Đăng"
   },
+  "home_page": {
+    "no_preservatives": "Không chất bảo quản",
+    "pre_made_fresh_tapioca_pearls": "Trân châu tươi",
+    "water_chestnut_tapioca_pearls": "Trân châu tuoi củ năng 350gr",
+    "sugarcane_white_tapioca_pearls": "Trân châu đường mía 350gr",
+    "fresh_brown_sugar_tapioca_pearls": "Trân châu đường đen 350gr",
+    "cheese_ball_tapioca_pearls": "Trân châu phô mai 350gr",
+    "packaged_dry_tapioca_pearls": "Trân châu khô",
+    "dry_brown_sugar_tapioca_pearls": "Trân châu khô hạt Đường đen",
+    "sugarcane_golden_tapioca_pearls": "Trân châu khô hạt Hoàng Kim",
+    "taro_tapioca_pearls": "Trân châu khô hạt Khoai môn",
+    "oolong_tea_tapioca_pearls": "Trân châu khô hạt Ô Long",
+    "dry_seasoning": "Bột gia vị",
+    "chicken_seasoning_1Kg": "Bột gia vị ướp gà 1kg",
+    "panko_crumbs_10Kg": "Bột chiên xù 10kg"
+  },
+  "about_page": {
+    "about_us": "CHÚNG TÔI",
+    "about_us_desc_first_line": "Trà sữa trân châu bắt nguồn từ Đài Loan, đã du nhập vào Việt Nam trên 10 năm. Đây là “thức uống yêu thích số 1 của giới trẻ”, không chỉ ở Việt Nam mà ra cả Thế giới.",
+    "about_us_desc_second_line": "Tập Đoàn AMY tại Việt Nam luôn tự hào với hơn 15 năm kinh nghiệm trong lĩnh vực “Cung cấp - Sản xuất - Xuất khẩu” các loại: Tinh bột sắn và Bột biến tính.",
+    "about_us_desc_third_line": "AMY Chúng tôi nhận thấy nguyên liệu “Tinh bột” chính là “Linh hồn” để tạo nên những hạt “Trân châu tươi” thơm ngon, dẻo dai giàu năng lượng.",
+    "our_passion": "ĐAM MÊ",
+    "our_passion_first_line": "Với ước mơ mang lại một nét “Văn hóa - Ẩm thực” độc đáo. Tập Đoàn AMY đã tìm đến “Xứ sở trân châu”, mời một chuyên gia hàng đầu về “Ẩm thực và thức uống” người Đài Loan: Ông Lucas.",
+    "our_passion_second_line": "Là người bản xứ, Ông dùng sự thấu hiểu và kinh nghiệm của mình để xây dựng một dây chuyền sản xuất “Trân châu tươi” tại Việt Nam theo đúng quy trình và tiêu chuẩn của Đài Loan.",
+    "our_passion_third_line": "Đặc biệt khâu chọn lựa nguyên liệu. Tinh bột khoai mì được trồng trên vùng cao nguyên, cùng nguồn nước tinh khiết và đường Caramen tự nhiên của các nhà sản xuất uy tín thế giới, với khả năng truy xuất nguồn gốc hoàn chỉnh.",
+    "our_technology": "Công nghệ",
+    "our_technology_first_line": "Song song với đó là thiết bị vận hành, được sử dụng công nghệ mới với dây chuyền sản xuất hiện đại của những nước tiên tiến trên thế giới.",
+    "our_vision": "KHAI SÁNG",
+    "our_vision_first_line": "Bạn có thể tưởng tượng được không? Khi những áp lực trong cuộc sống với nhiều nguyên do... đang bủa vây. Mà thời gian thì không nhiều cho việc thư giãn, nghỉ ngơi... và nấu nướng là một nhiệm vụ bất khả thi.",
+    "our_vision_second_line": "Tập Đòan AMY đã thấu hiểu và “Tâm huyết” theo đuổi một ý tưởng mới: “Trân châu tươi ăn liền” đầu tiên tại Việt Nam. Với mong muốn: Niềm Vui sẽ đến thật đơn giản và dễ dàng.",
+    "our_guarantee": "CAM KẾT",
+    "our_guarantee_first_line": "Tập Đoàn AMY cùng các Chuyên gia trong nước và Quốc tế sẽ kiểm tra nghiêm ngặt và đưa ra các giải pháp tốt nhất để đảm bảo, phù hợp với “Truyền thống & Văn Hóa - Ẩm thực” của người Việt Nam.",
+    "our_guarantee_list": "Trong đó Cam Kết:",
+    "our_guarantee_first_item": "Sản phẩm “Không chất bảo quản” mà vẫn giữ được vị “Tươi - Dẻo - Thơm Ngon” lâu dài.",
+    "our_guarantee_second_item": "“Tiết kiệm thời gian” là tiêu chí bậc nhất. Giúp: “Dễ dàng - Nhanh chóng - Tiện lợi” trong việc pha chế.",
+    "our_guarantee_third_item": "“An tòan - Vệ sinh - Đảm bảo sức khỏe” Được chứng nhận bởi Công ty Quốc Gia Good Việt Nam: HACCP CODEX 2020 Tương lai sẽ trở thành một trong những nhà máy chế biến Thạch - Trân châu, phục vụ ngành pha chế số 1 tại Việt Nam.",
+    "our_guarantee_second_line": "Đây chính là Niềm vui - Hạnh phúc và Tự hào, khi mang lại một điều nho nhỏ, có thể góp sức và chia sẻ với người tiêu dùng Việt Nam.",
+    "thank_you": "Chân thành Cảm ơn."
+  },
+  "notice_page": {
+    "notice": "GHI CHÚ",
+    "notice_first_line": "Tất cả các sản phẩm sẽ được chuyển vào kho lạnh trong suốt quá trình vận chuyển, quý khách vui lòng cho sản phẩm vào tủ lạnh ngay khi nhận được.",
+    "notice_second_line": "Khu vực giao hàng: Mỗi đơn hàng sẽ được giao đến một địa chỉ.",
+    "notice_third_line": "Không giao hàng vào thứ 7 chủ nhật, các ngày lễ, ngày nghỉ do chính phủ điều chỉnh linh hoạt, thiên tai; giao hàng bình thường sẽ được thực hiện trong thời gian còn lại. Ngoài ra, do chính sách không giao hàng vào ngày chủ nhật do công ty chúng tôi quy định nên hiện tại chưa thể hẹn ngày nhận hàng cụ thể. Tuy nhiên, bạn có thể chọn thời điểm dự kiến ​​giao hàng đến (trước 13:00 hoặc từ 14:00 đến Sau khi xuất hàng sẽ căn cứ vào tình hình thực tế trong ngày. Vui lòng đặt trước thời gian và ngày cho hàng hóa dự kiến ​​đến và hiểu rằng chúng tôi sẽ không chịu trách nhiệm bồi thường nếu hàng hóa đến muộn.",
+    "return_and_refund_policy": "Trả lại và hoàn tiền:",
+    "return_and_refund_policy_list": "Khi đơn đặt hàng được thiết lập, nó thể hiện rằng bạn hiểu mô tả sau và đồng ý hợp tác với chúng tôi:",
+    "return_and_refund_policy_first_item": "Do việc xem xét vệ sinh an toàn thực phẩm, chỉ những khiếm khuyết của bản thân hàng hóa, hư hỏng, sai sót trong vận hành hoặc phá hủy do quá trình giao hàng mới có thể được yêu cầu trả lại hoặc hoàn tiền.",
+    "return_and_refund_policy_second_item": "Vui lòng hiểu rằng đơn trả hàng và hoàn tiền sẽ bị từ chối nếu hàng hóa bị giảm chất lượng sau khi không được niêm phong, bị ăn mòn, mất nhiệt độ cần thiết và được giữ trong điều kiện không thích hợp!",
+    "return_and_refund_policy_third_item": "Trước khi đặt hàng, vui lòng đọc kỹ mô tả trên trang sản phẩm hoặc kiểm tra thông tin chi tiết với nhân viên chăm sóc khách hàng trước khi thực hiện giao dịch! Cty AMY chỉ cung cấp dịch vụ giao hàng đông lạnh tận nhà nhưng không chịu trách nhiệm về việc giao hàng chậm trễ của công ty logistics. Bạn có thể tìm hiểu thêm thông tin tại trang web chính thức của GRAB hoặc gọi cho bộ phận chăm sóc khách hàng của GRAB theo số : (84.4) ......",
+    "return_and_refund_policy_fourth_item": "Khi xử lý khoản tiền hoàn lại, khoản tiền đó sẽ được hoàn lại trực tiếp vào thẻ tín dụng được sử dụng để thanh toán (ngày hoàn trả thực tế sẽ được kiểm tra với ngân hàng của bạn) nếu bạn thanh toán bằng thẻ tín dụng. Nếu chuyển khoản ngân hàng được sử dụng để thanh toán, tiền hoàn lại sẽ được chuyển vào tài khoản được chỉ định hoặc bạn có thể chuyển số tiền hoàn lại thành điểm tiền mặt tương đương với số tiền tương tự để mua hàng trong tương lai.",
+    "product_feedback_policy": "Thủ tục phản ánh các vấn đề về sản phẩm:",
+    "product_feedback_policy_first_item": "Khi sản phẩm nhận được không phù hợp với thông số kỹ thuật và số lượng đặt hàng, Nếu sản phẩm bị hư hỏng nghiêm trọng trong quá trình giao hàng, Nếu bạn có bất kỳ ý kiến ​​hoặc nghi ngờ nào về chất lượng của sản phẩm nhận được, Vui lòng chụp ảnh hoặc quay video về sản phẩm trong vòng hai ngày sau khi nhận được sản phẩm, giữ lại sản phẩm và liên hệ với nhân viên chăm sóc khách hàng của chúng tôi. Chúng tôi sẽ xử lý nó cho bạn trong thời gian sớm nhất. Bất kỳ trường hợp nào khác được loại trừ ở trên sẽ không được chấp nhận trả lại và hoàn lại tiền.",
+    "product_feedback_policy_second_item": "Nếu bạn muốn trả lại sản phẩm, cả bạn và cửa hàng chúng tôi sẽ cùng có trách nhiệm khôi phục lại tình trạng ban đầu khi giao dịch chấm dứt theo quy định của Bộ luật dân sự.",
+    "product_feedback_policy_third_item_before": "Vì vậy: Vui lòng giữ sản phẩm ở trạng thái hoàn toàn mới cũng như xác nhận không thiếu sản phẩm chính, biên lai và phụ kiện liên quan trước khi gửi lại cùng với bao bì ban đầu để chúng tôi xử lý khoản hoàn trả có liên quan.",
+    "product_feedback_policy_third_item_after": "Nếu sản phẩm bị hư hỏng, hao mòn, trầy xước, bụi bẩn và bao bì không hoàn chỉnh hoặc bị hư hỏng do sử dụng và tháo dỡ không đúng cách và không thể trả lại cửa hàng của chúng tôi ở trạng thái hoàn chỉnh, chúng tôi sẽ tính phí yêu cầu để khôi phục lại nguyên bản ban đầu nêu theo tình hình thực tế hoặc tính giá sản phẩm theo tỷ lệ điều kiện bảo quản sản phẩm.",
+    "order_cancellation_policy": "Hủy đơn hàng:",
+    "order_cancellation_policy_first_item": "Khi bạn hoàn thành đơn đặt hàng, xin vui lòng sắp xếp việc thanh toán trong vòng hai ngày; nếu không, đơn đặt hàng có thể bị hủy hoặc ngày đến sẽ bị hoãn lại. Cảm ơn bạn đã hợp tác của bạn.",
+    "order_cancellation_policy_second_item": "Sau khi bạn hoàn tất thanh toán cho shop tại website chính thức của Cty AMY mà phải hủy đơn hàng vì bất kỳ lý do gì, vui lòng thông báo việc hủy đơn hàng cho chúng tôi thông qua đường dây chuyên dụng chăm sóc khách hàng, LINE, hoặc tin nhắn riêng trên Facebook ba làm việc vài ngày trước ngày giao hàng ban đầu (không bao gồm ngày nhận sản phẩm ban đầu, các ngày lễ thường hoặc các ngày lễ quốc gia) và phải trước 17:00. Sau khi được nhân viên chăm sóc khách hàng phản hồi và xác nhận, đơn hàng sẽ chính thức bị hủy. Đường dây dành riêng cho dịch vụ khách hàng (84.4) 653 653 67 (9 giờ sáng - 5 giờ chiều; trừ ngày lễ / ngày nghỉ bình thường).",
+    "order_cancellation_policy_third_item_before": "Phí xử lý sẽ được thu cho việc hủy bỏ ba ngày làm việc trước ngày đến ban đầu, không bao gồm ngày nhận sản phẩm ban đầu, ngày lễ thường hoặc ngày lễ quốc gia. Đây là phí xử lý cho luồng thanh toán của bên thứ ba.",
+    "order_cancellation_policy_third_item_after": "Nếu việc hủy đơn hàng được thông báo trong vòng ba ngày kể từ ngày đến ban đầu (không bao gồm ngày đến), AMY sẽ chịu 100% số tiền mà không hoàn lại bất kỳ khoản nào do sản phẩm đã được bước vào giai đoạn sản xuất.",
+    "order_cancellation_policy_fourth_item": "Đối với việc hủy đơn hàng đã xác nhận, AMY sẽ hoàn lại số tiền vào thẻ tín dụng hoặc chuyển khoản ngân hàng trong vòng 15 ngày sau khi trừ tiền phạt. Ngày hoàn trả thực tế sẽ được kiểm tra với ngân hàng phát hành thẻ."
+  },
   "before_footer": {
     "first_column": {
       "company_name": "CÔNG TY CỔ PHẦN AMY VIETNAM",
@@ -55,13 +117,9 @@
       "contact_cooperation": "Liên hệ hợp tác"
     },
     "fourth_column": {
-      "social_media": "CÁC KÊNH TRUYỀN THÔNG XÃ HỘI"
-    },
-    "fifth_column": {
-      "contact_us": "THÔNG TIN LIÊN HỆ",
-      "label": "Nhận thông tin sản phẩm mới nhất, chương trình khuyến mãi và nhiều hơn nữa",
-      "input_place_holder": "Email của bạn",
-      "subscribe": "Đăng ký"
+      "social_media": "Hãy theo dõi chúng tôi trên facebook để cập nhật những thông tin mới nhất về sản phẩm và các chương trình khuyến mãi",
+      "fresh_and_dry_boba": "Trân châu tươi, khô",
+      "dry_seasoning": "Bột gia vị"
     }
   },
   "footer": {
