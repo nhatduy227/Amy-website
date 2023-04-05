@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../Firebase';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 
 import productBanner from '../../Assets/product-banner.png';
@@ -6,44 +8,20 @@ import ProductCard from './ProductsCard';
 import la1 from '../../Assets/la1.png';
 import la2 from '../../Assets/la2.png';
 import bubbleDeco from '../../Assets/bubble-deco.png';
-// import cunang from '../../Assets/cunang.png';
-// import duongmia from '../../Assets/duongmia.png';
-// import duongden from '../../Assets/duongden.png';
-// import trasua from '../../Assets/trasua.png';
-// import tranchau3Q from '../../Assets/3Q.png';
 
-import tranchaucunang from '../../Assets/cunang.png';
-import tranchauduongmia from '../../Assets/duongmia.png';
-import tranchauduongden from '../../Assets/duongden.png';
-import tranchauphomai from '../../Assets/phomai.png';
-const productList = [
-  {
-    id: 1,
-    title: 'Trân châu tươi củ năng',
-    img: tranchaucunang,
-    price: 25000,
-  },
-  {
-    id: 2,
-    title: 'Trân châu tươi đường mía',
-    img: tranchauduongmia,
-    price: 25000,
-  },
-  {
-    id: 3,
-    title: 'Trân châu tươi đường đen',
-    img: tranchauduongden,
-    price: 25000,
-  },
-  {
-    id: 4,
-    title: 'Trân châu tươi phô mai',
-    img: tranchauphomai,
-    price: 25000,
-  },
-];
 
 const Products = () => {
+  const [freshBoba, setFreshBoba] = useState([]);
+  const fetchData = async () => {
+    const collectionRef = collection(db, 'freshBoba');
+    const querySnapshot = await getDocs(collectionRef);
+    const documents = querySnapshot.docs.map(doc => doc.data());
+    setFreshBoba(documents);
+
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div className="bg-background-main overflow-hidden pb-28">
       <div className="relative">
@@ -67,15 +45,9 @@ const Products = () => {
         <img className="w-full lg:h-[610px]" src={productBanner} alt="product-banner" />
         <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">Không chất bảo quản</h1>
 
-        {productList.map((product) => {
+        {freshBoba.map((product) => {
           return (
-            <ProductCard
-              key={product.title}
-              id={product.id}
-              title={product.title}
-              price={product.price}
-              img={product.img}
-            />
+            <ProductCard product={product} />
           );
         })}
 

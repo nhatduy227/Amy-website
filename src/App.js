@@ -18,8 +18,9 @@ import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import LandingPage from './Pages/LandingPage/LandingPage';
-import { collection, doc, getDoc } from "firebase/firestore";
-import { db } from "./Firebase";
+// import { doc, getDoc, collection } from "firebase/firestore";
+// import { db } from "./Firebase";
+import { getAdminRight } from "./Firebase";
 import UserInfo from "./Pages/UserInfo/UserInfo";
 
 function Layout() {
@@ -149,35 +150,78 @@ const adminRouter = createBrowserRouter([
   },
 ]);
 
+
+
 export const UserContext = createContext({ user: null })
+export const CartContext = createContext(null)
 
 function App() {
   const [user, setUser] = useState(null)
+  const [cartItems, setCartItems] = useState([]);
 
-  const getAdminRight = async (userId) => {
-    const usersCollection = collection(db, "users");
-    const userDoc = doc(usersCollection, userId);
-    getDoc(userDoc)
-      .then((doc) => {
-        if (doc.exists()) {
-          const userData = doc.data();
-          setUser(userData)
+  const handleAddToCart = (clickedItem) => {
+    setCartItems((prev) => {
+      const isItemInCart = prev.find((item) => item.productId === clickedItem.productId);
+
+      if (isItemInCart) {
+        return prev.map((item) =>
+          item.productId === clickedItem.productId
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
+  };
+
+  const handleRemoveFromCart = (productId) => {
+    setCartItems((prev) => {
+      return prev.reduce((acc, item) => {
+        if (item.productId === productId) {
+          if (item.amount === 1) return acc;
+          return [...acc, { ...item, amount: item.amount - 1 }];
         } else {
-          console.log("No such document!");
+          return [...acc, item];
         }
-      })
-      .catch((error) => {
-        console.error("Error getting document:", error);
-      });
-  }
+      }, []);
+    });
+  };
+
+  const getTotalItems = (items) => items.reduce((acc, item) => acc + item.amount, 0);
+
+  // const handleSetUserOnLogin = async (userId) => {
+  //   const usersCollection = collection(db, "users");
+  //   const userDoc = doc(usersCollection, userId);
+  //   getDoc(userDoc)
+  //     .then((doc) => {
+  //       if (doc.exists()) {
+  //         const userData = doc.data();
+  //         setUser(userData)
+  //       } else {
+  //         console.log("No such document!");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error getting document:", error);
+  //     });
+  // }
 
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-      getAdminRight(user.uid)
+      const isAdmin = getAdminRight(user.uid)
+      setUser({
+        ...user,
+        name: user.displayName,
+        email: user.email,
+        isAdmin: isAdmin
+      })
+      // handleSetUserOnLogin(user.uid)
     })
   }, [])
   return <UserContext.Provider value={user}>
-    <RouterProvider router={user ? adminRouter : router} />
+    <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
+      <RouterProvider router={user ? adminRouter : router} />
+    </CartContext.Provider>
   </UserContext.Provider>;
 }
 
