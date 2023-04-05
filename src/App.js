@@ -152,10 +152,9 @@ const adminRouter = createBrowserRouter([
 
 
 export const UserContext = createContext({ user: null })
-export const CartContext = createContext({ cartItems: [], setCartItems: () => { } })
+export const CartContext = createContext(null)
 
 function App() {
-  const [user, setUser] = useState(null)
   const dummyData = [{
     amount
       :
@@ -177,6 +176,40 @@ function App() {
       "freshBoba"
   },
   ]
+  const [user, setUser] = useState(null)
+  const [cartItems, setCartItems] = useState(dummyData);
+
+
+  const handleAddToCart = (clickedItem) => {
+    setCartItems((prev) => {
+      const isItemInCart = prev.find((item) => item.productId === clickedItem.productId);
+
+      if (isItemInCart) {
+        return prev.map((item) =>
+          item.productId === clickedItem.productId
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
+  };
+
+  const handleRemoveFromCart = (productId) => {
+    setCartItems((prev) => {
+      return prev.reduce((acc, item) => {
+        if (item.productId === productId) {
+          if (item.amount === 1) return acc;
+          return [...acc, { ...item, amount: item.amount - 1 }];
+        } else {
+          return [...acc, item];
+        }
+      }, []);
+    });
+  };
+
+  const getTotalItems = (items) => items.reduce((acc, item) => acc + item.amount, 0);
+
   const getAdminRight = async (userId) => {
     const usersCollection = collection(db, "users");
     const userDoc = doc(usersCollection, userId);
@@ -200,7 +233,7 @@ function App() {
     })
   }, [])
   return <UserContext.Provider value={user}>
-    <CartContext.Provider value={dummyData}>
+    <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
       <RouterProvider router={user ? adminRouter : router} />
     </CartContext.Provider>
   </UserContext.Provider>;

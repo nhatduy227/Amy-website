@@ -9,6 +9,25 @@ import bubbleDeco from '../../Assets/bubble-deco.png';
 import tranchaukhoBanner1 from '../../Assets/TrangHat.png';
 
 const DriedBoba = () => {
+  // const driedBoba = [
+  //   {
+  //     productFile
+  //       :
+  //       "https://firebasestorage.googleapis.com/v0/b/amy-website-eeebe.appspot.com/o/images%2F1680057318636_HatKhoaiMon.png?alt=media&token=8a9ead2d-c5ee-461f-8692-58b8c089459f",
+  //     productId
+  //       :
+  //       1,
+  //     productName
+  //       :
+  //       "Trân châu khô hạt Khoai môn 1 kg",
+  //     productPrice
+  //       :
+  //       "20000",
+  //     productType
+  //       :
+  //       "driedBoba"
+  //   }
+  // ]
   const [driedBoba, setDriedBoba] = useState([]);
   const fetchData = async () => {
     const collectionRef = collection(db, 'driedBoba');
@@ -19,7 +38,7 @@ const DriedBoba = () => {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [driedBoba]);
   return (
     <div className="bg-background-main overflow-hidden pb-28">
       <div className="relative">
@@ -44,13 +63,6 @@ const DriedBoba = () => {
         <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">Không chất bảo quản</h1>
         {driedBoba.map((product) => {
           return (
-            // <ProductCard
-            //   key={product.productId}
-            //   id={product.productId}
-            //   title={product.productName}
-            //   price={product.productPrice}
-            //   img={product.productFile}
-            // />
             <ProductCard product={product} />
           );
         })}
