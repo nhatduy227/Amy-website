@@ -16,6 +16,7 @@ const ProductCard = ({ product }) => {
           <div className='py-4'>Price: {product.productPrice} VND</div>
           <div className='flex flex-col mt-2'>
             <button onClick={() => {
+              alert("Item Added")
               handleAddToCart(product)
             }} className='px-4 bg-white text-background-main font-semibold hover:opacity-80 rounded'>Add to cart</button>
           </div>

@@ -18,8 +18,9 @@ import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import LandingPage from './Pages/LandingPage/LandingPage';
-import { collection, doc, getDoc } from "firebase/firestore";
-import { db } from "./Firebase";
+// import { doc, getDoc, collection } from "firebase/firestore";
+// import { db } from "./Firebase";
+import { getAdminRight } from "./Firebase";
 import UserInfo from "./Pages/UserInfo/UserInfo";
 
 function Layout() {
@@ -155,29 +156,8 @@ export const UserContext = createContext({ user: null })
 export const CartContext = createContext(null)
 
 function App() {
-  const dummyData = [{
-    amount
-      :
-      1,
-    productFile
-      :
-      "https://firebasestorage.googleapis.com/v0/b/amy-website-eeebe.appspot.com/o/images%2F1680119614512_phomai.png?alt=media&token=30c69fa3-bf6a-4e68-b1be-e87dc4602015",
-    productId
-      :
-      "71fd3628-c4ec-4e16-930b-2029182d06d2",
-    productName
-      :
-      "Trân châu phô mai 350 gr",
-    productPrice
-      :
-      "20000",
-    productType
-      :
-      "freshBoba"
-  },
-  ]
   const [user, setUser] = useState(null)
-  const [cartItems, setCartItems] = useState(dummyData);
+  const [cartItems, setCartItems] = useState([]);
 
   const handleAddToCart = (clickedItem) => {
     setCartItems((prev) => {
@@ -209,26 +189,33 @@ function App() {
 
   const getTotalItems = (items) => items.reduce((acc, item) => acc + item.amount, 0);
 
-  const getAdminRight = async (userId) => {
-    const usersCollection = collection(db, "users");
-    const userDoc = doc(usersCollection, userId);
-    getDoc(userDoc)
-      .then((doc) => {
-        if (doc.exists()) {
-          const userData = doc.data();
-          setUser(userData)
-        } else {
-          console.log("No such document!");
-        }
-      })
-      .catch((error) => {
-        console.error("Error getting document:", error);
-      });
-  }
+  // const handleSetUserOnLogin = async (userId) => {
+  //   const usersCollection = collection(db, "users");
+  //   const userDoc = doc(usersCollection, userId);
+  //   getDoc(userDoc)
+  //     .then((doc) => {
+  //       if (doc.exists()) {
+  //         const userData = doc.data();
+  //         setUser(userData)
+  //       } else {
+  //         console.log("No such document!");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error getting document:", error);
+  //     });
+  // }
 
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-      getAdminRight(user.uid)
+      const isAdmin = getAdminRight(user.uid)
+      setUser({
+        ...user,
+        name: user.displayName,
+        email: user.email,
+        isAdmin: isAdmin
+      })
+      // handleSetUserOnLogin(user.uid)
     })
   }, [])
   return <UserContext.Provider value={user}>

@@ -22,7 +22,7 @@ export const db = getFirestore(app);
 export const storage = getStorage(app);
 
 const provider = new GoogleAuthProvider();
-const getAdminRight = (userID) => {
+export const getAdminRight = (userID) => {
   const usersCollection = db.collection("users");
   const userDocRef = usersCollection.doc(userID);
   userDocRef.get().then((doc) => {
@@ -36,7 +36,7 @@ const getAdminRight = (userID) => {
   });
 }
 export const signInWithGoogle = async () => {
-  console.log(auth)
+  provider.setCustomParameters({ prompt: 'select_account' });
   await signInWithPopup(auth, provider)
     .then((result) => {
       const usersCollection = collection(db, "users");
@@ -57,7 +57,7 @@ export const signInWithGoogle = async () => {
     });
 };
 
-export const logOut = () => {
+export const logOut = async () => {
   signOut(auth).then(() => {
     window.location.reload(false);
   }).catch((error) => {

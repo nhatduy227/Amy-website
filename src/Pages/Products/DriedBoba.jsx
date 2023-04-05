@@ -9,25 +9,6 @@ import bubbleDeco from '../../Assets/bubble-deco.png';
 import tranchaukhoBanner1 from '../../Assets/TrangHat.png';
 
 const DriedBoba = () => {
-  // const driedBoba = [
-  //   {
-  //     productFile
-  //       :
-  //       "https://firebasestorage.googleapis.com/v0/b/amy-website-eeebe.appspot.com/o/images%2F1680057318636_HatKhoaiMon.png?alt=media&token=8a9ead2d-c5ee-461f-8692-58b8c089459f",
-  //     productId
-  //       :
-  //       1,
-  //     productName
-  //       :
-  //       "Trân châu khô hạt Khoai môn 1 kg",
-  //     productPrice
-  //       :
-  //       "20000",
-  //     productType
-  //       :
-  //       "driedBoba"
-  //   }
-  // ]
   const [driedBoba, setDriedBoba] = useState([]);
   const fetchData = async () => {
     const collectionRef = collection(db, 'driedBoba');
