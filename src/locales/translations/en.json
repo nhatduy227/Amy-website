@@ -32,6 +32,68 @@
     "recipe file": "Recipe File",
     "submit": "Submit"
   },
+  "home_page": {
+    "no_preservatives": "No preservatives",
+    "pre_made_fresh_tapioca_pearls": "Pre-made fresh tapioca pearls",
+    "water_chestnut_tapioca_pearls": "Water chestnut tapioca pearls",
+    "sugarcane_white_tapioca_pearls": "Sugarcane white tapioca pearls",
+    "fresh_brown_sugar_tapioca_pearls": "Brown sugar tapioca pearls",
+    "cheese_ball_tapioca_pearls": "Cheese ball tapioca pearls",
+    "packaged_dry_tapioca_pearls": "Packaged dry tapioca pearls",
+    "dry_brown_sugar_tapioca_pearls": "Dry Brown sugar tapioca pearls",
+    "sugarcane_golden_tapioca_pearls": "Sugarcane golden tapioca pearls",
+    "taro_tapioca_pearls": "Taro tapioca pearls",
+    "oolong_tea_tapioca_pearls": "Oolong tea tapioca pearls",
+    "dry_seasoning": "Dry seasoning ",
+    "chicken_seasoning_1Kg": "Panko crumbs 10Kg",
+    "panko_crumbs_10Kg": "Bột chiên xù 10kg"
+  },
+  "about_page": {
+    "about_us": "About us",
+    "about_us_desc_first_line": "'Trà sữa trân châu' (pearl milk tea) originates from Taiwan and has been popular in Vietnam for the last 10 years. It is the 'number one favorite drink of young people' not only in Vietnam but also around the world",
+    "about_us_desc_second_line": "At AMY Group Vietnam, we are proud of our over 15 years of experience in the \"Supply - Production - Export\" of types of cassava starch and modified starch. ",
+    "about_us_desc_third_line": "We realize that the main ingredient of \"Starch\" is the soul that creates delicious, chewy, and energizing fresh tapioca pearl.",
+    "our_passion": "Our passion ",
+    "our_passion_first_line": "With the dream of bringing a unique \"Culture - Cuisine\" feature, the AMY Group invited a leading expert in Cuisine and Beverage from Taiwan - \"Land of Pearl Milk Tea\": Mr. Lucas. ",
+    "our_passion_second_line": "As a local, he uses his understanding and experience to build a fresh tapioca pearl production line in Vietnam following to the process and standards of Taiwan.",
+    "our_passion_third_line": "Particularly in the stage of selecting materials: Cassava starch is grown in the highlands, along with pure water sources and natural caramel sugar from reputable global producers.",
+    "our_technology": "Our technology",
+    "our_technology_first_line": "Alongside with our passion and standards, we are supplied with the newest technologies and production line, using highly efficient machineries sorted from developed countries.",
+    "our_vision": "Our vision",
+    "our_vision_first_line": "So can you imagine - when life gets busy and stressful, time is such limited for relaxing and cooking seems to be an impossible mission.",
+    "our_vision_second_line": "AMY Group has seen and understand that. We are committed to an innovative idea: “Pre-made fresh tapioca pearl that is ready-to-eat”, with the desire for an easy and simple solution to happiness.",
+    "our_guarantee": "Our guarantee",
+    "our_guarantee_first_line": "The AMY Corporation, along with domestic and international experts, will rigorously inspect and propose the best solutions to ensure they are in line with the \"Tradition & Culture - Cuisine\" of the Vietnamese people. ",
+    "our_guarantee_list": "Their commitment includes:",
+    "our_guarantee_first_item": "A \"preservative-free\" product that still maintains a \"Fresh - Chewy - Delicious\" quality.",
+    "our_guarantee_second_item": "\"Time-saving\" is the top priority, making it \"Easy - Fast - Convenient\" to prepare.",
+    "our_guarantee_third_item": "\"Safe - Hygienic - Ensuring Health\" certified by the Vietnamese National Company Good Vietnam: HACCP CODEX 2020, on the pathway to becoming one of the leading jelly and tapioca processing factories, and the number one in the beverage industry in Vietnam.",
+    "our_guarantee_second_line": "This is our joy, happiness, and pride of contributing and sharing our quality products with Vietnamese consumers. ",
+    "thank_you": "Sincerely thank you."
+  },
+  "notice_page": {
+    "notice": "NOTICE",
+    "notice_first_line": "All products will be stored in the cold storage during transportation. Please put the products in the refrigerator immediately upon receiving them.",
+    "notice_second_line": "Delivery area: Each order will be delivered to one address.",
+    "notice_third_line": "We do not deliver on Saturdays, Sundays, holidays, on dates that are affected by natural disasters, or other day off according to the government. Normal delivery will be carried out during the remaining time. In addition, due to our company's policy of not delivering on Sundays, we cannot currently specify a specific delivery time. However, you can choose an estimated delivery time (before 1:00 PM or from 2:00 PM onwards), and the actual delivery date will be based on the actual situation on the day. Please schedule the expected date and time for the goods to arrive in advance and understand that we will not be liable for compensation if the goods arrive late.",
+    "return_and_refund_policy": "Return and refund policy:",
+    "return_and_refund_policy_list": "When an order is placed, it indicates that you understand and agree to cooperate with us as follows:",
+    "return_and_refund_policy_first_item": "Due to considerations for food safety and sanitation, only defects of the goods themselves, damage, operational errors, or destruction during the delivery process may be eligible for return or refund.",
+    "return_and_refund_policy_second_item": "Please understand that return and refund requests will be denied if the quality of the goods is compromised after unsealing, corroded, lost necessary temperature, and kept in inappropriate conditions!",
+    "return_and_refund_policy_third_item": "Before placing an order, please read the product description carefully or check the detailed information with the customer service staff before making a transaction! AMY only provides cold delivery services to your doorstep but is not responsible for the delayed delivery of the logistics company. You can find more information on the official website of GRAB or call the GRAB customer care department at: (84.4) ......",
+    "return_and_refund_policy_fourth_item": "When processing the refund amount, that amount will be refunded directly to the credit card used for payment (the actual refund date will be checked with your bank) if you pay by credit card. If the bank transfer was used for payment, the refund will be transferred to the designated account, or you can convert the refunded amount into cash equivalent points to purchase goods in the future.",
+    "product_feedback_policy:": "Product feedback policy:",
+    "product_feedback_policy_first_item": "When the received product does not meet the technical specifications and quantity of the order, if the product is seriously damaged during delivery, if you have any comments or doubts about the quality of the received product, please take photos or videos of the product within two days of receiving it, keep the product, and contact our customer service staff. We will handle it for you as soon as possible. Any other cases excluded above will not be accepted for return and refund.",
+    "product_feedback_policy_second_item": "If you want to return the product, both you and our store will be responsible for restoring the original condition when the transaction is terminated in accordance with the Civil Law regulations.",
+    "product_feedback_policy_third_item_before": "Therefore, please keep the product in a completely pristine condition as well as confirm that there are no missing main products, receipts, and related accessories before returning it along with the original packaging for us to process the relevant refund.",
+    "product_feedback_policy_third_item_after": "If the product is damaged, or shown signs of usage, and the packaging is incomplete or damaged due to improper use and disassembly and cannot be returned to our store in its original condition, we will charge a restoration fee based on the actual situation or calculate the product price based on the product preservation conditions.",
+    "order_cancellation_policy:": "Therefore, please keep the product in a completely pristine condition as well as confirm that there are no missing main products, receipts, and related accessories before returning it along with the original packaging for us to process the relevant refund.",
+    "order_cancellation_policy_first_item": "When you complete your order, please arrange payment within two days; otherwise, the order may be canceled, or the delivery date may be postponed. Thank you for your cooperation.",
+    "order_cancellation_policy_second_item": "If you have completed payment for your order on the official website of AMY Company's shop but need to cancel it for any reason, please notify us of the cancellation through the dedicated customer care hotline, LINE, or private message on Facebook at least a few days before the initial delivery date (excluding the initial product receipt date, regular holidays, or national holidays) and before 5:00 pm. After being confirmed by customer service personnel, the order will be officially canceled. The customer service hotline is (84.4) 653 653 67 (9:00 am - 5:00 pm, excluding regular holidays/national holidays).",
+    "order_cancellation_policy_third_item_before": "Cancellation fees will be charged for cancellations made three business days before the initial delivery date, excluding the initial product receipt date, regular holidays, or national holidays. This is a processing fee for the third-party payment flow.",
+    "order_cancellation_policy_third_item_after": "If the cancellation is made within three days from the initial delivery date (excluding the delivery date), AMY will not bear 100% the cost and will not refund you, because the products have moved into production phase.",
+    "order_cancellation_policy_fourth_item": "For confirmed cancellations, AMY will refund the amount to the credit card or bank transfer within 15 days after deducting the penalty. The actual refund date will be verified with the issuing bank."
+  },
   "before_footer": {
     "first_column": {
       "company_name": "AMY VN JOINT STOCK COMPANY",
@@ -48,20 +110,16 @@
       "shipping_and_forward_policy": "Shipping & Forward Policy"
     },
     "third_column": {
-      "information": "THÔNG TIN",
+      "information": "INFORMATION",
       "recruitment": "Recruitment",
       "agent_system": "Agent system",
       "frequently_asked_questions": "Frequently asked questions",
       "contact_cooperation": "Contact Cooperation"
     },
     "fourth_column": {
-      "social_media": "SOCIAL MEDIA"
-    },
-    "fifth_column": {
-      "contact_us": "CONTACT_US",
-      "label": "Receive the lastest product information, promotions and more",
-      "input_place_holder": "Your Email",
-      "subscribe": "Subscribe"
+      "social_media": "Follow us on Facebook for new product information and sale updates",
+      "fresh_and_dry_boba": "Fresh and dried boba",
+      "dry_seasoning": "Dry seasoning"
     }
   },
   "footer": {
