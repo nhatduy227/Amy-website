@@ -149,25 +149,34 @@ const adminRouter = createBrowserRouter([
   },
 ]);
 
+
+
 export const UserContext = createContext({ user: null })
-export const OrderContext = createContext({ order: null })
+export const CartContext = createContext({ cartItems: [], setCartItems: () => { } })
 
 function App() {
-  // const dummyData = [{
-  //   id: 1,
-  //   title: "Throwback Hip Bag",
-  //   price: 90,
-  //   amount: 1,
-  //   image: "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
-  // },
-  // ]
   const [user, setUser] = useState(null)
-  const order = {
-    cartItems: [],
-    totalPrice: 0,
-    isCompleted: false
-  }
-
+  const dummyData = [{
+    amount
+      :
+      1,
+    productFile
+      :
+      "https://firebasestorage.googleapis.com/v0/b/amy-website-eeebe.appspot.com/o/images%2F1680119614512_phomai.png?alt=media&token=30c69fa3-bf6a-4e68-b1be-e87dc4602015",
+    productId
+      :
+      "71fd3628-c4ec-4e16-930b-2029182d06d2",
+    productName
+      :
+      "Trân châu phô mai 350 gr",
+    productPrice
+      :
+      "20000",
+    productType
+      :
+      "freshBoba"
+  },
+  ]
   const getAdminRight = async (userId) => {
     const usersCollection = collection(db, "users");
     const userDoc = doc(usersCollection, userId);
@@ -191,9 +200,9 @@ function App() {
     })
   }, [])
   return <UserContext.Provider value={user}>
-    <OrderContext.Provider value={order}>
+    <CartContext.Provider value={dummyData}>
       <RouterProvider router={user ? adminRouter : router} />
-    </OrderContext.Provider>
+    </CartContext.Provider>
   </UserContext.Provider>;
 }
 

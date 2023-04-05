@@ -44,13 +44,14 @@ const DriedBoba = () => {
         <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">Không chất bảo quản</h1>
         {driedBoba.map((product) => {
           return (
-            <ProductCard
-              key={product.productId}
-              id={product.productId}
-              title={product.productName}
-              price={product.productPrice}
-              img={product.productFile}
-            />
+            // <ProductCard
+            //   key={product.productId}
+            //   id={product.productId}
+            //   title={product.productName}
+            //   price={product.productPrice}
+            //   img={product.productFile}
+            // />
+            <ProductCard product={product} />
           );
         })}
         <p className='w-full text-white flex justify-center items-center mt-5'>Thông tin tài khoản cho khách mua lẻ khi đặt hàng: BÙI THỊ ÁNH - Số tài khoản: 060199027754 - Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank) - PGD An Phú – TP HCM</p>

@@ -46,13 +46,14 @@ const Products = () => {
                 <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">Bot gia vi</h1>
                 {powder.map((product) => {
                     return (
-                        <ProductCard
-                            key={product.productId}
-                            id={product.productId}
-                            title={product.productName}
-                            price={product.productPrice}
-                            img={product.productFile}
-                        />
+                        // <ProductCard
+                        //     key={product.productId}
+                        //     id={product.productId}
+                        //     title={product.productName}
+                        //     price={product.productPrice}
+                        //     img={product.productFile}
+                        // />
+                        <ProductCard product={product} />
                     );
                 })}
 

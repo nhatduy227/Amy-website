@@ -47,13 +47,7 @@ const Products = () => {
 
         {freshBoba.map((product) => {
           return (
-            <ProductCard
-              key={product.productId}
-              id={product.productId}
-              title={product.productName}
-              price={product.productPrice}
-              img={product.productFile}
-            />
+            <ProductCard product={product} />
           );
         })}
 
