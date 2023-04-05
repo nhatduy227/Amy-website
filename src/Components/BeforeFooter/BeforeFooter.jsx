@@ -55,19 +55,18 @@ const BeforeFooter = () => {
             <img src={FBLogo} alt="Face book logo" className="w-[20px] rounded-full ml-2" />
           </div>
           <p>
-            Hãy theo dõi chúng tôi trên facebook để cập nhật những thông tin mới nhất về sản phẩm và các chương trình
-            khuyến mãi
+            {t('fourth_column.social_media')}
           </p>
           {/* <FacebookIcon className="text-[#0572e6] bg-white rounded mx-2 ml-0" /> */}
           <div className="flex items-start justify-around lg:gap-5">
             <div>
-              <p>Trân châu tươi, khô</p>
+              <p>{t('fourth_column.fresh_and_dry_boba')}</p>
               <a href="https://www.facebook.com/tranchautuoimood/" target="_blank" rel="noreferrer">
                 <img src={fanPage} alt="fanpage-mood" className="inline-block mt-2" />
               </a>
             </div>
             <div className="flex flex-col items-center">
-              <p>Bột gia vị</p>
+              <p>{t('fourth_column.dry_seasoning')}</p>
               <a href="https://www.facebook.com/botgiavigata/" target="_blank" rel="noreferrer">
                 <img
                   src={botGiaViGaTa}

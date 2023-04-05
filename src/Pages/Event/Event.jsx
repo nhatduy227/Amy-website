@@ -7,7 +7,7 @@ import eventBanner from '../../Assets/event-banner.png';
 // import eventImg5 from '../../Assets/cooking-contest-5.jpg';
 // import eventImg6 from '../../Assets/cooking-contest-6.jpg';
 // import eventImg7 from '../../Assets/cooking-contest-7.jpg';
-import Slider from "../../Components/NewSilder/Slider";
+// import Slider from "../../Components/NewSilder/Slider";
 
 const Event = () => {
   return (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '../../Firebase';
+import { useTranslation } from 'react-i18next';
 
 import ProductsComponent from '../../Components/ProductsComponent/ProductsComponent';
 
@@ -10,6 +11,7 @@ import bubbleDeco from '../../Assets/bubble-deco.png';
 import Slider from './../../Components/Slider/Slider';
 
 const Home = () => {
+  const { t } = useTranslation();
   const [freshBoba, setFreshBoba] = useState([]);
   const [driedBoba, setDriedBoba] = useState([]);
   const [powder, setPowder] = useState([]);
@@ -56,10 +58,10 @@ const Home = () => {
           {/* <img src={la1} alt="" className="lg:block hidden w-[250px] top-[1500px] -left-[50px] absolute" /> */}
         </>
 
-        <h2 className="text-primary-default text-center text-[24px] font-semibold mb-5">Không chất bảo quản</h2>
-        <ProductsComponent title="Trân châu tươi" productData={freshBoba} />
-        <ProductsComponent title="Trân châu khô" productData={driedBoba} classCustom="h-[350px]" />
-        <ProductsComponent title="Bột gia vị" productData={powder} classCustom="h-[250px] w-[200px]" />
+        <h2 className="text-primary-default text-center text-[24px] font-semibold mb-5">{t('home_page.no_preservatives')}</h2>
+        <ProductsComponent title={t('home_page.pre_made_fresh_tapioca_pearls')} productData={freshBoba} />
+        <ProductsComponent title={t('home_page.packaged_dry_tapioca_pearls')} productData={driedBoba} classCustom="h-[350px]" />
+        <ProductsComponent title={t('home_page.dry_seasoning')} productData={powder} classCustom="h-[250px] w-[200px]" />
       </div>
     </div>
   );
