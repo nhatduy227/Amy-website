@@ -18,8 +18,8 @@ import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import LandingPage from './Pages/LandingPage/LandingPage';
-// import { doc, getDoc, collection } from "firebase/firestore";
-// import { db } from "./Firebase";
+import { doc, getDoc, collection } from "firebase/firestore";
+import { db } from "./Firebase";
 import { getAdminRight } from "./Firebase";
 import UserInfo from "./Pages/UserInfo/UserInfo";
 
@@ -189,33 +189,33 @@ function App() {
 
   const getTotalItems = (items) => items.reduce((acc, item) => acc + item.amount, 0);
 
-  // const handleSetUserOnLogin = async (userId) => {
-  //   const usersCollection = collection(db, "users");
-  //   const userDoc = doc(usersCollection, userId);
-  //   getDoc(userDoc)
-  //     .then((doc) => {
-  //       if (doc.exists()) {
-  //         const userData = doc.data();
-  //         setUser(userData)
-  //       } else {
-  //         console.log("No such document!");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error getting document:", error);
-  //     });
-  // }
+  const handleSetUserOnLogin = async (userId) => {
+    const usersCollection = collection(db, "users");
+    const userDoc = doc(usersCollection, userId);
+    getDoc(userDoc)
+      .then((doc) => {
+        if (doc.exists()) {
+          const userData = doc.data();
+          setUser(userData)
+        } else {
+          console.log("No such document!");
+        }
+      })
+      .catch((error) => {
+        console.error("Error getting document:", error);
+      });
+  }
 
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-      const isAdmin = getAdminRight(user.uid)
-      setUser({
-        ...user,
-        name: user.displayName,
-        email: user.email,
-        isAdmin: isAdmin
-      })
-      // handleSetUserOnLogin(user.uid)
+      // const isAdmin = getAdminRight(user.uid)
+      // setUser({
+      //   ...user,
+      //   name: user.displayName,
+      //   email: user.email,
+      //   isAdmin: isAdmin
+      // })
+      handleSetUserOnLogin(user.uid)
     })
   }, [])
   return <UserContext.Provider value={user}>
