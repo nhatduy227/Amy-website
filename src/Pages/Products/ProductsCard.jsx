@@ -15,11 +15,9 @@ const ProductCard = ({ product }) => {
           <div className="text-lg text-white">{product.productName}</div>
           <div className='py-4'>Price: {product.productPrice} VND</div>
           <div className='flex flex-col mt-2'>
-            <label htmlFor="quantity" className='mt-2'>Quantity</label>
-            <input className='px-4 text-background-main select-none' id="quantity" type="number" min="1" max="5" placeholder='01' />
-          </div>
-          <div className='flex flex-col mt-2'>
-            <button onClick={() => handleAddToCart(product)} className='px-4 bg-white text-background-main font-semibold hover:opacity-80 rounded'>Add to cart</button>
+            <button onClick={() => {
+              handleAddToCart(product)
+            }} className='px-4 bg-white text-background-main font-semibold hover:opacity-80 rounded'>Add to cart</button>
           </div>
         </div>
       </div>
