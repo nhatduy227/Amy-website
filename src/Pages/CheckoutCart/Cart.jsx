@@ -1,4 +1,5 @@
 import CartItem from "./CartItem";
+import { Link } from 'react-router-dom';
 import { CartContext, UserContext } from "../../App";
 import { useContext, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
@@ -50,8 +51,11 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                     : <>
                         <p class="mt-0.5 text-sm text-gray-500">Your order will be ship as soon as possible</p>
                         <div class="mt-6">
-                            < a onClick={handleOrderCreation}
-                                class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">View all your orders</a>
+                            <Link className="flex no-underline text-base" to="/user-info">
+                                < a
+                                    class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">View all your orders</a>
+                            </Link>
+
                         </div>
                     </>
                 }
