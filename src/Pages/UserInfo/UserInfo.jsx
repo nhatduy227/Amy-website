@@ -1,9 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../Firebase';
 import profile from '../../Assets/user-profile.jpg';
 
 export default function UserInfo() {
     const user = useContext(UserContext)
+    const [order, setOrder] = useState([]);
+    const fetchData = async () => {
+        const collectionRef = collection(db, 'orders');
+        const querySnapshot = await getDocs(collectionRef);
+        const documents = querySnapshot.docs.map(doc => doc.data());
+        setOrder(documents);
+    };
+    useEffect(() => {
+        fetchData();
+    }, [order]);
+    const OrderCard = ({ order }) => (
+        <div >
+            <h2>{order.orderId}</h2>
+            <p>{order.price}</p>
+            <p>{order.status}</p>
+            <hr />
+        </div>
+    );
+    const updatedOrder = order.filter((obj) => obj.status === "pending" && obj.userEmail === user.email)
     return (
         <div class="flex items-center justify-center">
 
@@ -31,7 +52,11 @@ export default function UserInfo() {
                             </tr>
                         </tbody>
                     </table>
-
+                    <h1> Your Order </h1>
+                    <hr />
+                    {updatedOrder.map((order) => (
+                        <OrderCard key={order.orderId} order={order} />
+                    ))}
                 </div>
             </div>
 

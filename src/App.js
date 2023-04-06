@@ -151,12 +151,11 @@ const userRouter = createBrowserRouter([
 
 export const UserContext = createContext({ user: null })
 export const CartContext = createContext(null)
-export const OrderContext = createContext(null)
 
 function App() {
   const [user, setUser] = useState(null)
   const [cartItems, setCartItems] = useState([]);
-  const [order, setOrder] = useState();
+
 
 
   const handleAddToCart = (clickedItem) => {
@@ -202,13 +201,11 @@ function App() {
         setUser(undefined);
       }
     });
-  }, [auth])
+  }, [])
   return <UserContext.Provider value={user}>
-    <OrderContext.Provider value={{ order, setOrder }}>
-      <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems, setCartItems }}>
-        <RouterProvider router={user ? userRouter : router} />
-      </CartContext.Provider>
-    </OrderContext.Provider>
+    <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems, setCartItems }}>
+      <RouterProvider router={user ? userRouter : router} />
+    </CartContext.Provider>
   </UserContext.Provider>;
 }
 
