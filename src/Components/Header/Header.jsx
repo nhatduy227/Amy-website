@@ -40,8 +40,8 @@ export default function Header() {
         <div className="flex items-center gap-6 mr-[60px]">
           {user ?
             <Link className="flex no-underline text-base" to="/user-info">
-              {user.isAdmin ? <StarBorderOutlinedIcon /> : <Person2OutlinedIcon />}
-              <div className="h-6 ml-1" >{user.name}</div>
+              {user.role === "admin" ? <StarBorderOutlinedIcon /> : <Person2OutlinedIcon />}
+              <div className="h-6 ml-1" >{user.displayName}</div>
             </Link> :
             <Link className="flex no-underline text-base" to="/">
               <button className="h-6 ml-1" onClick={signInWithGoogle}>{t('header.login_in')} </button>

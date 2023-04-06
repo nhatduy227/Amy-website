@@ -52,7 +52,7 @@ const Navbar = () => {
             </li>
           </ul>
         </li>
-        {user && user.isAdmin ?
+        {user && user.role === "admin" ?
           <li key={'product'} className="text-xs relative group">
             <span className="px-4 py-2 no-underline uppercase hover:bg-primary-default text-white cursor-pointer">
               {t(`navbar.admin`)}
