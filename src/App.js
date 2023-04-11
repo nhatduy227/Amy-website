@@ -19,6 +19,7 @@ import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import UserInfo from "./Pages/UserInfo/UserInfo";
+import SupportChat from "./Components/SupportChat/SupportChat";
 
 function Layout() {
   return (
@@ -31,6 +32,7 @@ function Layout() {
           <Outlet />
         </div>
       </div>
+      <SupportChat />
       <BeforeFooter />
       <Footer />
     </>
