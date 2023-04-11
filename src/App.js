@@ -202,7 +202,6 @@ function App() {
       }
     });
   }, [])
-  console.log(user)
   return <UserContext.Provider value={user}>
     <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
       <RouterProvider router={user ? userRouter : router} />
