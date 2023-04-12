@@ -110,6 +110,8 @@ function App() {
   const [user, setUser] = useState(null)
   const [cartItems, setCartItems] = useState([]);
 
+
+
   const handleAddToCart = (clickedItem) => {
     setCartItems((prev) => {
       const isItemInCart = prev.find((item) => item.productId === clickedItem.productId);
