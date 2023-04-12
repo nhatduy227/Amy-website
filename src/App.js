@@ -156,6 +156,8 @@ function App() {
   const [user, setUser] = useState(null)
   const [cartItems, setCartItems] = useState([]);
 
+
+
   const handleAddToCart = (clickedItem) => {
     setCartItems((prev) => {
       const isItemInCart = prev.find((item) => item.productId === clickedItem.productId);
@@ -200,9 +202,8 @@ function App() {
       }
     });
   }, [])
-  console.log(user)
   return <UserContext.Provider value={user}>
-    <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
+    <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems, setCartItems }}>
       <RouterProvider router={user ? userRouter : router} />
     </CartContext.Provider>
   </UserContext.Provider>;
