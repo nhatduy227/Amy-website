@@ -19,6 +19,8 @@ import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import UserInfo from "./Pages/UserInfo/UserInfo";
+import SupportChat from "./Components/SupportChat/SupportChat";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function Layout() {
   return (
@@ -31,6 +33,7 @@ function Layout() {
           <Outlet />
         </div>
       </div>
+      <SupportChat />
       <BeforeFooter />
       <Footer />
     </>
@@ -80,56 +83,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/*',
-        element: <LandingPage />,
-      },
-    ],
-  },
-]);
-
-const userRouter = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/about',
-        element: <About />,
-      },
-      {
-        path: '/dried-boba',
-        element: <DriedBoba />,
-      },
-      {
-        path: '/fresh-boba',
-        element: <FreshBoba />,
-      },
-      {
-        path: '/powder-spices',
-        element: <PowderSpices />,
-      },
-      {
-        path: '/product/:id',
-        element: <Product />,
-      },
-      {
-        path: '/event',
-        element: <Event />,
-      },
-      {
-        path: '/notice',
-        element: <Notice />,
-      },
-      {
-        path: '/where-to-buy',
-        element: <FreshBoba />,
-      },
-      {
-        path: '/*',
-        element: <LandingPage />,
+        element: <NotFound />,
       },
       {
         path: '/post-product',
@@ -202,11 +156,17 @@ function App() {
       }
     });
   }, [])
-  return <UserContext.Provider value={user}>
-    <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems, setCartItems }}>
-      <RouterProvider router={user ? userRouter : router} />
-    </CartContext.Provider>
-  </UserContext.Provider>;
+
+  return (
+    user ?
+      <UserContext.Provider value={user}>
+        <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
+          <RouterProvider router={router} />
+        </CartContext.Provider>
+      </UserContext.Provider> :
+      <LandingPage />
+  )
+    ;
 }
 
 export default App;
