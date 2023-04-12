@@ -19,10 +19,14 @@ export default function SupportChat() {
             .catch(e => console.log('Get or create user error', e))
     }
 
-    function getOrCreateChat(user) {
-        axios.put(
+    function createChat(user) {
+        axios.post(
             'https://api.chatengine.io/chats/',
-            { usernames: [user.email, user.displayName], is_direct_chat: true },
+            {
+                usernames: [user.displayName, 'Adam La Morre'],
+                is_direct_chat: true,
+                title: "New Chat"
+            },
             {
                 headers: {
                     "Project-ID": process.env.REACT_APP_CE_PROJECT_ID,
@@ -31,17 +35,16 @@ export default function SupportChat() {
                 }
             }
         )
-            // .then(r => SetChatSession(r.data))
-            .then(r => console.log(r.data))
+            .then(r => SetChatSession(r.data))
+            // .then(r => console.log(r.data))
             .catch(e => console.log('Get or create chat error', e))
     }
 
     function handleSubmit(user) {
-        console.log('Creating Chat Session')
         getOrCreateUser(user)
-        getOrCreateChat(user)
+        createChat(user)
     }
-
+    console.log(chatSession)
     const handleToggleChat = () => {
         setIsChatOpen(!isChatOpen);
     };
