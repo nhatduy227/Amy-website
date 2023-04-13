@@ -21,6 +21,7 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import UserInfo from "./Pages/UserInfo/UserInfo";
 import SupportChat from "./Components/SupportChat/SupportChat";
 import NotFound from "./Pages/NotFound/NotFound";
+import AdminChat from "./Pages/Admin/AdminChat";
 
 function Layout() {
   return (
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
       {
         path: '/user-info',
         element: <UserInfo />,
+      },
+      {
+        path: '/chat',
+        element: <AdminChat />,
       },
     ],
   },

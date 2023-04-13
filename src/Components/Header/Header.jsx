@@ -43,10 +43,12 @@ export default function Header() {
             <div className="h-6 ml-1" >{user.displayName}</div>
           </Link>
           <CheckoutCart />
-          <Link className="flex no-underline text-base" to="/">
-            <ChatBubbleOutlineOutlinedIcon />
-            <div className="h-6 ml-1">{t('header.message')}</div>
-          </Link>
+          {user.role === "admin" ?
+            <Link className="flex no-underline text-base" to="/chat">
+              <ChatBubbleOutlineOutlinedIcon />
+              <div className="h-6 ml-1">{t('header.message')}</div>
+            </Link>
+            : null}
           <Link className="flex no-underline text-base" to="/">
             <button className="h-6 ml-1" onClick={logOut}>{t('header.login_out')}</button>
           </Link>

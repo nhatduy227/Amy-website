@@ -1,53 +1,20 @@
 import React, { useContext, useState } from 'react';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import { ChatEngineWrapper, Socket, ChatFeed } from 'react-chat-engine'
-import axios from 'axios'
 import { UserContext } from '../../App';
 
 export default function SupportChat() {
     const [isChatOpen, setIsChatOpen] = useState(false);
-    const [chatSession, SetChatSession] = useState({})
     const user = useContext(UserContext)
 
-    function getOrCreateUser(user) {
-        axios.put(
-            'https://api.chatengine.io/users/',
-            { username: user.displayName, email: user.email, secret: user.email },
-            { headers: { "Private-Key": process.env.REACT_APP_CE_PRIVATE_KEY } }
-        )
-            .then(r => console.log(r.data))
-            .catch(e => console.log('Get or create user error', e))
-    }
-
-    function createChat(user) {
-        axios.post(
-            'https://api.chatengine.io/chats/',
-            {
-                usernames: [user.displayName, 'Adam La Morre'],
-                is_direct_chat: true,
-                title: "New Chat"
-            },
-            {
-                headers: {
-                    "Project-ID": process.env.REACT_APP_CE_PROJECT_ID,
-                    "User-Name": user.displayName,
-                    "User-Secret": user.email,
-                }
-            }
-        )
-            .then(r => SetChatSession(r.data))
-            // .then(r => console.log(r.data))
-            .catch(e => console.log('Get or create chat error', e))
-    }
-
     function handleSubmit(user) {
-        getOrCreateUser(user)
-        createChat(user)
+        console.log(user)
     }
-    console.log(chatSession)
+
     const handleToggleChat = () => {
         setIsChatOpen(!isChatOpen);
     };
+    if (user.role === "admin")
+        return null
     return (
         <div className="fixed bottom-4 right-4">
             {isChatOpen ? (
@@ -67,26 +34,17 @@ export default function SupportChat() {
                             </svg>
                         </button>
                     </div>
-                    <ChatEngineWrapper>
-                        <Socket
-                            projectID={process.env.REACT_APP_CE_PROJECT_ID}
-                            userName={user.displayName}
-                            userSecret={user.email}
-                        />
-                        {/* {chatSession.id && <ChatFeed activeChat={chatSession.id} />} */}
-                        <ChatFeed activeChat={chatSession.id} />
-                    </ChatEngineWrapper>
                 </div>
-            ) : (
-                <button
-                    onClick={() => {
-                        handleToggleChat();
-                        handleSubmit(user)
-                    }}
-                    type="button" class="fixed bottom-4 right-4 select-none bg-primary-default border-2 text-white text-xl font-bold p-2 m-2 rounded-full shadow h-20 w-20 focus:outline-none focus:shadow-outline">
-                    <ChatBubbleOutlineOutlinedIcon />
-                </button>
-            )}
+            ) : <button
+                onClick={() => {
+                    handleToggleChat();
+                    handleSubmit(user)
+                }}
+                type="button" class="fixed bottom-4 right-4 select-none bg-primary-default border-2 text-white text-xl font-bold p-2 m-2 rounded-full shadow h-20 w-20 focus:outline-none focus:shadow-outline">
+                <ChatBubbleOutlineOutlinedIcon />
+            </button>
+            }
+
         </div>
     );
 };
