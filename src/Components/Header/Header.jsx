@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { logOut } from '../../Firebase';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
-import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
+// import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import CheckoutCart from '../../Pages/CheckoutCart/CheckoutCart';
 import { useTranslation } from 'react-i18next';
 import { UserContext } from '../../App';
@@ -43,10 +43,12 @@ export default function Header() {
             <div className="h-6 ml-1" >{user.displayName}</div>
           </Link>
           <CheckoutCart />
-          <Link className="flex no-underline text-base" to="/">
-            <ChatBubbleOutlineOutlinedIcon />
-            <div className="h-6 ml-1">{t('header.message')}</div>
-          </Link>
+          {/* {user.role === "admin" ?
+            <Link className="flex no-underline text-base" to="/chat">
+              <ChatBubbleOutlineOutlinedIcon />
+              <div className="h-6 ml-1">{t('header.message')}</div>
+            </Link>
+            : null} */}
           <Link className="flex no-underline text-base" to="/">
             <button className="h-6 ml-1" onClick={logOut}>{t('header.login_out')}</button>
           </Link>
