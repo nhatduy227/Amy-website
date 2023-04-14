@@ -5,7 +5,7 @@ import { UserContext } from '../../App';
 export default function SupportChat() {
     const user = useContext(UserContext)
     const handleRedirect = () => {
-        const url = 'https://www.facebook.com/amyfood210';
+        const url = 'https://www.facebook.com/tranchautuoimood/';
         window.open(url, '_blank');
     };
     if (user.role === "admin")
