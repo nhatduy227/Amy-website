@@ -1,3 +1,4 @@
+
 const CartItem = ({ item, addToCart, removeFromCart }) => (
     <>
         <li class="flex py-6">
@@ -20,7 +21,6 @@ const CartItem = ({ item, addToCart, removeFromCart }) => (
                         </div>
                         <p class="ml-4">{(item.amount * item.productPrice)} VND</p>
                     </div>
-                    <p class="mt-1 text-sm text-gray-500">Quantity: {item.amount}</p>
                 </div>
             </div>
         </li>

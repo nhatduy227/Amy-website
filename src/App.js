@@ -162,7 +162,7 @@ function App() {
   return (
     // user ?
     <UserContext.Provider value={user}>
-      <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
+      <CartContext.Provider value={{ cartItems, setCartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
         <RouterProvider router={router} />
       </CartContext.Provider>
     </UserContext.Provider>
