@@ -72,8 +72,6 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                         removeFromCart={removeFromCart}
                     />
                 ))}
-            </div>
-            <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
                 <div class="flex justify-between text-base font-medium text-gray-900">
                     <p>{t(`cart.total`)}</p>
                     <p>{calculateTotal(cartItems)} VND</p>
