@@ -35,7 +35,7 @@ export default function UserInfo() {
                 <div class="p-2">
                     <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{user.displayName}</h3>
                     <div class="text-center text-gray-400 text-xs font-semibold">
-                        <p>User Role: {user.role === "admin" ? <strong>Admin</strong> : <strong>Customer</strong>}</p>
+                        <p>User Role:  <strong>Admin</strong></p>
                     </div>
                     <table class="text-xs my-3">
                         <tbody><tr>

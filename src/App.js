@@ -17,7 +17,7 @@ import './App.css';
 import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
-import LandingPage from './Pages/LandingPage/LandingPage';
+// import LandingPage from './Pages/LandingPage/LandingPage';
 import UserInfo from "./Pages/UserInfo/UserInfo";
 import SupportChat from "./Components/SupportChat/SupportChat";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -110,8 +110,6 @@ function App() {
   const [user, setUser] = useState(null)
   const [cartItems, setCartItems] = useState([]);
 
-
-
   const handleAddToCart = (clickedItem) => {
     setCartItems((prev) => {
       const isItemInCart = prev.find((item) => item.productId === clickedItem.productId);
@@ -158,13 +156,13 @@ function App() {
   }, [])
 
   return (
-    user ?
-      <UserContext.Provider value={user}>
-        <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
-          <RouterProvider router={router} />
-        </CartContext.Provider>
-      </UserContext.Provider> :
-      <LandingPage />
+    // user ?
+    <UserContext.Provider value={user}>
+      <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
+        <RouterProvider router={router} />
+      </CartContext.Provider>
+    </UserContext.Provider>
+    // : <LandingPage />
   )
     ;
 }

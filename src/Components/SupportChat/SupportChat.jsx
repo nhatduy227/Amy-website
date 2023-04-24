@@ -8,7 +8,7 @@ export default function SupportChat() {
         const url = 'https://www.facebook.com/tranchautuoimood/';
         window.open(url, '_blank');
     };
-    if (user.role === "admin")
+    if (user)
         return null
     return (
         <div className="fixed bottom-4 right-4">
