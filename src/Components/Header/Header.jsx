@@ -2,9 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { signInWithGoogle, logOut } from '../../Firebase';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import CheckoutCart from '../../Pages/CheckoutCart/CheckoutCart';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Badge } from "@mui/material";
 import { useTranslation } from 'react-i18next';
 import { UserContext } from '../../App';
+import { CartContext } from '../../App';
 
 import vnFlag from '../../Assets/vietnam-flag.png';
 import ukFlag from '../../Assets/united-kingdom.png';
@@ -15,6 +17,8 @@ export default function Header() {
   const [defaultSelectLanguage, setDefaultSelectLanguage] = useState('vi');
   const { t, i18n } = useTranslation();
   const user = useContext(UserContext)
+  const { cartItems, getTotalItems } = useContext(CartContext);
+
   const onChangeVNLanguage = () => {
     localStorage.setItem('locale', 'vi');
     i18n.changeLanguage('vi');
@@ -39,7 +43,7 @@ export default function Header() {
           {user ?
             (
               <>
-                <Link className="flex no-underline text-base" to="/user-info">
+                <Link className="flex no-underline text-base" to="/">
                   <Person2OutlinedIcon />
                   <div className="h-6 ml-1" >{user.displayName}</div>
                 </Link>
@@ -52,7 +56,13 @@ export default function Header() {
             :
             (
               <>
-                {user && user.role === "admin" ? null : <CheckoutCart />}
+                {user && user.role === "admin" ? null :
+                  <Link className="flex no-underline text-base" to="/cart">
+                    <Badge badgeContent={getTotalItems(cartItems)} color="error" />
+                    <ShoppingCartOutlinedIcon />
+                    <div className="h-6 ml-1">{t('header.cart')}</div>
+                  </Link>
+                }
                 <Link className="flex no-underline text-base" to="/">
                   <button
                     onClick={signInWithGoogle}

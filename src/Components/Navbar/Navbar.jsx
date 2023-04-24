@@ -74,6 +74,14 @@ const Navbar = () => {
                   {t(`navbar.post recipe`)}
                 </Link>
               </li>
+              <li>
+                <Link
+                  className="py-2 px-4 w-full inline-block no-underline uppercase hover:bg-primary-default text-white"
+                  to={'/manage-order'}
+                >
+                  {t(`navbar.manage order`)}
+                </Link>
+              </li>
             </ul>
           </li> : null
         }

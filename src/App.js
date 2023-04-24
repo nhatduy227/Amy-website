@@ -7,6 +7,7 @@ import Header from './Components/Header/Header';
 import Home from './Pages/Home/Home';
 import PostProduct from "./Pages/Admin/PostProduct";
 import PostRecipe from "./Pages/Admin/PostRecipe";
+import ManageOrder from "./Pages/Admin/ManageOrder";
 import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About/About';
 import DriedBoba from './Pages/Products/DriedBoba';
@@ -17,8 +18,7 @@ import './App.css';
 import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
-// import LandingPage from './Pages/LandingPage/LandingPage';
-import UserInfo from "./Pages/UserInfo/UserInfo";
+import CheckoutCart from './Pages/CheckoutCart/CheckoutCart';
 import SupportChat from "./Components/SupportChat/SupportChat";
 import NotFound from "./Pages/NotFound/NotFound";
 
@@ -94,8 +94,12 @@ const router = createBrowserRouter([
         element: <PostRecipe />,
       },
       {
-        path: '/user-info',
-        element: <UserInfo />,
+        path: '/manage-order',
+        element: <ManageOrder />,
+      },
+      {
+        path: '/cart',
+        element: <CheckoutCart />,
       },
     ],
   },
