@@ -33,6 +33,18 @@
     "recipe file": "Công thức nấu ăn",
     "submit": "Đăng"
   },
+  "cart": {
+    "user info": "Thông tin khách hàng",
+    "username": "Tên khách hàng",
+    "phone": "Số điện thoại",
+    "address": "Địa chỉ",
+    "order confirmation": "Xác nhận đơn hàng",
+    "total": "Tổng số tiền",
+    "note": "Ghi chú cho đơn hàng",
+    "no item": "Đơn hàng trống",
+    "payment instruction": "Hướng dẫn chuyển khoảng ngân hàng",
+    "buy": "Thanh toán"
+  },
   "home_page": {
     "no_preservatives": "Không chất bảo quản",
     "pre_made_fresh_tapioca_pearls": "Trân châu tươi",

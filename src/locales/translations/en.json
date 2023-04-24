@@ -33,6 +33,18 @@
     "recipe file": "Recipe File",
     "submit": "Submit"
   },
+  "cart": {
+    "user info": "User Info",
+    "username": "User Name",
+    "phone": "Phone Number ",
+    "address": "Address",
+    "order confirmation": "Order Confirmation",
+    "total": "Total",
+    "note": "Order Note",
+    "no item": "No Item in Cart",
+    "payment instruction": "Payment Instruction",
+    "buy": "Buy Now"
+  },
   "home_page": {
     "no_preservatives": "No preservatives",
     "pre_made_fresh_tapioca_pearls": "Pre-made fresh tapioca pearls",

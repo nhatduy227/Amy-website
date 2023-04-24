@@ -1,14 +1,16 @@
 import CartItem from "./CartItem";
 import { CartContext } from "../../App";
 import { useContext, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../Firebase";
 
 const Cart = ({ cartItems, addToCart, removeFromCart }) => {
+    const { t } = useTranslation();
     const initialState = {
         username: "",
-        email: "",
+        phone: "",
         address: ""
     }
     const { setCartItems } = useContext(CartContext)
@@ -28,9 +30,9 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
     return (
         <div className="lg:px-36 pt-5 relative overflow-hidden">
             <div>
-                <h2 class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">Thông tin khách hàng</h2>
+                <h2 class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">{t(`cart.user info`)}</h2>
                 <div className="mb-4">
-                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name</label>
+                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">{t(`cart.username`)}</label>
                     <input
                         type="text"
                         id="name"
@@ -40,17 +42,17 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</label>
+                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">{t(`cart.phone`)}</label>
                     <input
                         type="email"
                         id="email"
                         className="w-full border-gray-300 rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-                        placeholder="john.doe@example.com"
-                        value={userInfo.email}
+                        placeholder="xxx-xxx-xxxx"
+                        value={userInfo.phone}
                     />
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="address" className="block text-gray-700 font-medium mb-2">Address</label>
+                    <label htmlFor="address" className="block text-gray-700 font-medium mb-2">{t(`cart.address`)}</label>
                     <textarea
                         id="address"
                         className="w-full border-gray-300 rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
@@ -60,8 +62,8 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                 </div>
             </div>
             <div>
-                <h2 class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">Xác nhận đơn hàng</h2>
-                {cartItems.length === 0 ? <p class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">No item in cart</p> : null}
+                <h2 class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">{t(`cart.order confirmation`)}</h2>
+                {cartItems.length === 0 ? <p class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">{t(`cart.no item`)}</p> : null}
                 {cartItems.map((item) => (
                     <CartItem
                         key={item.productId}
@@ -73,12 +75,12 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
             </div>
             <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
                 <div class="flex justify-between text-base font-medium text-gray-900">
-                    <p>Total:</p>
+                    <p>{t(`cart.total`)}</p>
                     <p>{calculateTotal(cartItems)} VND</p>
                 </div>
                 <div class="mt-6">
                     <button onClick={handleOrderCreation}>
-                        Buy Now
+                        {t(`cart.buy`)}
                     </button>
                 </div>
             </div>
