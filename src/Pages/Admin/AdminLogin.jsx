@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import logo from '../../Assets/logo.png';
 import banner from '../../Assets/home-banner.png';
 
-export default function LandingPage() {
+export default function AdminLogin() {
     const { t } = useTranslation();
     return (
         <>

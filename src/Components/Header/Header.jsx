@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { signInWithGoogle, logOut } from '../../Firebase';
+import { logOut } from '../../Firebase';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Badge } from "@mui/material";
@@ -47,30 +47,21 @@ export default function Header() {
                   <Person2OutlinedIcon />
                   <div className="h-6 ml-1" >{user.displayName}</div>
                 </Link>
-
-                <Link className="flex no-underline text-base" to="/">
+                {user.role === "admin" ? <Link className="flex no-underline text-base" to="/">
                   <button className="h-6 ml-1" onClick={logOut}>{t('header.login_out')}</button>
-                </Link>
+                </Link> : null}
               </>
+
             )
             :
             (
-              <>
-                {user && user.role === "admin" ? null :
-                  <Link className="flex no-underline text-base" to="/cart">
-                    <Badge badgeContent={getTotalItems(cartItems)} color="error" />
-                    <ShoppingCartOutlinedIcon />
-                    <div className="h-6 ml-1">{t('header.cart')}</div>
-                  </Link>
-                }
-                <Link className="flex no-underline text-base" to="/">
-                  <button
-                    onClick={signInWithGoogle}
-                    className="h-6 ml-1">
-                    {t('header.login_in')}
-                  </button>
-                </Link>
-              </>
+
+
+              <Link className="flex no-underline text-base" to="/cart">
+                <Badge badgeContent={getTotalItems(cartItems)} color="error" />
+                <ShoppingCartOutlinedIcon />
+                <div className="h-6 ml-1">{t('header.cart')}</div>
+              </Link>
             )
           }
 

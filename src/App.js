@@ -14,13 +14,14 @@ import DriedBoba from './Pages/Products/DriedBoba';
 import FreshBoba from './Pages/Products/FreshBoba';
 import PowderSpices from './Pages/Products/PowderSpices';
 import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
-import './App.css';
+import AdminLogin from "./Pages/Admin/AdminLogin";
 import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import CheckoutCart from './Pages/CheckoutCart/CheckoutCart';
 import SupportChat from "./Components/SupportChat/SupportChat";
 import NotFound from "./Pages/NotFound/NotFound";
+import './App.css';
 
 function Layout() {
   return (
@@ -41,6 +42,11 @@ function Layout() {
 }
 
 const router = createBrowserRouter([
+  {
+    path: '/admin',
+    element: <AdminLogin />
+  },
+
   {
     path: '/',
     element: <Layout />,
@@ -160,13 +166,11 @@ function App() {
   }, [])
 
   return (
-    // user ?
     <UserContext.Provider value={user}>
       <CartContext.Provider value={{ cartItems, setCartItems, handleAddToCart, handleRemoveFromCart, getTotalItems }}>
         <RouterProvider router={router} />
       </CartContext.Provider>
     </UserContext.Provider>
-    // : <LandingPage />
   )
     ;
 }
