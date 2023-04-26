@@ -4,7 +4,8 @@
     "login_out": "Đăng xuất",
     "cart": "Giỏ hàng",
     "message": "Tin nhắn",
-    "admin": "Quản Lý"
+    "admin": "Quản Lý",
+    "go to home": "Về Trang Chủ"
   },
   "navbar": {
     "home": "Trang chủ",
@@ -18,6 +19,7 @@
     "powder spices": "Bột gia vị",
     "where to buy": "Nơi mua hàng",
     "post product": " Đăng sản phẩm",
+    "manage product": "Quản lý sản phẩm",
     "post recipe": " Đăng công thức",
     "manage order": " Quản lý đơn hàng"
   },

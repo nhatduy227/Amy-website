@@ -4,7 +4,8 @@
     "login_out": "Log Out",
     "cart": "Cart",
     "message": "Message",
-    "admin": "Admin"
+    "admin": "Admin",
+    "go to home": "Go to homepage"
   },
   "navbar": {
     "home": "Home",
@@ -17,7 +18,8 @@
     "fresh boba": "Fresh Boba",
     "dried boba": "Dried Boba",
     "powder spices": "Powder Spices",
-    "post product": " Post Products",
+    "post product": "Post Products",
+    "manage product": "Manage Products",
     "post recipe": " Post Recipes",
     "manage order": " Manage Orders"
   },

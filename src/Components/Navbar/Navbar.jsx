@@ -69,6 +69,14 @@ const Navbar = () => {
               <li>
                 <Link
                   className="py-2 px-4 w-full inline-block no-underline uppercase hover:bg-primary-default text-white"
+                  to={'/manage-product'}
+                >
+                  {t(`navbar.manage product`)}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="py-2 px-4 w-full inline-block no-underline uppercase hover:bg-primary-default text-white"
                   to={'/post-recipe'}
                 >
                   {t(`navbar.post recipe`)}

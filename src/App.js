@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Pages/Home/Home';
 import PostProduct from "./Pages/Admin/PostProduct";
+import ManageProduct from "./Pages/Admin/ManageProduct";
 import PostRecipe from "./Pages/Admin/PostRecipe";
 import ManageOrder from "./Pages/Admin/ManageOrder";
 import Navbar from './Components/Navbar/Navbar';
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
         element: <PostProduct />,
       },
       {
+        path: '/manage-product',
+        element: <ManageProduct />,
+      },
+      {
         path: '/post-recipe',
         element: <PostRecipe />,
       },
@@ -110,8 +115,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
-
 
 export const UserContext = createContext({ user: null })
 export const CartContext = createContext(null)

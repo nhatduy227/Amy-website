@@ -20,13 +20,14 @@ export default function ManageOrder() {
         fetchData();
     }, [order]);
     const OrderCard = ({ order }) => (
-        <div class="ml-4 flex flex-1 flex-col">
-            <div class="flex flex-row">
-                <div class="p-8">
-                    <div class="uppercase tracking-wide text-sm text-primary-default font-semibold">Customer Name</div>
-                    <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{order.userInfo.username}</a>
-                    <p class="mt-2 text-gray-500">Order Status: {order.status}</p>
-                    <div class="mt-4">
+        <div class="p-9">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex justify-between">
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-primary-default font-semibold">Customer Name: {order.userInfo.username}</div>
+                        <p class="mt-2 text-gray-500">Order Status: {order.status}</p>
+                    </div>
+                    <div class="p-8">
                         <span class="text-gray-500 font-bold text-xl">{order.price} VND</span>
                         {order.status === "completed" ? <button
                             onClick={() => deleteOrder(order.orderId)}
@@ -46,15 +47,13 @@ export default function ManageOrder() {
     );
     const updatedOrder = order.filter((obj) => obj.status === "pending")
     return (
-        <div class="flex items-center justify-center">
 
-            <div class="max-w-xs">
-                <h1> All Order </h1>
-                <hr />
-                {updatedOrder.map((order) => (
-                    <OrderCard key={order.orderId} order={order} />
-                ))}
-            </div>
+        <div className="bg-background-main overflow-hidden pb-28">
+            <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">All Orders</h1>
+            {updatedOrder.map((order) => (
+                <OrderCard key={order.orderId} order={order} />
+            ))}
         </div>
+
     )
 }
