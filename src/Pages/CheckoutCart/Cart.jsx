@@ -2,7 +2,6 @@ import CartItem from "./CartItem";
 import { CartContext } from "../../App";
 import { useContext, useState } from "react";
 import { useTranslation } from 'react-i18next';
-import { v4 as uuidv4 } from 'uuid';
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../Firebase";
 
@@ -36,8 +35,7 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
 
     const handleOrderCreation = async () => {
         const collectionRef = collection(db, "orders")
-        const id = uuidv4();
-        const payload = { orderId: id, userInfo: userInfo, cartItems: cartItems, price: calculateTotal(cartItems), status: "pending" }
+        const payload = { userInfo: userInfo, cartItems: cartItems, price: calculateTotal(cartItems), status: "pending" }
         await addDoc(collectionRef, payload).then(() => alert("Order Submitted"))
         setCartItems([])
     }

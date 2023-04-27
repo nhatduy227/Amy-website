@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from '../../Firebase';
 
 export default function ManageOrder() {
@@ -7,14 +7,34 @@ export default function ManageOrder() {
     const fetchData = async () => {
         const collectionRef = collection(db, 'orders');
         const querySnapshot = await getDocs(collectionRef);
-        const documents = querySnapshot.docs.map(doc => doc.data());
+        const documents = querySnapshot.docs.map((doc) => ({ orderId: doc.id, ...doc.data() }))
         setOrder(documents);
     };
     const markOrderAsCompleted = (orderId) => {
-        console.log(orderId)
+        const docRef = doc(db, "orders", orderId);
+        const data = {
+            status: "completed"
+        };
+
+        updateDoc(docRef, data)
+            .then(docRef => {
+                console.log("A New Document Field has been added to an existing document");
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
     }
     const deleteOrder = (orderId) => {
-        console.log(orderId)
+        const docRef = doc(db, "orders", orderId);
+
+        deleteDoc(docRef)
+            .then(docRef => {
+                console.log("Document Deleted");
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     useEffect(() => {
         fetchData();
@@ -45,12 +65,11 @@ export default function ManageOrder() {
             </div>
         </div>
     );
-    const updatedOrder = order.filter((obj) => obj.status === "pending")
     return (
 
         <div className="bg-background-main overflow-hidden pb-28">
             <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">All Orders</h1>
-            {updatedOrder.map((order) => (
+            {order.map((order) => (
                 <OrderCard key={order.orderId} order={order} />
             ))}
         </div>
