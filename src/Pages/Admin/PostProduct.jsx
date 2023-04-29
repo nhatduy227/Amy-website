@@ -8,7 +8,6 @@ import {
 import { useTranslation } from 'react-i18next';
 import { addDoc, collection } from "firebase/firestore";
 import { storage } from "../../Firebase";
-import { v4 as uuidv4 } from 'uuid';
 
 export default function PostProduct() {
     const initialState = {
@@ -56,8 +55,7 @@ export default function PostProduct() {
     };
     const handlePostProduct = async () => {
         const collectionRef = collection(db, data.type)
-        const id = uuidv4();
-        const payload = { productId: id, productType: data.type, productName: data.name, productPrice: data.price, productFile: data.url }
+        const payload = { productType: data.type, productName: data.name, productPrice: data.price, productFile: data.url }
         setSelectedValue("freshBoba")
         setData(initialState)
         setDisable(true)

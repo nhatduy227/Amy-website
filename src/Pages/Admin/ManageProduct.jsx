@@ -12,7 +12,7 @@ export default function ManageProduct() {
   const fetchData = async (productType) => {
     const collectionRef = collection(db, productType);
     const querySnapshot = await getDocs(collectionRef);
-    const documents = querySnapshot.docs.map(doc => doc.data());
+    const documents = querySnapshot.docs.map((doc) => ({ productId: doc.id, ...doc.data() }))
     if (productType === 'freshBoba')
       setFreshBoba(documents);
     if (productType === 'driedBoba')
