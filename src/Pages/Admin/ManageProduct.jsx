@@ -21,6 +21,7 @@ export default function ManageProduct() {
       setPowder(documents);
   };
   useEffect(() => {
+    console.log("product fetched")
     fetchData('freshBoba');
     fetchData('driedBoba');
     fetchData('powder');

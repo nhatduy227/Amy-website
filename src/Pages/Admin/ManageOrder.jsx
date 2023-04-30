@@ -27,7 +27,6 @@ export default function ManageOrder() {
     }
     const deleteOrder = (orderId) => {
         const docRef = doc(db, "orders", orderId);
-
         deleteDoc(docRef)
             .then(docRef => {
                 console.log("Document Deleted");
@@ -38,7 +37,7 @@ export default function ManageOrder() {
     }
     useEffect(() => {
         fetchData();
-    }, [order]);
+    }, []);
     const OrderCard = ({ order }) => (
         <div class="p-9">
             <div class="bg-white rounded-lg shadow-md p-6">
