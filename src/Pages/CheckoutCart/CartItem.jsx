@@ -1,11 +1,11 @@
 
 const CartItem = ({ item, addToCart, removeFromCart }) => (
     <>
-        <li class="flex py-6">
+        <li class="flex py-6 w-[660px]">
             <div class="ml-4 flex flex-1 flex-col">
                 <div>
-                    <div class="flex justify-between text-base font-medium text-gray-900">
-                        <h3>{item.productName}</h3>
+                    <div class="flex justify-between text-base font-medium ">
+                        <h3 className="text-primary-default">{item.productName}</h3>
                         <div class="h-10 0">
                             <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
                                 <button onClick={() => removeFromCart(item.productId)} class=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
@@ -19,7 +19,7 @@ const CartItem = ({ item, addToCart, removeFromCart }) => (
                                 </button>
                             </div>
                         </div>
-                        <p class="ml-4">{(item.amount * item.productPrice)} VND</p>
+                        <p className="text-primary-default">{(item.amount * item.productPrice)} VND</p>
                     </div>
                 </div>
             </div>
