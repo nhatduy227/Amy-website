@@ -5,6 +5,12 @@ import { useTranslation } from 'react-i18next';
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../Firebase";
 
+import productBanner from '../../Assets/product-banner.png';
+import la1 from '../../Assets/la1.png';
+import la2 from '../../Assets/la2.png';
+import bubbleDeco from '../../Assets/bubble-deco.png';
+
+
 const Cart = ({ cartItems, addToCart, removeFromCart }) => {
     const { t } = useTranslation();
     const initialState = {
@@ -44,59 +50,88 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
         items.reduce((acc, item) => acc + item.amount * item.productPrice, 0);
 
     return (
-        <div className="lg:px-36 pt-5 relative overflow-hidden">
-            <div>
-                <h2 class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">{t(`cart.user info`)}</h2>
-                <div className="mb-4">
-                    <label htmlFor="name" className="block text-gray-700 font-medium mb-2">{t(`cart.username`)}</label>
-                    <input
-                        type="text"
-                        name="username"
-                        placeholder={t(`cart.username`)}
-                        value={userInfo.username}
-                        onChange={handleInputChange}
-                    />
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="email" className="block text-gray-700 font-medium mb-2">{t(`cart.phone`)}</label>
-                    <input
-                        type="phone"
-                        name="phone"
-                        placeholder="xxx-xxx-xxxx"
-                        value={userInfo.phone}
-                        onChange={formatPhoneNumber}
-                    />
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="address" className="block text-gray-700 font-medium mb-2">{t(`cart.address`)}</label>
-                    <input
-                        name="address"
-                        placeholder={t(`cart.address`)}
-                        value={userInfo.address}
-                        onChange={handleInputChange}
-                    />
-                </div>
-            </div>
+        <div className="bg-background-main overflow-hidden pb-28">
+            <div className="relative">
+                {/* Decoration */}
+                <img src={la1} alt="" className="hidden lg:block w-[250px] top-[600px] -left-[50px] absolute" />
+                <img
+                    src={bubbleDeco}
+                    alt="bubbleDeco"
+                    className="hidden lg:block w-[400px] top-[800px] -left-[100px] absolute"
+                />
+                <img src={la2} alt="" className="hidden lg:block w-[250px] top-[800px] -right-[50px] absolute" />
+                <img src={la1} alt="" className="hidden lg:block w-[250px] top-[1300px] -left-[50px] absolute" />
+                <img
+                    src={bubbleDeco}
+                    alt="bubbleDeco"
+                    className="hidden lg:block w-[400px] top-[1100px] -right-[120px] absolute"
+                />
+                <img src={la2} alt="" className="hidden lg:block w-[250px] top-[1500px] -right-[50px] absolute" />
 
-            <div>
-                <h2 class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">{t(`cart.order confirmation`)}</h2>
-                {cartItems.length === 0 ? <p class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">{t(`cart.no item`)}</p> : null}
-                {cartItems.map((item) => (
-                    <CartItem
-                        key={item.productId}
-                        item={item}
-                        addToCart={addToCart}
-                        removeFromCart={removeFromCart}
-                    />
-                ))}
-                <div class="flex justify-between text-base font-medium text-gray-900">
-                    <p>{t(`cart.total`)}</p>
-                    <p>{calculateTotal(cartItems)} VND</p>
+                {/* Banner */}
+                <img className="w-full lg:h-[610px]" src={productBanner} alt="product-banner" />
+
+                <h2 class="text-primary-default text-center text-[24px] font-semibold mt-5">{t(`cart.user info`)}</h2>
+                <div className="flex flex-col justify-left items-center">
+                    <div className="flex justify-center w-[660px] h-[2px] bg-primary-default my-6" />
+                    <div className="mb-4">
+                        <label htmlFor="name" className="block text-primary-default font-medium mb-2">{t(`cart.username`)}</label>
+                        <input
+                            className="w-[660px]"
+                            type="text"
+                            name="username"
+                            placeholder={t(`cart.username`)}
+                            value={userInfo.username}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="email" className="block text-primary-default font-medium mb-2">{t(`cart.phone`)}</label>
+                        <input
+                            className="w-[660px]"
+                            type="phone"
+                            name="phone"
+                            placeholder="xxx-xxx-xxxx"
+                            value={userInfo.phone}
+                            onChange={formatPhoneNumber}
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="address" className="block text-primary-default font-medium mb-2">{t(`cart.address`)}</label>
+                        <input
+                            className="w-[660px]"
+                            name="address"
+                            placeholder={t(`cart.address`)}
+                            value={userInfo.address}
+                            onChange={handleInputChange}
+                        />
+                    </div>
                 </div>
-                <h2 class="text-lg font-medium text-gray-900 text-center" id="slide-over-title">{t(`cart.payment instruction`)}</h2>
-                <div class="bg-gray-200 p-4 rounded">
-                    <p class="text-gray-700">Thông tin tài khoản cho khách mua lẻ khi đặt hàng: BÙI THỊ ÁNH - Số tài khoản: 060199027754 - Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank) - PGD An Phú – TP HCM</p>
+                <h2 class="text-primary-default text-center text-[24px] font-semibold mt-5">{t(`cart.order confirmation`)}</h2>
+                <div className="flex flex-col justify-center items-center">
+                    <div className="flex justify-center w-[660px] h-[2px] bg-primary-default my-6" />
+                    {cartItems.length === 0 ? <p class="text-primary-default font-medium text-center" id="slide-over-title">{t(`cart.no item`)}</p> : null}
+                    {cartItems.map((item) => (
+                        <CartItem
+                            key={item.productId}
+                            item={item}
+                            addToCart={addToCart}
+                            removeFromCart={removeFromCart}
+                        />
+                    ))}
                 </div>
+
+                <div class="text-primary-default font-medium text-center">
+                    <p>{t(`cart.total`)}: {calculateTotal(cartItems)} VND</p>
+                </div>
+                <h2 class="text-primary-default text-center text-[24px] font-semibold mt-5">{t(`cart.payment instruction`)}</h2>
+                <div className="flex flex-col justify-center items-center">
+                    <div className="flex justify-center w-[660px] h-[2px] bg-primary-default my-6" />
+                    <div class="bg-gray-200 p-4 rounded w-[660px]">
+                        <p class="text-gray-700">Thông tin tài khoản cho khách mua lẻ khi đặt hàng: BÙI THỊ ÁNH - Số tài khoản: 060199027754 - Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank) - PGD An Phú – TP HCM</p>
+                    </div>
+                </div>
+
                 <div class="mt-6">
                     <button
                         class="bg-blue-500 text-white py-2 px-4 mx-auto block"
@@ -106,6 +141,7 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                 </div>
             </div>
         </div>
+
     );
 };
 
