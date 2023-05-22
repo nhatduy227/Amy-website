@@ -16,7 +16,8 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
     const initialState = {
         username: "",
         phone: "",
-        address: ""
+        address: "",
+        email: ""
     }
     const { setCartItems } = useContext(CartContext)
     const [userInfo, setUserInfo] = useState(initialState)
@@ -38,12 +39,16 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
             [event.target.name]: event.target.value
         });
     };
+    const goToHomePage = () => {
+        window.location.href = "/";
+    }
 
     const handleOrderCreation = async () => {
         const collectionRef = collection(db, "orders")
         const payload = { userInfo: userInfo, cartItems: cartItems, price: calculateTotal(cartItems), status: "pending" }
         await addDoc(collectionRef, payload).then(() => alert("Order Submitted"))
         setCartItems([])
+        goToHomePage()
     }
 
     const calculateTotal = (items) =>
@@ -106,6 +111,16 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                             onChange={handleInputChange}
                         />
                     </div>
+                    <div className="mb-4">
+                        <label htmlFor="email" className="block text-primary-default font-medium mb-2">{t(`cart.email`)}</label>
+                        <input
+                            className="w-[660px]"
+                            name="email"
+                            placeholder={t(`cart.email`)}
+                            value={userInfo.email}
+                            onChange={handleInputChange}
+                        />
+                    </div>
                 </div>
                 <h2 class="text-primary-default text-center text-[24px] font-semibold mt-5">{t(`cart.order confirmation`)}</h2>
                 <div className="flex flex-col justify-center items-center">
@@ -136,7 +151,8 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                     <button
                         class="bg-blue-500 text-white py-2 px-4 mx-auto block"
                         onClick={handleOrderCreation}>
-                        {t(`cart.buy`)}
+                        <a href="mailto:nomiephan1504@gmail.com?subject='Hello from Abstract!'&body='Just popped in to say hello">{t(`cart.buy`)}</a>
+                        {/* <a href={"mailto:" + userInfo.email + "?subject='Hello from Abstract!'&body='Just popped in to say hello"}>{t(`cart.buy`)}</a> */}
                     </button>
                 </div>
             </div>
