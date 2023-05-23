@@ -1,3 +1,5 @@
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import CartItem from "./CartItem";
 import { CartContext } from "../../App";
 import { useContext, useState } from "react";
@@ -13,6 +15,7 @@ import bubbleDeco from '../../Assets/bubble-deco.png';
 
 const Cart = ({ cartItems, addToCart, removeFromCart }) => {
     const { t } = useTranslation();
+    const form = useRef();
     const initialState = {
         username: "",
         phone: "",
@@ -43,19 +46,31 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
         window.location.href = "/";
     }
 
+    const sendEmail = (e) => {
+        e.preventDefault();
+        handleOrderCreation();
+
+        emailjs.sendForm('service_d1gsomh', 'template_83mczqc', form.current, '1Do_dEWDJTYoZl4Ia')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
+
+
     const handleOrderCreation = async () => {
         const collectionRef = collection(db, "orders")
         const payload = { userInfo: userInfo, cartItems: cartItems, price: calculateTotal(cartItems), status: "pending" }
         await addDoc(collectionRef, payload).then(() => alert("Order Submitted"))
         setCartItems([])
-        goToHomePage()
     }
 
     const calculateTotal = (items) =>
         items.reduce((acc, item) => acc + item.amount * item.productPrice, 0);
 
     return (
-        <div className="bg-background-main overflow-hidden pb-28">
+        <form ref={form} className="bg-background-main overflow-hidden pb-28" onSubmit={sendEmail}>
             <div className="relative">
                 {/* Decoration */}
                 <img src={la1} alt="" className="hidden lg:block w-[250px] top-[600px] -left-[50px] absolute" />
@@ -148,15 +163,10 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                 </div>
 
                 <div class="mt-6">
-                    <button
-                        class="bg-blue-500 text-white py-2 px-4 mx-auto block"
-                        onClick={handleOrderCreation}>
-                        <a href="mailto:nomiephan1504@gmail.com?subject='Hello from Abstract!'&body='Just popped in to say hello">{t(`cart.buy`)}</a>
-                        {/* <a href={"mailto:" + userInfo.email + "?subject='Hello from Abstract!'&body='Just popped in to say hello"}>{t(`cart.buy`)}</a> */}
-                    </button>
+                    <input class="bg-blue-500 text-white py-2 px-4 mx-auto block" type="submit" value={t(`cart.buy`)} />
                 </div>
             </div>
-        </div>
+        </form>
 
     );
 };
