@@ -51,7 +51,6 @@ export default function PostRecipe() {
         setDisable(true)
         await addDoc(collectionRef, payload).then(() => console.log("submitted"))
     }
-    console.log(data)
     return (
         <form class="bg-white rounded px-8 pt-6 pb-8 mb-4">
             <div class="mb-4">

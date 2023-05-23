@@ -126,7 +126,6 @@ function App() {
   const handleAddToCart = (clickedItem) => {
     setCartItems((prev) => {
       const isItemInCart = prev.find((item) => item.productName === clickedItem.productName);
-      console.log(prev)
       if (isItemInCart) {
         return prev.map((item) =>
           item.productId === clickedItem.productId
