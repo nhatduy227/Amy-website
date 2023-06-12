@@ -49,10 +49,15 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
 
     const sendEmail = (e) => {
         e.preventDefault();
+        if (cartItems.length === 0) {
+            alert("Cannot Create Order with an empty cart.")
+            return
+        }
         handleOrderCreation();
         var templateParams = {
             to_email: userInfo.email,
-            to_name: userInfo.username
+            to_name: userInfo.username,
+            message: "All the items in this order: " + cartItems.map(p => p.productName.toString())
         };
 
         emailjs.send('service_d1gsomh', 'template_83mczqc', templateParams, '1Do_dEWDJTYoZl4Ia')
@@ -62,7 +67,6 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                 console.log(error.text);
             });
     };
-
 
     const handleOrderCreation = async () => {
         const collectionRef = collection(db, "orders")
@@ -107,6 +111,7 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                             <div className="mb-4">
                                 <label htmlFor="name" className="block text-primary-default font-medium mb-2">{t(`cart.username`)}</label>
                                 <input
+                                    required
                                     className="w-[660px]"
                                     type="text"
                                     name="username"
@@ -118,6 +123,7 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                             <div className="mb-4">
                                 <label htmlFor="email" className="block text-primary-default font-medium mb-2">{t(`cart.phone`)}</label>
                                 <input
+                                    required
                                     className="w-[660px]"
                                     type="phone"
                                     name="phone"
@@ -129,6 +135,7 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                             <div className="mb-4">
                                 <label htmlFor="address" className="block text-primary-default font-medium mb-2">{t(`cart.address`)}</label>
                                 <input
+                                    required
                                     className="w-[660px]"
                                     name="address"
                                     placeholder={t(`cart.address`)}
@@ -139,6 +146,7 @@ const Cart = ({ cartItems, addToCart, removeFromCart }) => {
                             <div className="mb-4">
                                 <label htmlFor="email" className="block text-primary-default font-medium mb-2">{t(`cart.email`)}</label>
                                 <input
+                                    required
                                     className="w-[660px]"
                                     name="email"
                                     placeholder={t(`cart.email`)}
