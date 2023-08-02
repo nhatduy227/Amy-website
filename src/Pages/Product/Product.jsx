@@ -37,28 +37,28 @@ import tranchauphomai from '../../Assets/phomai.png';
 
 const dummyData = [
   {
-    id: 1,
-    title: 'Trân châu củ năng 350gr',
-    img: tranchaucunang,
-    price: 25000,
+    productId: 1,
+    productName: 'Trân châu củ năng 350gr',
+    productFile: tranchaucunang,
+    productPrice: 25000,
   },
   {
-    id: 2,
-    title: 'Trân châu đường mía 350gr',
-    img: tranchauduongmia,
-    price: 25000,
+    productId: 2,
+    productName: 'Trân châu đường mía 350gr',
+    productFile: tranchauduongmia,
+    productPrice: 25000,
   },
   {
-    id: 3,
-    title: 'Trân châu đường đen 350gr',
-    img: tranchauduongden,
-    price: 25000,
+    productId: 3,
+    productName: 'Trân châu đường đen 350gr',
+    productFile: tranchauduongden,
+    productPrice: 25000,
   },
   {
-    id: 4,
-    title: 'Trân châu phô mai 350gr',
-    img: tranchauphomai,
-    price: 25000,
+    productId: 4,
+    productName: 'Trân châu phô mai 350gr',
+    productFile: tranchauphomai,
+    productPrice: 25000,
   },
 ];
 

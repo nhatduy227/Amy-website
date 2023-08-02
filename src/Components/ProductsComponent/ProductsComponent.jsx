@@ -13,11 +13,11 @@ export default function ProductsComponent({ title, productData, classCustom }) {
               key={product.title}
               className="w-[200px] flex flex-wrap flex-col text-white items-center justify-center gap-4 mx-4"
             >
-              <Link to={'/product/' + product.id}>
-                <img src={product.img} alt="product-img" className={classCustom} />
+              <Link to={'/product/' + product.productId}>
+                <img src={product.productFile} alt="product-img" className={classCustom} />
               </Link>
-              <div className="text-center">{product.title}</div>
-              <div>{product.price} VND</div>
+              <div className="text-center">{product.productName}</div>
+              <div>{product.productPrice} VND</div>
             </div>
           );
         })}
