@@ -20,7 +20,6 @@ import Notice from './Pages/Notice/Notice';
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import CheckoutCart from './Pages/CheckoutCart/CheckoutCart';
-import SupportChat from "./Components/SupportChat/SupportChat";
 import NotFound from "./Pages/NotFound/NotFound";
 import './App.css';
 
@@ -35,7 +34,6 @@ function Layout() {
           <Outlet />
         </div>
       </div>
-      <SupportChat />
       <BeforeFooter />
       <Footer />
     </>
