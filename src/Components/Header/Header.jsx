@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { logOut } from '../../Firebase';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { Badge } from "@mui/material";
 import { useTranslation } from 'react-i18next';
 import { UserContext } from '../../App';
@@ -40,6 +41,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-6 mr-[60px]">
+
           {user ?
             (
               <>
@@ -55,13 +57,17 @@ export default function Header() {
             )
             :
             (
-
-
-              <Link className="flex no-underline text-base" to="/cart">
-                <Badge badgeContent={getTotalItems(cartItems)} color="error" />
-                <ShoppingCartOutlinedIcon />
-                <div className="h-6 ml-1">{t('header.cart')}</div>
-              </Link>
+              <>
+                <Link className="flex no-underline text-base" to="/admin">
+                  <AdminPanelSettingsIcon />
+                  <div className="h-6 ml-1">{t('header.admin')}</div>
+                </Link>
+                <Link className="flex no-underline text-base" to="/cart">
+                  <Badge badgeContent={getTotalItems(cartItems)} color="error" />
+                  <ShoppingCartOutlinedIcon />
+                  <div className="h-6 ml-1">{t('header.cart')}</div>
+                </Link>
+              </>
             )
           }
 

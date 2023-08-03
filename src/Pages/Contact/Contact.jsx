@@ -1,10 +1,10 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 import contactBanner from '../../Assets/event-banner.png';
 
 const Contact = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   return (
     <div className="bg-background-main">
       {/* Banner */}
