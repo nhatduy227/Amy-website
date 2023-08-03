@@ -118,13 +118,17 @@
       "factory_address": "Factory: 143 Vo Van Hat, Long Truong Ward, City. Thu Duc, T. Pho Ho Chi Minh.",
       "email": "Email: info@amyvietnam.com",
       "website": "Website: https://amyvietnam.com/",
-      "hotline": "Hotline: (84.8) 653 653 67"
+      "hotline": "Hotline: (84.8) 653 653 67",
+      "payment policy": "Payment Policy",
+      "ship COD policy": "Ship COD Policy"
     },
     "second_column": {
       "policy": "POLICY",
       "information_and_security_policy": "Information Security Policy",
       "sales_policy": "Sales Policy",
-      "shipping_and_forward_policy": "Shipping & Forward Policy"
+      "shipping_and_forward_policy": "Shipping & Forward Policy",
+      "payment_policy": "Payment Policy",
+      "ship_COD_policy": "Ship COD Policy"
     },
     "third_column": {
       "information": "INFORMATION",

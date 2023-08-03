@@ -124,7 +124,9 @@
       "policy": "CHÍNH SÁCH",
       "information_and_security_policy": "Chính sách bảo mật",
       "sales_policy": "Chính sách bán hàng",
-      "shipping_and_forward_policy": "Chính sách giao hàng"
+      "shipping_and_forward_policy": "Chính sách giao hàng",
+      "payment_policy": "Chính sách thanh toán",
+      "ship_COD_policy": "Chính sách kiểm hàng"
     },
     "third_column": {
       "information": "THÔNG TIN",
