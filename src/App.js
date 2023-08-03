@@ -17,6 +17,7 @@ import PowderSpices from './Pages/Products/PowderSpices';
 import BeforeFooter from './Components/BeforeFooter/BeforeFooter';
 import AdminLogin from "./Pages/Admin/AdminLogin";
 import Notice from './Pages/Notice/Notice';
+import Contact from './Pages/Contact/Contact'
 import Event from './Pages/Event/Event';
 import Product from './Pages/Product/Product';
 import CheckoutCart from './Pages/CheckoutCart/CheckoutCart';
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
       {
         path: '/where-to-buy',
         element: <FreshBoba />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
       },
       {
         path: '/*',
