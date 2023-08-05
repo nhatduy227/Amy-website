@@ -1,19 +1,45 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
 
 export default function SignupForm() {
     const form = useRef();
+    const { t } = useTranslation();
+    const initialState = {
+        username: "",
+        phone: "",
+        email: "",
+        customerType: "",
+        productType: "",
+        message: ""
+    }
+    const [userInfo, setUserInfo] = useState(initialState)
+
+    const handleInputChange = event => {
+        setUserInfo({
+            ...userInfo,
+            [event.target.name]: event.target.value
+        });
+    };
+
+    const formatPhoneNumber = (e) => {
+        let input = e.target.value;
+        input = input.replace(/\D/g, ''); // Remove all non-digit characters
+        input = input.slice(0, 10); // Limit to 10 digits
+        const formattedPhoneNumber = input.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3'); // Format as xxx-xxx-xxxx
+        setUserInfo({
+            ...userInfo,
+            [e.target.name]: formattedPhoneNumber
+        });
+    };
 
     const sendEmail = (e) => {
         e.preventDefault();
-        if (cartItems.length === 0) {
-            alert("Cannot Create Order with an empty cart.")
-            return
-        }
-        handleOrderCreation();
+
         var templateParams = {
             to_email: userInfo.email,
             to_name: userInfo.username,
-            message: "All the items in this order: " + cartItems.map(p => p.productName.toString())
+            message: "Thank you for signing up to test our product."
         };
 
         emailjs.send('service_d1gsomh', 'template_83mczqc', templateParams, '1Do_dEWDJTYoZl4Ia')
@@ -26,46 +52,39 @@ export default function SignupForm() {
 
     return (
         <form ref={form} onSubmit={sendEmail}>
-            <h2 class="text-primary-default text-center text-[24px] font-semibold mt-5">{t(`cart.user info`)}</h2>
-            <div className="flex flex-col justify-left items-center">
-                <div className="flex justify-center w-[660px] h-[2px] bg-primary-default my-6" />
-                <div className="mb-4">
-                    <label htmlFor="name" className="block text-primary-default font-medium mb-2">{t(`cart.username`)}</label>
+            <div className="flex flex-col justify-left items-center mt-10">
+                <div className="mb-4 space-x-4">
                     <input
                         required
-                        className="w-[660px]"
+                        className="w-[330px] p-2 rounded-lg"
                         type="text"
                         name="username"
-                        placeholder={t(`cart.username`)}
+                        placeholder="Họ và Tên"
                         value={userInfo.username}
                         onChange={handleInputChange}
                     />
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="email" className="block text-primary-default font-medium mb-2">{t(`cart.phone`)}</label>
                     <input
                         required
-                        className="w-[660px]"
+                        className="w-[330px] p-2 rounded-lg"
                         type="phone"
                         name="phone"
-                        placeholder="xxx-xxx-xxxx"
+                        placeholder="Số điện thoại"
                         value={userInfo.phone}
                         onChange={formatPhoneNumber}
                     />
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="address" className="block text-primary-default font-medium mb-2">{t(`cart.address`)}</label>
                     <input
                         required
-                        className="w-[660px]"
+                        className="w-[675px] p-2 rounded-lg"
                         name="address"
-                        placeholder={t(`cart.address`)}
-                        value={userInfo.address}
+                        placeholder="Email"
+                        value={userInfo.email}
                         onChange={handleInputChange}
                     />
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="email" className="block text-primary-default font-medium mb-2">{t(`cart.email`)}</label>
+                    <label htmlFor="email" className="block text-white font-medium mb-2">Vui lòng chọn</label>
                     <input
                         required
                         className="w-[660px]"
@@ -75,34 +94,6 @@ export default function SignupForm() {
                         onChange={handleInputChange}
                     />
                 </div>
-            </div>
-            <h2 class="text-primary-default text-center text-[24px] font-semibold mt-5">{t(`cart.order confirmation`)}</h2>
-            <div className="flex flex-col justify-center items-center">
-                <div className="flex justify-center w-[660px] h-[2px] bg-primary-default my-6" />
-                {cartItems.length === 0 ? <p class="text-primary-default font-medium text-center" id="slide-over-title">{t(`cart.no item`)}</p> : null}
-                {cartItems.map((item) => (
-                    <CartItem
-                        key={item.productId}
-                        item={item}
-                        addToCart={addToCart}
-                        removeFromCart={removeFromCart}
-                    />
-                ))}
-            </div>
-
-            <div class="text-primary-default font-medium text-center">
-                <p>{t(`cart.total`)}: {calculateTotal(cartItems)} VND</p>
-            </div>
-            <h2 class="text-primary-default text-center text-[24px] font-semibold mt-5">{t(`cart.payment instruction`)}</h2>
-            <div className="flex flex-col justify-center items-center">
-                <div className="flex justify-center w-[660px] h-[2px] bg-primary-default my-6" />
-                <div class="bg-gray-200 p-4 rounded w-[660px]">
-                    <p class="text-gray-700">Thông tin tài khoản cho khách mua lẻ khi đặt hàng: BÙI THỊ ÁNH - Số tài khoản: 060199027754 - Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank) - PGD An Phú – TP HCM</p>
-                </div>
-            </div>
-
-            <div class="mt-6">
-                <input class="bg-blue-500 text-white py-2 px-4 mx-auto block" type="submit" value={t(`cart.buy`)} />
             </div>
         </form>
     )

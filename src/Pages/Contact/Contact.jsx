@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SignUpForm from './SignupForm'
+
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LanguageIcon from '@mui/icons-material/Language';
@@ -140,6 +142,7 @@ const Contact = () => {
         {/* Form */}
         <div className="flex flex-col justify-center items-center mt-20">
           <h1 className="text-primary-default text-center text-[40px] font-semibold mt-5">Đăng ký dùng thử sản phẩm</h1>
+          <SignUpForm />
         </div>
 
 
