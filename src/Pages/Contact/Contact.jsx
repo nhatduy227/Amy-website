@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LanguageIcon from '@mui/icons-material/Language';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -9,6 +10,43 @@ import productBanner from '../../Assets/product-banner.png';
 import la1 from '../../Assets/la1.png';
 import la2 from '../../Assets/la2.png';
 import bubbleDeco from '../../Assets/bubble-deco.png';
+
+const CompanyMap = () => {
+  const location1 = {
+    lat: 10.794321745861602,
+    lng: 106.73045766326335
+  };
+  return (
+    <LoadScript googleMapsApiKey="AIzaSyCLfjNFRaPsZeFGS6Ibgm5rASt90DcJFc8">
+      <GoogleMap
+        mapContainerStyle={{ width: '350px', height: '350px' }}
+        center={location1}
+        zoom={20}
+      >
+        <Marker position={location1} />
+      </GoogleMap>
+    </LoadScript>
+  );
+};
+
+const FactoryMap = () => {
+  const location2 = {
+    lat: 10.795529412298212,
+    lng: 106.73546445648095
+  };
+  return (
+    <LoadScript googleMapsApiKey="AIzaSyCLfjNFRaPsZeFGS6Ibgm5rASt90DcJFc8">
+      <GoogleMap
+        mapContainerStyle={{ width: '350px', height: '350px' }}
+        center={location2}
+        zoom={20}
+      >
+        <Marker position={location2} />
+      </GoogleMap>
+    </LoadScript>
+  );
+};
+
 
 
 const Contact = () => {
@@ -82,15 +120,27 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Icons */}
+        {/* Map */}
+        <div className="flex justify-center items-center mt-20 space-x-5">
+          <div class="flex flex-col items-center">
+            <CompanyMap />
+            <p class="mt-2 text-white">Công ty TNHH Amy Việt Nam</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <FactoryMap />
+            <p class="mt-2 text-white">Nhà máy Amy Việt Nam</p>
+          </div>
+        </div>
+
+        {/* Button */}
         <div className="flex justify-center items-center mt-20">
-          <button class="rounded-full p-5 bg-primary-default text-white p-4">
-            Vui lòng liên hệ HOTLINE: <strong>{phoneNumber}</strong> để được tư vấn thêm
+          <button class="rounded-lg py-5 px-20 bg-primary-default text-white">
+            <p class="text-[20px] text-white"> Vui lòng liên hệ HOTLINE: <strong>{phoneNumber}</strong> để được tư vấn thêm </p>
           </button>
         </div>
 
         {/* Form */}
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center mt-20">
           <h1 className="text-primary-default text-center text-[40px] font-semibold mt-5">Đăng ký dùng thử sản phẩm</h1>
         </div>
 
