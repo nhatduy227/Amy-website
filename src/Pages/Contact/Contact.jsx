@@ -47,8 +47,6 @@ const FactoryMap = () => {
   );
 };
 
-
-
 const Contact = () => {
   const phoneNumber = "(84.8) 653 653 67"
   return (
