@@ -85,14 +85,14 @@ export default function SignupForm() {
                 </div>
                 <div className="mb-4">
                     <label htmlFor="email" className="block text-white font-medium mb-2">Vui lòng chọn</label>
-                    <input
+                    {/* <input
                         required
                         className="w-[660px]"
                         name="email"
                         placeholder={t(`cart.email`)}
                         value={userInfo.email}
                         onChange={handleInputChange}
-                    />
+                    /> */}
                 </div>
             </div>
         </form>
