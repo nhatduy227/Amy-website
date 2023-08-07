@@ -5,10 +5,13 @@ import ProductCard from './ProductsCard';
 import la1 from '../../Assets/la1.png';
 import la2 from '../../Assets/la2.png';
 import bubbleDeco from '../../Assets/bubble-deco.png';
+import { useTranslation } from 'react-i18next';
+
 
 import tranchaukhoBanner1 from '../../Assets/TrangHat.png';
 
 const DriedBoba = () => {
+  const { t } = useTranslation();
   const [driedBoba, setDriedBoba] = useState([]);
   const fetchData = async () => {
     const collectionRef = collection(db, 'driedBoba');
@@ -41,7 +44,7 @@ const DriedBoba = () => {
 
         {/* Banner */}
         <img className="w-full lg:h-[610px]" src={tranchaukhoBanner1} alt="product-banner" />
-        <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">Không chất bảo quản</h1>
+        <h1 className="text-primary-default text-center text-[24px] font-semibold mt-5">{t('home_page.no_preservatives')}</h1>
         {driedBoba.map((product) => {
           return (
             <ProductCard product={product} />

@@ -109,6 +109,11 @@ const Navbar = () => {
             {t(`navbar.where to buy`)}
           </Link>
         </li>
+        <li key={'contact'} className="text-xs">
+          <Link className="px-4 py-2 no-underline uppercase hover:bg-primary-default text-white" to={'/contact'}>
+            {t(`navbar.contact`)}
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -4,7 +4,7 @@
     "login_out": "Log Out",
     "cart": "Cart",
     "message": "Message",
-    "admin": "Admin",
+    "admin": "Admin Login",
     "go to home": "Go to homepage"
   },
   "navbar": {
@@ -15,6 +15,7 @@
     "event": "Event",
     "notice": "Notice",
     "where to buy": "Where to buy",
+    "contact": "Contact Us",
     "fresh boba": "Fresh Boba",
     "dried boba": "Dried Boba",
     "powder spices": "Powder Spices",

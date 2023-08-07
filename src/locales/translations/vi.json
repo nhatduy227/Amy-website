@@ -4,7 +4,7 @@
     "login_out": "Đăng xuất",
     "cart": "Giỏ hàng",
     "message": "Tin nhắn",
-    "admin": "Quản Lý",
+    "admin": "Quản Trị Viên",
     "go to home": "Về Trang Chủ"
   },
   "navbar": {
@@ -18,6 +18,7 @@
     "dried boba": "Trân châu khô",
     "powder spices": "Bột gia vị",
     "where to buy": "Nơi mua hàng",
+    "contact": "Liên hệ",
     "post product": " Đăng sản phẩm",
     "manage product": "Quản lý sản phẩm",
     "post recipe": " Đăng công thức",
