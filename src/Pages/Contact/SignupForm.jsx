@@ -50,7 +50,7 @@ export default function SignupForm() {
         var templateParams = {
             to_email: userInfo.email,
             to_name: userInfo.username,
-            message: "Người gủi: " + userInfo.customerType.toString() + "- Sản phẩm quan tâm: " + userInfo.productType.toString()
+            message: "Khách hàng: " + userInfo.customerType.toString() + "- Sản phẩm quan tâm: " + userInfo.productType.toString() + ". \n Tin Nhắn: " + userInfo.message.toString()
         };
 
         emailjs.send('service_d1gsomh', 'template_83mczqc', templateParams, '1Do_dEWDJTYoZl4Ia')
