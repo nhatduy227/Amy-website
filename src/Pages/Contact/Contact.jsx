@@ -135,7 +135,7 @@ const Contact = () => {
         {/* Button */}
         <div className="flex justify-center items-center mt-20">
           <button class="rounded-lg py-5 px-20 bg-primary-default text-white">
-            <p class="text-[20px] text-white"> Vui lòng liên hệ HOTLINE: <strong>{phoneNumber}</strong> để được tư vấn thêm </p>
+            <p class="text-[19px] text-white"> Vui lòng liên hệ HOTLINE: <strong>{phoneNumber}</strong> để được tư vấn thêm </p>
           </button>
         </div>
 
